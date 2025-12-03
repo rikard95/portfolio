@@ -1,0 +1,46 @@
+.project-container {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 800px;        
+  margin: 4rem auto;       
+  padding: 2rem;
+  background-color: #000000; 
+  border: 2px solid #ffcc00;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  color: #ffffff; 
+  line-height: 1.7;  
+}
+
+.project-container:hover {
+    border: 2px solid #238b5a; 
+}
+
+.project-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1e1e2f;      
+  text-align: center;
+}
+
+.project-container p {
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+.todo-btn {
+  display: inline-block; /* eller block om du vill hela radens bredd */
+  padding: 12px 20px;
+  background-color: #1a0032;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid #ffcc00;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.todo-btn:hover {
+  background-color: #002f23;
+}

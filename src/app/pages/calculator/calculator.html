@@ -1,0 +1,46 @@
+<app-klocka></app-klocka>
+<div class="calculator-page">
+  <div class="calculator-container">
+    <div class="display">
+      <input type="text" [value]="input" readonly placeholder="0" />
+      <div class="result">{{ result }}</div>
+    </div>
+
+    <div class="buttons">
+      <button type="button" class="function" (click)="clear()">C</button>
+      <button type="button" class="function" (click)="deleteLast()">⌫</button>
+      <button type="button" (click)="append('%')">%</button>
+      <button type="button" (click)="append('÷')">÷</button>
+
+      <button type="button" (click)="append('7')">7</button>
+      <button type="button" (click)="append('8')">8</button>
+      <button type="button" (click)="append('9')">9</button>
+      <button type="button" (click)="append('×')">×</button>
+
+      <button type="button" (click)="append('4')">4</button>
+      <button type="button" (click)="append('5')">5</button>
+      <button type="button" (click)="append('6')">6</button>
+      <button type="button" (click)="append('−')">−</button>
+
+      <button type="button" (click)="append('1')">1</button>
+      <button type="button" (click)="append('2')">2</button>
+      <button type="button" (click)="append('3')">3</button>
+      <button type="button" (click)="append('+')">+</button>
+
+      <button type="button" (click)="append('0')" class="zero">0</button>
+      <button type="button" (click)="append('.')">.</button>
+      <button type="button" class="equals" (click)="calculate()">=</button>
+    </div>
+  </div>
+
+  <div class="notes-container">
+    <h3>Anteckningar</h3>
+    <textarea
+      [(ngModel)]="notes"
+      (ngModelChange)="saveNotes()"
+      placeholder="Skriv dina anteckningar här..."></textarea>
+
+    <button type="button" (click)="clearNotes()">Rensa anteckningar</button>
+  </div>
+</div>
+<app-projekt></app-projekt>

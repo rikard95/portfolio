@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { Kalender } from './kalender';
+
+describe('Kalender', () => {
+  let component: Kalender;
+  let fixture: ComponentFixture<Kalender>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [Kalender]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(Kalender);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

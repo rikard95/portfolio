@@ -1,0 +1,38 @@
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 79px;
+  padding: 1rem 2rem;
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+  border-top: 2px solid #ffcc00;
+  margin-top: auto; /* pushar footern till botten */
+  font-size: 0.9rem;
+}
+
+
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 1rem;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #ffcc00;
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  footer a {
+    margin-left: 0;
+  }
+}

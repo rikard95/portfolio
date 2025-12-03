@@ -1,0 +1,21 @@
+<div class="login-box">
+  <img src="logo.png" alt="Angular Logo">
+  <h2>Logga in</h2>
+
+  <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+    
+    <input type="text" placeholder="Användarnamn" [(ngModel)]="username" name="username" required #usernameField="ngModel" />
+    <div *ngIf="usernameField.invalid && usernameField.touched" class="error">Fyll i användarnamn</div>
+
+    <input type="password" placeholder="Lösenord" [(ngModel)]="password" name="password" required #passwordField="ngModel" />
+    <div *ngIf="passwordField.invalid && passwordField.touched" class="error">Fyll i lösenord</div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Logga in</button>
+    <button type="button" routerLink="registrera">Skapa konto</button>
+
+
+
+  </form>
+
+  <p *ngIf="message" class="login-message">{{ message }}</p>
+</div>

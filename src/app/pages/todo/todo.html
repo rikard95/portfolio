@@ -1,0 +1,67 @@
+<app-klocka></app-klocka>
+<div class="todo-container">
+  <h2>Todos</h2>
+
+  <!-- Input för nya todos -->
+  <div class="todo-input">
+    <input type="text" [(ngModel)]="newTodo" placeholder="Skriv en uppgift..." (keyup.enter)="addTodo()" />
+    <select [(ngModel)]="selectedCategory">
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+    <button (click)="addTodo()">Lägg till</button>
+  </div>
+
+  <!-- Skapa nya kategorier -->
+  <div class="category-input">
+    <input type="text" [(ngModel)]="newCategory" placeholder="Ny kategori..." />
+    <button (click)="addCategory()">Skapa kategori</button>
+  </div>
+
+  <!-- Ta bort kategori -->
+  <div class="filter-section">
+    <label>Ta bort :</label>
+    <select [(ngModel)]="selectedCategory">
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+    <button *ngIf="selectedCategory !== 'Allmänt'" class="delete-category-btn"
+            (click)="deleteCategory(categories.indexOf(selectedCategory))">
+      Ta bort kategori
+    </button>
+  </div>
+
+  <!-- Filtrera todos -->
+  <div class="filter-section">
+    <label>Visa kategori :</label>
+    <select [(ngModel)]="filterCategory">
+      <option value="Alla">Alla</option>
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+  </div>
+
+  <!-- Lista med todos -->
+  <div class="todo-list">
+    <div *ngFor="let todo of filteredTodos()" class="todo-item" [class.done]="todo.done">
+      <div class="todo-left">
+        <input type="checkbox" [ngModel]="todo.done" (ngModelChange)="toggleDone(todo)" />
+        <span class="todo-category">{{ todo.category }}</span>
+
+        <div *ngIf="!todo.editing" class="todo-display">
+          <span class="todo-text">{{ todo.text }}</span>
+        </div>
+
+        <div *ngIf="todo.editing" class="todo-edit">
+          <input [(ngModel)]="todo.text" />
+        </div>
+      </div>
+
+      <div class="todo-actions">
+        <button class="edit" (click)="editTodo(todo)">{{ todo.editing ? 'Spara' : 'Ändra' }}</button>
+        <button class="delete" (click)="deleteTodo(todo)">Ta bort</button>
+        <button class="up" (click)="moveUp(todo)">⬆</button>
+        <button class="down" (click)="moveDown(todo)">⬇</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-projekt></app-projekt>

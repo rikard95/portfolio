@@ -1,0 +1,55 @@
+<app-klocka></app-klocka>
+
+<div class="dagbok-container welcome-container">
+  <h1>Dagbok</h1>
+
+  <div class="dagbok-controls">
+    <textarea
+      class="new-entry-textarea"
+      [(ngModel)]="newEntryText"
+      placeholder="Skriv ny anteckning..."
+      (keydown.enter)="addEntry(); $event.preventDefault()">
+    </textarea>
+
+    <button (click)="addEntry()">Spara</button>
+
+    <div class="filter-controls">
+      <input
+        type="date"
+        [(ngModel)]="filterDate"
+      >
+      <button (click)="setToday()">Idag</button>
+      <button (click)="showAll()">Se alla</button>
+    </div>
+  </div>
+
+  <div class="dagbok-entries">
+    <div *ngFor="let entry of filteredEntries" class="entry">
+      <div class="entry-left">
+        <div class="timestamp">{{ entry.timestamp }}</div>
+      </div>
+
+      <div class="entry-center">
+        <div *ngIf="!entry.editing" class="entry-text">{{ entry.text }}</div>
+        <textarea
+          *ngIf="entry.editing"
+          [(ngModel)]="entry.editText"
+          rows="3">
+        </textarea>
+      </div>
+
+      <div class="entry-right">
+        <div *ngIf="!entry.editing" class="entry-buttons">
+          <button (click)="startEdit(entry)">Ändra</button>
+          <button class="remove-btn" (click)="removeEntry(entry)">Ta bort</button>
+        </div>
+        <div *ngIf="entry.editing" class="entry-buttons">
+          <button (click)="saveEdit(entry)">Spara</button>
+          <button class="remove-btn" (click)="cancelEdit(entry)">Avbryt</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-projekt></app-projekt>

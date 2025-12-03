@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  overflow: auto;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; 
+}
+
+body.login-page .logga-ut {
+    display: none;
+}
+
+body.register-page header {
+  display: none; /* gömmer hela headern */
+}
+
+
+body {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  min-height: 100vh;
+    background-color: #1a0032;
+    color: #ffffff;
+}
+
+
+
+app-hem {
+  background-color: #1a0032;
+}
+
+body.login-page .top {
+  display: none;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}

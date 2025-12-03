@@ -1,0 +1,21 @@
+<div class="register-box">
+  <h2>Registrera ny användare</h2>
+
+  <form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm)">
+    <input type="text" placeholder="Användarnamn" [(ngModel)]="username" name="username" required #usernameField="ngModel">
+    <div *ngIf="usernameField.invalid && usernameField.touched" class="error">Fyll i användarnamn</div>
+
+    <input type="password" placeholder="Lösenord" [(ngModel)]="password" name="password" required #passwordField="ngModel">
+    <div *ngIf="passwordField.invalid && passwordField.touched" class="error">Fyll i lösenord</div>
+
+    <input type="password" placeholder="Bekräfta lösenord" [(ngModel)]="confirmPassword" name="confirmPassword" required #confirmField="ngModel">
+    <div *ngIf="confirmField.invalid && confirmField.touched" class="error">Bekräfta lösenord</div>
+
+    <button type="submit" [disabled]="registerForm.invalid">Registrera</button>
+  </form>
+
+  <button type="button" routerLink="/" class="back-button">Tillbaka</button>
+
+
+  <p *ngIf="message" class="register-message">{{ message }}</p>
+</div>

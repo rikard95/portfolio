@@ -1,0 +1,47 @@
+
+.welcome-container {
+  max-width: 800px;        
+  margin: 4rem auto;       
+  padding: 2rem;
+  background-color: #000000; 
+  border: 2px solid #ffcc00;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  color: #ffffff; 
+  line-height: 1.7;  
+}
+
+
+.welcome-container:hover {
+    border: 2px solid #238b5a; 
+}
+
+
+
+.welcome-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;      
+  text-align: center;
+}
+
+.welcome-container p {
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+/* Responsiv styling */
+@media (max-width: 768px) {
+  .welcome-container {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .welcome-container h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-container p {
+    font-size: 1rem;
+  }
+}

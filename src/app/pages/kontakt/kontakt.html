@@ -1,0 +1,21 @@
+<app-klocka></app-klocka>
+<div class="contact-container">
+  <h1>Kontakta mig</h1>
+  <p>
+    Har du frågor, idéer eller vill samarbeta?
+  </p>
+
+  <form (ngSubmit)="submitForm()" #contactForm="ngForm">
+    <label for="name">Namn</label>
+    <input type="text" placeholder="Namn" id="name" name="name" [(ngModel)]="name" required>
+
+    <label for="email">E-post</label>
+    <input type="email" placeholder="E-post" id="email" name="email" [(ngModel)]="email" required>
+
+    <label for="message">Meddelande</label>
+    <textarea id="message" placeholder="Skriv ditt Meddelande här" name="message" [(ngModel)]="message" rows="5" required></textarea>
+
+    <button type="submit" [disabled]="!contactForm.form.valid">Skicka</button>
+  </form>
+</div>
+<app-projekt></app-projekt>

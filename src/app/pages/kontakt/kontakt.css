@@ -1,0 +1,118 @@
+h1 {
+    color: #ffffff !important;  
+}
+
+
+.welcome-container {
+  max-width: 800px;        
+  margin: 4rem auto;       
+  padding: 2rem;
+  background-color: #000000; 
+  border: 2px solid #ffcc00;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  color: #ffffff; 
+  line-height: 1.7;  
+}
+
+.welcome-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1e1e2f;      
+  text-align: center;
+}
+
+.welcome-container p {
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .welcome-container {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .welcome-container h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-container p {
+    font-size: 1rem;
+  }
+}
+
+
+.contact-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #000000;
+  border: 2px solid #ffcc00;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.contact-container:hover {
+    border: 2px solid #238b5a; 
+}
+
+.contact-container h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.contact-container p {
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.5;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+input, textarea {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #6c3939;
+  cursor: default;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+}

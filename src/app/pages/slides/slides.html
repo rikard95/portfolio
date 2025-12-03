@@ -1,0 +1,43 @@
+<app-klocka></app-klocka>
+<div class="dagbok-container slides-container">
+  <h1>Slides</h1>
+
+  <div class="dagbok-controls">
+    <input type="text" [(ngModel)]="newProjectName" placeholder="Nytt projekt namn">
+    <button (click)="addProject()">Skapa projekt</button>
+  </div>
+
+  <div class="projects-list" *ngIf="projects.length > 0">
+    <span *ngFor="let p of projects; let i = index" 
+          [class.active-project]="i === selectedProjectIndex"
+          (click)="selectProject(i)">
+      {{ p.name }}
+      <button class="remove-project-btn" (click)="removeProject(i)">X</button>
+    </span>
+  </div>
+
+  <div class="dagbok-controls" *ngIf="currentProject">
+    <input type="text" [(ngModel)]="newText" placeholder="Skriv ny slide..."
+              (keydown.enter)="addText(); $event.preventDefault()">
+    <button (click)="addText()">Lägg till slide</button>
+  </div>
+
+  
+  <div class="slide-display" *ngIf="currentProject && currentProject.slides.length > 0">
+    <button class="nav-button" (click)="prevSlide()">&#8592;</button>
+    <div class="slide">
+      {{ currentProject.slides[currentIndex] }}
+      <button class="remove-slide-btn" (click)="removeSlide(currentIndex)">Ta bort</button>
+    </div>
+    <button class="nav-button" (click)="nextSlide()">&#8594;</button>
+  </div>
+
+  <div class="slide-dots" *ngIf="currentProject && currentProject.slides.length > 1">
+    <span *ngFor="let s of currentProject.slides; let i = index"
+          class="dot"
+          [class.active]="i === currentIndex"
+          (click)="goToSlide(i)">
+    </span>
+  </div>
+</div>
+<app-projekt></app-projekt>

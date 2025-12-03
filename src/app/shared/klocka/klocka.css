@@ -1,0 +1,45 @@
+.klocka-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 200px;
+  height: 50px;
+  margin: 2rem auto 1rem auto;
+  padding: 1rem;
+  border: 2px solid #ffcc00;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: #000000; 
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer; /* visa att det är klickbart */
+  transition: border 0.2s;
+}
+
+.klocka-container:hover {
+  border: 2px solid #238b5a; 
+}
+
+.klocka-container h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* ta bort standard länk-styling */
+a {
+  text-decoration: none;
+  color: inherit;
+  width: 10px;
+}
+ 
+.klocka-link {
+  display: inline-block; /* gör att a bara tar upp innehållets storlek */
+  text-decoration: none;
+  width: 268px;
+  border: 2px solid #ffcc00;
+  border-radius: 50%;
+  color: inherit;
+  background-color: #3d0000;
+  margin-top: 30px;
+}

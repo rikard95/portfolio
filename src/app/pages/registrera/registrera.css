@@ -1,0 +1,78 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.register-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 30px 35px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-sizing: border-box;
+}
+
+.register-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #5c438a;
+  background-color: #2b0050;
+  color: #fff;
+  border-radius: 6px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.register-box input:focus {
+  border-color: #9f5bff;
+  box-shadow: 0 0 6px #9f5bff;
+}
+
+.register-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #9f5bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.register-box button:hover {
+  background-color: #b77bff;
+}
+
+.register-message {
+  color: red;
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.back-button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #5a6268;
+}
