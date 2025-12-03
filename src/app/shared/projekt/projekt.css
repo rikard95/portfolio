@@ -1,25 +1,27 @@
 .project-container {
   display: flex;
   justify-content: space-evenly;
-  max-width: 800px;        
-  margin: 4rem auto;       
+  align-items: flex-start;
+  max-width: 800px;
+  margin: 4rem auto;
   padding: 2rem;
-  background-color: #000000; 
+  background-color: #000000;
   border: 2px solid #ffcc00;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  color: #ffffff; 
-  line-height: 1.7;  
+  color: #ffffff;
+  line-height: 1.7;
+  box-sizing: border-box;
 }
 
 .project-container:hover {
-    border: 2px solid #238b5a; 
+  border: 2px solid #238b5a;
 }
 
 .project-container h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #1e1e2f;      
+  color: #1e1e2f;
   text-align: center;
 }
 
@@ -29,7 +31,7 @@
 }
 
 .todo-btn {
-  display: inline-block; /* eller block om du vill hela radens bredd */
+  display: inline-block;
   padding: 12px 20px;
   background-color: #1a0032;
   color: white;
@@ -39,8 +41,52 @@
   text-align: center;
   cursor: pointer;
   transition: all 0.2s;
+  margin-top: 1rem; 
 }
 
 .todo-btn:hover {
   background-color: #002f23;
+}
+
+
+@media (max-width: 768px) {
+  .project-container {
+    flex-direction: column;  
+    align-items: center;    
+    padding: 1.5rem;
+    margin: 3rem 1.5rem;
+  }
+
+  .project-container h1 {
+    font-size: 2rem;
+  }
+
+  .project-container p {
+    font-size: 1rem;
+  }
+
+  .todo-btn {
+    width: 80%;             
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-container {
+    padding: 1rem;
+    margin: 2rem 1rem;
+  }
+
+  .project-container h1 {
+    font-size: 1.7rem;
+  }
+
+  .project-container p {
+    font-size: 0.95rem;
+  }
+
+  .todo-btn {
+    width: 100%;         
+    padding: 10px 0;
+  }
 }
