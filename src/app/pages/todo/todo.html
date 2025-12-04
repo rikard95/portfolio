@@ -1,4 +1,5 @@
 <app-klocka></app-klocka>
+
 <div class="todo-container">
   <h2>Todos</h2>
 
@@ -54,12 +55,16 @@
         </div>
       </div>
 
-      <div class="todo-actions">
-        <button class="edit" (click)="editTodo(todo)">{{ todo.editing ? 'Spara' : 'Ändra' }}</button>
-        <button class="delete" (click)="deleteTodo(todo)">Ta bort</button>
-        <button class="up" (click)="moveUp(todo)">⬆</button>
-        <button class="down" (click)="moveDown(todo)">⬇</button>
-      </div>
+<div class="todo-actions">
+  <div class="up-down">
+    <button class="up" (click)="moveUp(todo)">⬆</button>
+    <button class="down" (click)="moveDown(todo)">⬇</button>
+  </div>
+  <div class="edit-delete">
+    <button class="edit" (click)="editTodo(todo)">{{ todo.editing ? 'Spara' : 'Ändra' }}</button>
+    <button class="delete" (click)="deleteTodo(todo)">Ta bort</button>
+  </div>
+</div>
     </div>
   </div>
 </div>

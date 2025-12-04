@@ -1,5 +1,6 @@
 .slides-container {
   max-width: 1000px; 
+  width: 90%; 
   margin: 4rem auto;
   padding: 2rem;
   background-color: #000000;
@@ -8,6 +9,7 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   color: #ffffff;
   line-height: 1.7;
+  box-sizing: border-box;
 }
 
 .slides-container h1 {
@@ -83,12 +85,16 @@ button:hover {
   align-items: center;
   gap: 10px;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .slide {
-  flex: 1;
-  min-height: 500px;
-  padding: 4rem;     
+  flex: 1 1 90%; 
+  min-width: 280px; 
+  max-width: 600px;
+  min-height: 300px;
+  padding: 3rem;
   background-color: #1a1a1a;
   border: 2px solid #ffcc00;
   border-radius: 12px;
@@ -96,9 +102,10 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem; 
+  font-size: 2rem; 
   text-align: center;
   position: relative;
+  box-sizing: border-box;
 }
 
 .remove-slide-btn {
@@ -134,4 +141,37 @@ button:hover {
 
 .dot.active {
   background-color: #ffcc00;
+}
+
+
+@media (max-width: 1024px) {
+  .slide {
+    max-width: 500px;
+    padding: 2.5rem;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide {
+    min-width: 300px;
+    max-width: 450px;
+    padding: 2rem;
+    font-size: 1.5rem;
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide {
+    min-width: 280px;
+    width: 90%; 
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    min-height: 280px;
+  }
+
+  .nav-button {
+    font-size: 28px;
+  }
 }

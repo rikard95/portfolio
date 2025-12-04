@@ -1,4 +1,5 @@
 <app-klocka></app-klocka>
+
 <div class="kalender-container welcome-container">
   <h1>Kalender</h1>
 
@@ -15,18 +16,11 @@
   </div>
 
   <div class="kalender-grid">
-    <div class="weekday">Mån</div>
-    <div class="weekday">Tis</div>
-    <div class="weekday">Ons</div>
-    <div class="weekday">Tors</div>
-    <div class="weekday">Fre</div>
-    <div class="weekday">Lör</div>
-    <div class="weekday">Sön</div>
-
     <div *ngFor="let day of monthDays" class="day" 
          [class.empty]="isInvalidDate(day.date)"
          [class.today]="isToday(day.date)">
       <div *ngIf="!isInvalidDate(day.date)" class="day-content">
+        <div class="day-name">{{ getWeekdayName(day.date) }}</div>
         <div class="day-number">{{ day.date.getDate() }}</div>
         <textarea 
           [value]="day.note" 
@@ -36,4 +30,11 @@
     </div>
   </div>
 </div>
+
+<div class="scroll-top-container">
+  <button type="button" (click)="scrollToTop()" class="scroll-top-btn">
+    Gå till datumväljare ↑
+  </button>
+</div>
+
 <app-projekt></app-projekt>

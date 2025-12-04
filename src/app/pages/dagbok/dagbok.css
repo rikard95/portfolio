@@ -1,5 +1,6 @@
 .dagbok-container {
   max-width: 800px;
+  width: 90%; 
   margin: 4rem auto;
   padding: 2rem;
   background-color: #000000;
@@ -8,6 +9,7 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   color: #ffffff;
   line-height: 1.7;
+  box-sizing: border-box;
 }
 
 .dagbok-container h1 {
@@ -88,14 +90,17 @@ button:hover {
   border: 1px solid #ffcc00;
   border-radius: 8px;
   padding: 0.8rem;
+  flex-wrap: wrap; 
 }
 
 .entry-left {
   flex: 0 0 160px;
+  min-width: 100px; 
 }
 
 .entry-center {
-  flex: 1;
+  flex: 1 1 100px;
+  min-width: 120px;
 }
 
 .entry-right {
@@ -103,6 +108,7 @@ button:hover {
   flex-direction: column;
   gap: 0.3rem;
   flex: 0 0 120px;
+  min-width: 80px;
   align-items: flex-end;
 }
 
@@ -125,4 +131,47 @@ textarea {
   padding: 0.3rem;
   margin-bottom: 15px;
   resize: none;
+  box-sizing: border-box;
+}
+
+
+@media (max-width: 768px) {
+  .entry {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .entry-left,
+  .entry-center,
+  .entry-right {
+    flex: 1 1 100%;
+    min-width: 0;
+    align-items: flex-start;
+  }
+
+  .dagbok-controls input[type="date"] {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dagbok-container {
+    padding: 1rem;
+  }
+
+  .new-entry-textarea {
+    min-height: 100px;
+  }
+
+  button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .entry-left,
+  .entry-center,
+  .entry-right {
+    flex: 1 1 100%;
+  }
 }

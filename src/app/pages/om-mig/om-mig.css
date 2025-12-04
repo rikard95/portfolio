@@ -11,6 +11,15 @@
   line-height: 1.7;  
 }
 
+img.profile-picture {
+  display: block;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  border-radius: 10%;
+  margin: 2rem auto 0 auto;
+  border: 1px solid #ffcc00;
+}
 
 .welcome-container:hover {
     border: 2px solid #238b5a; 

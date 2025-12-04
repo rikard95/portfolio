@@ -1,5 +1,6 @@
 .kalender-container {
   max-width: 900px;
+  width: 90%;
   margin: 4rem auto;
   padding: 2rem;
   background-color: #000000;
@@ -8,6 +9,7 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   color: #ffffff;
   line-height: 1.7;
+  box-sizing: border-box;
 }
 
 .kalender-container h1 {
@@ -21,6 +23,7 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
   margin-bottom: 1.5rem;
 }
 
@@ -33,6 +36,8 @@
   padding: 0.4rem;
   font-size: 1rem;
   width: auto;
+  min-width: 80px;
+  flex: 1 1 auto;
 }
 
 .kalender-header button {
@@ -43,6 +48,7 @@
   padding: 0.4rem 0.8rem;
   cursor: pointer;
   transition: background 0.2s;
+  flex: 0 0 auto;
 }
 
 .kalender-header button:hover {
@@ -55,23 +61,15 @@
   gap: 8px;
 }
 
-.weekday {
-  text-align: center;
-  font-weight: bold;
-  padding: 0.5rem 0;
-  color: #ffcc00;
-}
-
 .day {
   background-color: #1a1a1a;
   border: 2px solid #40005d;
   border-radius: 10px;
-  min-height: 100px;
-  padding: 0.4rem;
+  min-height: 120px;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  position: relative;
   transition: border 0.2s;
 }
 
@@ -85,13 +83,22 @@
 }
 
 .day.today {
-  border: 2px solid #238b5a; /* grön border för dagens datum */
+  border: 2px solid #238b5a;
+}
+
+.day-name {
+  font-weight: bold;
+  text-align: left;
+  color: #ffcc00;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
 }
 
 .day-number {
   font-weight: bold;
   text-align: right;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
 }
 
 textarea {
@@ -109,8 +116,71 @@ textarea::placeholder {
   color: #777;
 }
 
+.scroll-top-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.scroll-top-btn {
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.scroll-top-btn:hover {
+  background-color: #e6b800;
+}
+
+
+@media (min-width: 769px) {
+  .scroll-top-container {
+    display: none;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .kalender-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .kalender-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kalender-header select,
+  .kalender-header input,
+  .kalender-header button {
+    flex: 1 1 45%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .kalender-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .day {
+    min-height: 100px;
+    padding: 0.3rem;
+  }
+
+  .kalender-header {
+    gap: 0.5rem;
+  }
+
+  .kalender-header select,
+  .kalender-header input,
+  .kalender-header button {
+    width: 100%;
   }
 }

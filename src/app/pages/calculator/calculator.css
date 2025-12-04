@@ -1,4 +1,4 @@
-/* wrapper: två boxar bredvid varandra (space-evenly) */
+
 .calculator-page {
   display: flex;
   justify-content: center;
@@ -11,9 +11,10 @@
   gap: 30px;
 }
 
-/* kalkylator */
+
 .calculator-container {
   width: 380px;
+  max-width: 100%;
   padding: 20px;
   background: #1a1a1a;
   border-radius: 15px;
@@ -86,9 +87,10 @@ button.zero {
   grid-column: span 2;
 }
 
-/* anteckningar */
+
 .notes-container {
   width: 380px;
+  max-width: 100%;
   height: 415px;
   background: #1a1a1a;
   border-radius: 15px;
@@ -99,6 +101,21 @@ button.zero {
   font-family: 'Segoe UI', sans-serif;
   display: flex;
   flex-direction: column;
+  align-items: center; 
+}
+
+.notes-container textarea {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  background: #2c2c2c;
+  color: white;
+  padding: 10px;
+  font-size: 1rem;
+  resize: none;
+  margin: 0 auto; 
+  display: block; 
 }
 
 .notes-container h3 {
@@ -108,7 +125,7 @@ button.zero {
 }
 
 .notes-container textarea {
-  width: 95%;
+  width: 93%;
   height: 250px;
   border-radius: 10px;
   border: 1px solid #444;
@@ -116,7 +133,7 @@ button.zero {
   color: white;
   padding: 10px;
   font-size: 1rem;
-  resize: vertical;
+  resize: none;
 }
 
 .notes-container textarea:focus {
@@ -157,8 +174,14 @@ button.zero {
   }
 }
 
+@media (max-width: 600px) {
+  .display { font-size: 1.2rem; min-height: 55px; }
+  button { padding: 12px; font-size: 1rem; }
+  .notes-container textarea { height: 180px; }
+}
+
 @media (max-width: 480px) {
   .display { font-size: 1.1rem; min-height: 50px; }
-  button { padding: 12px; font-size: 1rem; }
+  button { padding: 10px; font-size: 0.95rem; }
   .notes-container textarea { height: 160px; }
 }

@@ -44,11 +44,9 @@ export class Kalender implements OnInit {
 
     const calendarDays: CalendarDay[] = [];
 
-   
     for (let i = 0; i < startDay; i++) {
       calendarDays.push({ date: new Date(NaN), note: '' });
     }
-
 
     for (let i = 1; i <= daysInMonth; i++) {
       const date = new Date(this.currentYear, this.currentMonth, i);
@@ -59,6 +57,13 @@ export class Kalender implements OnInit {
 
     this.monthDays = calendarDays;
   }
+
+  scrollToTop(): void {
+  const header: HTMLElement | null = document.querySelector('.kalender-header');
+  if (header) {
+    header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
 
   getStorageKey(date: Date): string {
     return `kalender-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
@@ -104,4 +109,12 @@ export class Kalender implements OnInit {
            date.getMonth() === today.getMonth() &&
            date.getFullYear() === today.getFullYear();
   }
+
+  getWeekdayName(date: Date): string {
+    if (this.isInvalidDate(date)) return '';
+    const weekdays = ['Mån', 'Tis', 'Ons', 'Tors', 'Fre', 'Lör', 'Sön'];
+    const jsDay = date.getDay();
+    return jsDay === 0 ? 'Sön' : weekdays[jsDay - 1];
+  }
 }
+
