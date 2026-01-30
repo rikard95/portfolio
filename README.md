@@ -64,9 +64,16 @@ This project is automatically deployed to Vercel when changes are pushed to the 
 
 - The project uses Vercel for hosting and automatic deployments
 - Build configuration is defined in `vercel.json`
-- GitHub Actions workflow (`.github/workflows/deploy.yml`) handles automated deployments
-- Production deployments are triggered on push to `main` branch
-- Preview deployments are created for pull requests
+- Vercel automatically detects and deploys changes pushed to the `main` branch
+- Preview deployments are automatically created for pull requests
+
+### How Deployment Works
+
+1. Push changes to the `main` branch
+2. Vercel automatically detects the push via GitHub integration
+3. Vercel builds the project using `npm run build`
+4. The built application from `dist/text/browser` is deployed to production
+5. The deployment is live at the URL above
 
 ### Manual Deployment
 
@@ -77,7 +84,13 @@ npm install -g vercel
 vercel --prod
 ```
 
-Note: You'll need to configure Vercel secrets (`VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`) in your GitHub repository settings for automated deployments to work.
+### First-Time Setup
+
+To connect your Vercel account:
+1. Visit [Vercel](https://vercel.com)
+2. Import the GitHub repository
+3. Vercel will automatically detect the Angular framework and use the configuration from `vercel.json`
+4. The project will be deployed automatically
 
 ## Additional Resources
 
