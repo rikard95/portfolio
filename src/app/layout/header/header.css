@@ -41,7 +41,7 @@ header nav a.active {
   color: #ffcc00;
 }
 
-img {
+header .logo img {
   width: 110px;
   height: auto;
   object-fit: contain;
@@ -72,10 +72,32 @@ img {
 @media (max-width: 768px) {
   header {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
+    padding: 1rem;
   }
+  
+  header .logo {
+    margin-bottom: 0.5rem;
+  }
+  
   header nav {
-    flex-direction: column;
-    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  header nav a {
+    font-size: 1rem;
+  }
+  
+  .dark-mode-toggle {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.7rem;
+  }
+  
+  header .logo img {
+    width: 80px;
   }
 }

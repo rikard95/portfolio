@@ -58,7 +58,7 @@ body.light-mode .dark-mode-toggle {
   border-color: #ffcc00;
 }
 
-body.light-mode img {
+body.light-mode header .logo img {
   filter: invert(0%);
 }
 
