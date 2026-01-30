@@ -36,3 +36,18 @@ footer a:hover {
     margin-left: 0;
   }
 }
+
+/* Light mode styles */
+body.light-mode footer {
+  background-color: #ffffff;
+  color: #333333;
+  border-top-color: #ffcc00;
+}
+
+body.light-mode footer a {
+  color: #333333;
+}
+
+body.light-mode footer a:hover {
+  color: #ffcc00;
+}
