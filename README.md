@@ -54,6 +54,31 @@ ng e2e
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
+## Deployment
+
+This project is automatically deployed to Vercel when changes are pushed to the `main` branch.
+
+**Live URL:** https://portfolio-rho-one-80.vercel.app/
+
+### Deployment Configuration
+
+- The project uses Vercel for hosting and automatic deployments
+- Build configuration is defined in `vercel.json`
+- GitHub Actions workflow (`.github/workflows/deploy.yml`) handles automated deployments
+- Production deployments are triggered on push to `main` branch
+- Preview deployments are created for pull requests
+
+### Manual Deployment
+
+If you need to deploy manually, you can use the Vercel CLI:
+
+```bash
+npm install -g vercel
+vercel --prod
+```
+
+Note: You'll need to configure Vercel secrets (`VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`) in your GitHub repository settings for automated deployments to work.
+
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
