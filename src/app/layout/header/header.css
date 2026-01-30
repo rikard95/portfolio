@@ -41,7 +41,7 @@ header nav a.active {
   color: #ffcc00;
 }
 
-img {
+header .logo img {
   width: 110px;
   height: auto;
   object-fit: contain;
@@ -97,7 +97,7 @@ img {
     padding: 0.4rem 0.7rem;
   }
   
-  img {
+  header .logo img {
     width: 80px;
   }
 }
