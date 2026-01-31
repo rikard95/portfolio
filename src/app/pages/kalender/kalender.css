@@ -251,6 +251,8 @@ textarea::placeholder {
 body.light-mode .kalender-container {
   background-color: #ffffff;
   color: #333333;
+  border-color: #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 body.light-mode .kalender-container h1 {
@@ -264,6 +266,12 @@ body.light-mode .kalender-header input {
   border-color: #ccc;
 }
 
+body.light-mode .kalender-header select:focus,
+body.light-mode .kalender-header input:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
+}
+
 body.light-mode .kalender-header button {
   background-color: #f5f5f5;
   color: #333333;
@@ -271,7 +279,8 @@ body.light-mode .kalender-header button {
 }
 
 body.light-mode .kalender-header button:hover {
-  background-color: #e0e0e0;
+  background-color: #ffcc00;
+  border-color: #ffcc00;
 }
 
 body.light-mode .day {
@@ -282,11 +291,13 @@ body.light-mode .day {
 
 body.light-mode .day:hover {
   border-color: #ffcc00;
+  box-shadow: 0 3px 8px rgba(255, 204, 0, 0.2);
 }
 
 body.light-mode .day.today {
   border-color: #ffcc00;
   background-color: #fff9e6;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
 }
 
 body.light-mode .day-name {
@@ -299,4 +310,8 @@ body.light-mode textarea {
 
 body.light-mode textarea::placeholder {
   color: #999;
+}
+
+body.light-mode textarea:focus {
+  box-shadow: 0 0 5px rgba(255, 204, 0, 0.3);
 }

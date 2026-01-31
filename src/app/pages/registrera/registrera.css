@@ -79,9 +79,10 @@
 
 /* Light mode styles */
 body.light-mode .register-box {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(0, 0, 0, 0.1);
   color: #333333;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
 }
 
 body.light-mode .register-box input {
@@ -92,7 +93,7 @@ body.light-mode .register-box input {
 
 body.light-mode .register-box input:focus {
   border-color: #ffcc00;
-  box-shadow: 0 0 6px #ffcc00;
+  box-shadow: 0 0 6px rgba(255, 204, 0, 0.5);
 }
 
 body.light-mode .register-box button {

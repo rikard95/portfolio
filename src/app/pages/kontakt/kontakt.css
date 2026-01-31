@@ -189,6 +189,11 @@ button:hover:not(:disabled) {
 body.light-mode .welcome-container {
   background-color: #ffffff;
   color: #333333;
+  border-color: #ccc;
+}
+
+body.light-mode .welcome-container:hover {
+  border-color: #ffcc00;
 }
 
 body.light-mode .welcome-container h1 {
@@ -198,6 +203,11 @@ body.light-mode .welcome-container h1 {
 body.light-mode .contact-container {
   background-color: #ffffff;
   color: #333333;
+  border-color: #ccc;
+}
+
+body.light-mode .contact-container:hover {
+  border-color: #ffcc00;
 }
 
 body.light-mode .contact-container h1,
@@ -219,4 +229,5 @@ body.light-mode textarea {
 body.light-mode input:focus,
 body.light-mode textarea:focus {
   border-color: #ffcc00;
+  box-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
 }

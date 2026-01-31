@@ -344,6 +344,8 @@ h2 {
 body.light-mode .todo-container {
   background: #ffffff;
   color: #333333;
+  border-color: #ccc;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 body.light-mode h2 {
@@ -359,10 +361,22 @@ body.light-mode .filter-section select {
   border-color: #ccc;
 }
 
+body.light-mode .todo-input input:focus,
+body.light-mode .todo-input select:focus,
+body.light-mode .category-input input:focus,
+body.light-mode .filter-section select:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
+}
+
 body.light-mode .todo-item {
   background: #f5f5f5;
   border-color: #ccc;
   color: #333333;
+}
+
+body.light-mode .todo-item:hover {
+  border-color: #ffcc00;
 }
 
 body.light-mode .todo-category {

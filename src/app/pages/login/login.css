@@ -139,8 +139,9 @@ img {
 
 /* Light mode styles */
 body.light-mode .login-box {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
 }
 
 body.light-mode .login-box label {
@@ -155,7 +156,7 @@ body.light-mode .login-box input {
 
 body.light-mode .login-box input:focus {
   border-color: #ffcc00;
-  box-shadow: 0 0 6px #ffcc00;
+  box-shadow: 0 0 6px rgba(255, 204, 0, 0.5);
 }
 
 body.light-mode .login-box button {

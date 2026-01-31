@@ -81,6 +81,11 @@ img.profile-picture {
 body.light-mode .welcome-container {
   background-color: #ffffff;
   color: #333333;
+  border-color: #ccc;
+}
+
+body.light-mode .welcome-container:hover {
+  border-color: #ffcc00;
 }
 
 body.light-mode .welcome-container h1 {
@@ -89,4 +94,5 @@ body.light-mode .welcome-container h1 {
 
 body.light-mode img.profile-picture {
   filter: none;
+  border-color: #ccc;
 }

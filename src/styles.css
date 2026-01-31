@@ -66,6 +66,66 @@ body.light-mode app-hem {
   background-color: #f5f5f5;
 }
 
+/* Global light mode overrides for all components */
+body.light-mode .welcome-container {
+  background-color: #ffffff !important;
+  color: #333333 !important;
+  border-color: #ccc !important;
+}
+
+body.light-mode .welcome-container:hover {
+  border-color: #ffcc00 !important;
+}
+
+body.light-mode .welcome-container h1 {
+  color: #1e1e2f !important;
+}
+
+body.light-mode .clock-container,
+body.light-mode .klocka-container {
+  background-color: #ffffff !important;
+  color: #1e1e2f !important;
+  border-color: #ccc !important;
+}
+
+body.light-mode .clock-container:hover,
+body.light-mode .klocka-container:hover {
+  border-color: #ffcc00 !important;
+}
+
+body.light-mode .klocka-link {
+  background-color: #ffffff !important;
+  border-color: #ccc !important;
+}
+
+body.light-mode .project-container {
+  background-color: #ffffff !important;
+  color: #333333 !important;
+  border-color: #ccc !important;
+}
+
+body.light-mode .project-container:hover {
+  border-color: #ffcc00 !important;
+}
+
+body.light-mode .calculator-container,
+body.light-mode .notes-container {
+  background-color: #ffffff !important;
+  color: #333333 !important;
+  border-color: #ccc !important;
+}
+
+body.light-mode .todo-container,
+body.light-mode .dagbok-container,
+body.light-mode .kalender-container,
+body.light-mode .timer-alarm-container,
+body.light-mode .slides-container,
+body.light-mode .contact-container {
+  background-color: #ffffff !important;
+  color: #333333 !important;
+  border-color: #ccc !important;
+}
+
 
 
 app-hem {

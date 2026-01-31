@@ -346,6 +346,8 @@
 body.light-mode .timer-alarm-container {
   background-color: #ffffff;
   color: #333333;
+  border-color: #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 body.light-mode .timer-alarm-container h1,
@@ -367,10 +369,22 @@ body.light-mode .alarm-picker select {
   border-color: #ccc;
 }
 
+body.light-mode .timer-controls input:focus,
+body.light-mode .alarm-section input:focus,
+body.light-mode .alarm-picker select:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
+}
+
 body.light-mode .active-alarm {
   color: #28a745;
 }
 
 body.light-mode .inactive-alarm {
   color: #666;
+}
+
+body.light-mode .alarm-item {
+  background-color: #f5f5f5;
+  border-color: #ccc;
 }
