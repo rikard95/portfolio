@@ -217,8 +217,8 @@ textarea::placeholder {
   }
 
   .day {
-    min-height: 150px;
-    padding: 1rem;
+    min-height: 120px;
+    padding: 0.8rem;
   }
 
   .day-name {
@@ -232,9 +232,9 @@ textarea::placeholder {
   }
 
   textarea {
-    height: 80px;
-    font-size: 1rem;
-    padding: 0.5rem;
+    height: 60px;
+    font-size: 0.95rem;
+    padding: 0.3rem;
   }
 
   .kalender-header {
