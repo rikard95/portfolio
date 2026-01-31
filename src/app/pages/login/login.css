@@ -100,3 +100,37 @@ img {
   color: red;
   margin-top: 10px;
 }
+
+/* Light mode styles */
+body.light-mode .login-box {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .login-box label {
+  color: #333333;
+}
+
+body.light-mode .login-box input {
+  background-color: #f5f5f5;
+  color: #333333;
+  border-color: #ccc;
+}
+
+body.light-mode .login-box input:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 6px #ffcc00;
+}
+
+body.light-mode .login-box button {
+  background-color: #ffcc00;
+  color: #333333;
+}
+
+body.light-mode .login-box button:hover {
+  background-color: #e6b800;
+}
+
+body.light-mode img {
+  filter: invert(0%);
+}

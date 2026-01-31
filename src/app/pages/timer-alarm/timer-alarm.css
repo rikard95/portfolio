@@ -212,3 +212,36 @@
     min-width: 70px;
   }
 }
+
+/* Light mode styles */
+body.light-mode .timer-alarm-container {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+body.light-mode .timer-alarm-container h1,
+body.light-mode .timer-alarm-container h2 {
+  color: #333333;
+}
+
+body.light-mode .time-display {
+  background-color: #f5f5f5;
+  color: #333333;
+  border-color: #ccc;
+}
+
+body.light-mode .timer-controls input,
+body.light-mode .alarm-section input,
+body.light-mode .alarm-picker select {
+  background-color: #f5f5f5;
+  color: #333333;
+  border-color: #ccc;
+}
+
+body.light-mode .active-alarm {
+  color: #28a745;
+}
+
+body.light-mode .inactive-alarm {
+  color: #666;
+}
