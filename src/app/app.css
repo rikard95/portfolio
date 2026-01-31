@@ -2,5 +2,6 @@
   flex: 1;           
   display: flex;
   flex-direction: column;
+  padding-top: 80px; /* Add padding to account for fixed navbar height */
 }
 
