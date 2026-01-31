@@ -153,6 +153,28 @@ button:hover {
 }
 
 @media (max-width: 768px) {
+  .slides-container {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .slides-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .new-entry-textarea, input[type="text"] {
+    font-size: 16px;
+    padding: 10px;
+    min-height: 44px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px 12px;
+    min-height: 44px;
+  }
+
   .slide {
     min-width: 300px;
     max-width: 450px;
@@ -163,6 +185,31 @@ button:hover {
 }
 
 @media (max-width: 480px) {
+  .slides-container {
+    margin: 1.5rem auto;
+    padding: 1rem;
+    width: 98%;
+  }
+
+  .slides-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .new-entry-textarea, input[type="text"] {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .projects-list span {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
   .slide {
     min-width: 280px;
     width: 90%; 
