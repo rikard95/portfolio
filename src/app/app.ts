@@ -1,7 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
 import { Header } from './layout/header/header';
 import { Footer } from './layout/footer/footer';
+import { filter } from 'rxjs/operators';
+import { ViewportScroller } from '@angular/common';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 
 @Component({
@@ -13,4 +16,16 @@ import { Footer } from './layout/footer/footer';
 })
 export class App {
   protected readonly title = signal('text');
+
+  constructor(private router: Router, private viewportScroller: ViewportScroller) {
+    // Scroll to top on route change
+    this.router.events
+      .pipe(
+        filter(event => event instanceof NavigationEnd),
+        takeUntilDestroyed()
+      )
+      .subscribe(() => {
+        this.viewportScroller.scrollToPosition([0, 0]);
+      });
+  }
 }
