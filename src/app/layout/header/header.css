@@ -45,6 +45,8 @@ header nav {
 .nav-links {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  flex: 1;
   gap: 1.5rem;
 }
 
@@ -115,6 +117,8 @@ header .logo img {
   
   .nav-links {
     gap: 0.5rem;
+    justify-content: space-evenly;
+    flex: 1;
   }
   
   .logo {
@@ -154,6 +158,8 @@ header .logo img {
   
   .nav-links {
     gap: 0.25rem;
+    justify-content: space-evenly;
+    flex: 1;
   }
   
   header nav a {
