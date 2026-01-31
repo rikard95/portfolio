@@ -36,16 +36,10 @@ header .logo {
 
 header nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  gap: 2rem;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 header nav a {
@@ -108,12 +102,8 @@ header .logo img {
   }
   
   header nav {
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 100%;
-    gap: 0.5rem;
-  }
-  
-  .nav-links {
     gap: 0.5rem;
   }
   
@@ -148,11 +138,7 @@ header .logo img {
   }
   
   header nav {
-    justify-content: space-between;
-    gap: 0.25rem;
-  }
-  
-  .nav-links {
+    justify-content: space-evenly;
     gap: 0.25rem;
   }
   
