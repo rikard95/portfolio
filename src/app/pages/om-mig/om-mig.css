@@ -1,6 +1,7 @@
 
 .welcome-container {
-  max-width: 800px;        
+  max-width: 800px;
+  width: 90%;
   margin: 4rem auto;       
   padding: 2rem;
   background-color: #000000; 
@@ -8,7 +9,9 @@
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   color: #ffffff; 
-  line-height: 1.8;  
+  line-height: 1.8;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 img.profile-picture {
@@ -46,12 +49,13 @@ img.profile-picture {
 /* Responsiv styling */
 @media (max-width: 768px) {
   .welcome-container {
-    margin: 2rem 1rem;
+    margin: 2rem auto;
     padding: 1.5rem;
+    width: 90%;
   }
 
   .welcome-container h1 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     margin-bottom: 1.2rem;
   }
 
@@ -60,12 +64,17 @@ img.profile-picture {
     line-height: 1.7;
     margin-bottom: 1.2rem;
   }
+  
+  img.profile-picture {
+    max-width: 180px;
+  }
 }
 
 @media (max-width: 480px) {
   .welcome-container {
-    margin: 1.5rem 0.75rem;
+    margin: 1.5rem auto;
     padding: 1.25rem;
+    width: 95%;
   }
 
   .welcome-container h1 {
@@ -73,7 +82,12 @@ img.profile-picture {
   }
 
   .welcome-container p {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  
+  img.profile-picture {
+    max-width: 160px;
   }
 }
 

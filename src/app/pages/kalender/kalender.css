@@ -10,6 +10,7 @@
   color: #ffffff;
   line-height: 1.7;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .kalender-container h1 {
@@ -33,11 +34,13 @@
   color: #ffffff;
   border: 1px solid #ffcc00;
   border-radius: 6px;
-  padding: 0.4rem;
+  padding: 0.6rem;
   font-size: 1rem;
   width: auto;
-  min-width: 80px;
+  min-width: 100px;
+  min-height: 44px;
   flex: 1 1 auto;
+  box-sizing: border-box;
 }
 
 .kalender-header button {
@@ -45,10 +48,14 @@
   color: #ffffff;
   border: 1px solid #ffcc00;
   border-radius: 8px;
-  padding: 0.4rem 0.8rem;
+  padding: 0.6rem 1rem;
   cursor: pointer;
   transition: background 0.2s;
   flex: 0 0 auto;
+  min-height: 44px;
+  font-size: 1rem;
+  touch-action: manipulation;
+  box-sizing: border-box;
 }
 
 .kalender-header button:hover {
@@ -155,20 +162,21 @@ textarea::placeholder {
   .kalender-container {
     padding: 1.5rem;
     margin: 2rem auto;
+    width: 90%;
   }
 
   .kalender-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
+    gap: 8px;
   }
 
   .day {
     min-height: 140px;
-    padding: 0.6rem;
+    padding: 0.8rem;
   }
 
   .day-name {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
   .day-number {
@@ -176,7 +184,7 @@ textarea::placeholder {
   }
 
   textarea {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     height: 70px;
   }
 
@@ -185,21 +193,22 @@ textarea::placeholder {
   .kalender-header button {
     flex: 1 1 45%;
     min-width: 0;
-    font-size: 0.95rem;
-    padding: 0.5rem;
+    font-size: 1rem;
+    padding: 0.7rem;
+    min-height: 48px;
   }
 }
 
 @media (max-width: 480px) {
   .kalender-container {
     padding: 1rem;
-    margin: 1rem auto;
+    margin: 1.5rem auto;
     width: 95%;
   }
 
   .kalender-container h1 {
     font-size: 1.8rem;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
   }
 
   .kalender-grid {
@@ -209,27 +218,27 @@ textarea::placeholder {
 
   .day {
     min-height: 150px;
-    padding: 0.8rem;
+    padding: 1rem;
   }
 
   .day-name {
-    font-size: 0.9rem;
-    margin-bottom: 0.4rem;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .day-number {
     font-size: 1.2rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
   }
 
   textarea {
     height: 80px;
-    font-size: 0.9rem;
-    padding: 0.4rem;
+    font-size: 1rem;
+    padding: 0.5rem;
   }
 
   .kalender-header {
-    gap: 0.6rem;
+    gap: 0.8rem;
   }
 
   .kalender-header select,
@@ -237,13 +246,14 @@ textarea::placeholder {
   .kalender-header button {
     width: 100%;
     font-size: 1rem;
-    padding: 0.6rem;
-    min-height: 44px;
+    padding: 0.8rem;
+    min-height: 50px;
   }
 
   .scroll-top-btn {
-    padding: 0.7rem 1.2rem;
+    padding: 0.8rem 1.5rem;
     font-size: 1rem;
+    min-height: 48px;
   }
 }
 
