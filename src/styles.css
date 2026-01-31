@@ -1,3 +1,7 @@
+:root {
+  --navbar-height: 80px;
+}
+
 html, body {
   margin: 0;
   padding: 0;
