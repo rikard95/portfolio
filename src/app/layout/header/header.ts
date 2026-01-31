@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -10,11 +10,25 @@ import { RouterModule } from '@angular/router';
 export class Header implements OnInit {
   isDarkMode = true;
 
+  constructor(private elementRef: ElementRef) {}
+
   ngOnInit() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
       this.isDarkMode = false;
       document.body.classList.add('light-mode');
+    }
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const header = this.elementRef.nativeElement.querySelector('header');
+    if (header) {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
     }
   }
 
