@@ -46,20 +46,20 @@ a {
 
 /* Light mode styles */
 body.light-mode .klocka-container {
-  background-color: #ffffff;
-  color: #1e1e2f;
-  border-color: #ccc;
+  background-color: #ffffff !important;
+  color: #1e1e2f !important;
+  border-color: #ccc !important;
 }
 
 body.light-mode .klocka-container:hover {
-  border-color: #ffcc00;
+  border-color: #ffcc00 !important;
 }
 
 body.light-mode .klocka-link {
-  background-color: #ffffff;
-  border-color: #ccc;
+  background-color: #ffffff !important;
+  border-color: #ccc !important;
 }
 
 body.light-mode .klocka-link:hover {
-  border-color: #ffcc00;
+  border-color: #ffcc00 !important;
 }
