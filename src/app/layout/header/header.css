@@ -139,3 +139,20 @@ header .logo img {
 :host-context(body.light-mode) header .logo img {
   filter: invert(0%);
 }
+
+/* Accessibility: Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  header,
+  header nav a,
+  .dark-mode-toggle {
+    transition: none;
+  }
+  
+  header nav a:hover {
+    transform: none;
+  }
+  
+  .dark-mode-toggle:hover {
+    transform: none;
+  }
+}

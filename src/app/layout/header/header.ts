@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, AfterViewInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -7,8 +7,9 @@ import { RouterModule } from '@angular/router';
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
-export class Header implements OnInit {
+export class Header implements OnInit, AfterViewInit {
   isDarkMode = true;
+  private headerElement: HTMLElement | null = null;
 
   constructor(private elementRef: ElementRef) {}
 
@@ -20,14 +21,17 @@ export class Header implements OnInit {
     }
   }
 
+  ngAfterViewInit() {
+    this.headerElement = this.elementRef.nativeElement.querySelector('header');
+  }
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    const header = this.elementRef.nativeElement.querySelector('header');
-    if (header) {
+    if (this.headerElement) {
       if (window.scrollY > 50) {
-        header.classList.add('scrolled');
+        this.headerElement.classList.add('scrolled');
       } else {
-        header.classList.remove('scrolled');
+        this.headerElement.classList.remove('scrolled');
       }
     }
   }
