@@ -34,6 +34,16 @@ header .logo {
   letter-spacing: 1px;
 }
 
+header .logo img {
+  filter: invert(1);
+  transition: filter 0.3s ease;
+}
+
+
+:host-context(body.light-mode) header .logo img {
+  filter: invert(0);
+}
+
 header nav {
   display: flex;
   justify-content: space-evenly;
