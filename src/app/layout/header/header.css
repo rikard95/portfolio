@@ -120,7 +120,6 @@ header .logo img {
   .dark-mode-toggle {
     font-size: 1.1rem;
     padding: 0.5rem 0.75rem;
-    min-width: auto;
     min-height: 44px;
     width: auto;
     height: auto;
@@ -154,7 +153,6 @@ header .logo img {
   .dark-mode-toggle {
     font-size: 1rem;
     padding: 0.4rem 0.6rem;
-    min-width: auto;
     min-height: 44px;
     width: auto;
     height: auto;
