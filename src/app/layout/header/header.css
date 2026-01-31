@@ -3,13 +3,21 @@ header {
   justify-content: center;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.95);
   color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   border-bottom: 2px solid #ffcc00;
   position: sticky;
   top: 0;
   z-index: 1000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+header.scrolled {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  padding: 0.8rem 2rem;
 }
 
 .logo{
@@ -33,15 +41,19 @@ header nav {
 header nav a {
   text-decoration: none;
   color: #ffffff;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
 }
 
 header nav a:hover {
   color: #ffcc00;
+  transform: translateY(-2px);
 }
 
 header nav a.active {
   color: #ffcc00;
+  font-weight: 600;
 }
 
 header .logo img {
@@ -105,8 +117,9 @@ header .logo img {
 
 /* Light mode styles using :host-context */
 :host-context(body.light-mode) header {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.95);
   color: #333333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 :host-context(body.light-mode) header nav a {
@@ -125,4 +138,21 @@ header .logo img {
 
 :host-context(body.light-mode) header .logo img {
   filter: invert(0%);
+}
+
+/* Accessibility: Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  header,
+  header nav a,
+  .dark-mode-toggle {
+    transition: none;
+  }
+  
+  header nav a:hover {
+    transform: none;
+  }
+  
+  .dark-mode-toggle:hover {
+    transform: none;
+  }
 }
