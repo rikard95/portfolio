@@ -117,7 +117,7 @@ export class CalculatorComponent implements OnInit {
 
     const parseAddSub = (): number => {
       let val = parseMulDiv();
-      while (peek() === '+' || (peek() === '-' && pos > 0)) {
+      while (peek() === '+' || peek() === '-') {
         const op = consume();
         const right = parseMulDiv();
         if (op === '+') {
