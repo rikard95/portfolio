@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Klocka } from '../../shared/klocka/klocka';
 import { Projekt } from '../../shared/projekt/projekt';
 
@@ -8,8 +8,5 @@ import { Projekt } from '../../shared/projekt/projekt';
   templateUrl: './om-mig.html',
   styleUrl: './om-mig.css'
 })
-export class OmMig implements OnInit {
-ngOnInit(): void {
-    document.body.style.backgroundColor = '#002f23';
-  }
+export class OmMig {
 }

@@ -101,3 +101,27 @@ header .logo img {
     width: 80px;
   }
 }
+
+/* Light mode styles using :host-context */
+:host-context(body.light-mode) header {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+:host-context(body.light-mode) header nav a {
+  color: #333333;
+}
+
+:host-context(body.light-mode) header nav a:hover,
+:host-context(body.light-mode) header nav a.active {
+  color: #ffcc00;
+}
+
+:host-context(body.light-mode) .dark-mode-toggle {
+  color: #333333;
+  border-color: #ffcc00;
+}
+
+:host-context(body.light-mode) header .logo img {
+  filter: invert(0%);
+}
