@@ -28,8 +28,17 @@ jobs:
       - name: Build
         run: npm run build
       
+      - name: Check Vercel secrets
+        id: check-secrets
+        run: |
+          if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then
+            echo "has_secrets=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_secrets=true" >> $GITHUB_OUTPUT
+          fi
+      
       - name: Deploy to Vercel
-        if: ${{ secrets.VERCEL_TOKEN }}
+        if: steps.check-secrets.outputs.has_secrets == 'true'
         uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
