@@ -111,13 +111,35 @@ a:hover {
 body.light-mode .welcome-container {
   background-color: #ffffff;
   color: #333333;
+  border-color: #ccc;
+}
+
+body.light-mode .welcome-container:hover {
+  border-color: #ffcc00;
 }
 
 body.light-mode .welcome-container h1 {
   color: #1e1e2f;
 }
 
+body.light-mode h1 {
+  color: #1e1e2f;
+}
+
+body.light-mode a {
+  color: #333333;
+}
+
+body.light-mode a:hover {
+  color: #ffcc00;
+}
+
 body.light-mode .clock-container {
   background-color: #ffffff;
   color: #1e1e2f;
+  border-color: #ccc;
+}
+
+body.light-mode .clock-container:hover {
+  border-color: #ffcc00;
 }
