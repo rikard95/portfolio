@@ -222,30 +222,6 @@ button:hover {
     right: 8px;
   }
 }
-  }
-
-  button {
-    font-size: 16px;
-    padding: 12px;
-  }
-
-  .projects-list span {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-
-  .slide {
-    min-width: 280px;
-    width: 90%; 
-    padding: 1.5rem;
-    font-size: 1.2rem;
-    min-height: 280px;
-  }
-
-  .nav-button {
-    font-size: 28px;
-  }
-}
 
 /* Light mode styles */
 body.light-mode .slides-container {
