@@ -112,3 +112,52 @@ body.light-mode .back-button {
 body.light-mode .back-button:hover {
   background-color: #cccccc;
 }
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  :host {
+    padding: 15px;
+  }
+
+  .register-box {
+    max-width: 100%;
+    padding: 25px 20px;
+  }
+
+  .register-box input,
+  .register-box button,
+  .back-button {
+    font-size: 16px;
+    padding: 14px;
+    min-height: 44px;
+  }
+
+  .register-box input {
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  :host {
+    padding: 10px;
+  }
+
+  .register-box {
+    padding: 20px 15px;
+  }
+
+  .register-box input,
+  .register-box button,
+  .back-button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .error {
+    font-size: 14px;
+  }
+
+  .register-message {
+    font-size: 14px;
+  }
+}

@@ -40,6 +40,74 @@ h1 {
   .welcome-container p {
     font-size: 1rem;
   }
+
+  .contact-container {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .contact-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-container p {
+    font-size: 1rem;
+  }
+
+  input, textarea, button {
+    font-size: 16px;
+    padding: 12px;
+    min-height: 44px;
+  }
+
+  textarea {
+    min-height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-container {
+    margin: 1.5rem 0.75rem;
+    padding: 1.25rem;
+  }
+
+  .welcome-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .welcome-container p {
+    font-size: 0.95rem;
+  }
+
+  .contact-container {
+    margin: 1.5rem 0.75rem;
+    padding: 1.25rem;
+  }
+
+  .contact-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .contact-container p {
+    font-size: 0.95rem;
+  }
+
+  form {
+    gap: 0.8rem;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  input, textarea {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 14px;
+  }
 }
 
 
