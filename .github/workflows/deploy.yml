@@ -11,8 +11,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
     
     steps:
       - name: Checkout code
@@ -31,7 +29,7 @@ jobs:
         run: npm run build
       
       - name: Deploy to Vercel
-        if: env.VERCEL_TOKEN != ''
+        continue-on-error: true
         uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
