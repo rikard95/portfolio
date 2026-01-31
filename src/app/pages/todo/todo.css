@@ -1,6 +1,10 @@
 .todo-container {
   max-width: 600px;
+<<<<<<< HEAD
   width: 90%;
+=======
+  width: 100%;
+>>>>>>> origin/copilot/improve-mobile-ui-design
   margin: 50px auto;
   padding: 30px;
   background: #1a1a1a;
@@ -191,7 +195,12 @@ h2 {
 @media (max-width: 768px) {
   .todo-container {
     padding: 20px;
+<<<<<<< HEAD
     width: 95%;
+=======
+    width: calc(100% - 20px);
+    margin: 30px 10px;
+>>>>>>> origin/copilot/improve-mobile-ui-design
   }
 
   .todo-input input,
@@ -245,7 +254,12 @@ h2 {
 @media (max-width: 480px) {
   .todo-container { 
     padding: 15px;
+<<<<<<< HEAD
     margin: 30px auto;
+=======
+    margin: 20px 8px;
+    width: calc(100% - 16px);
+>>>>>>> origin/copilot/improve-mobile-ui-design
   }
 
   h2 { 

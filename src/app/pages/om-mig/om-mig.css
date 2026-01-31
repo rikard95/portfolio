@@ -1,6 +1,10 @@
 
 .welcome-container {
   max-width: 800px;        
+<<<<<<< HEAD
+=======
+  width: 100%;
+>>>>>>> origin/copilot/improve-mobile-ui-design
   margin: 4rem auto;       
   padding: 2rem;
   background-color: #000000; 
@@ -8,7 +12,12 @@
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   color: #ffffff; 
+<<<<<<< HEAD
   line-height: 1.8;  
+=======
+  line-height: 1.8;
+  box-sizing: border-box;
+>>>>>>> origin/copilot/improve-mobile-ui-design
 }
 
 img.profile-picture {
@@ -46,8 +55,14 @@ img.profile-picture {
 /* Responsiv styling */
 @media (max-width: 768px) {
   .welcome-container {
+<<<<<<< HEAD
     margin: 2rem 1rem;
     padding: 1.5rem;
+=======
+    margin: 2rem 10px;
+    padding: 1.5rem;
+    width: calc(100% - 20px);
+>>>>>>> origin/copilot/improve-mobile-ui-design
   }
 
   .welcome-container h1 {
@@ -64,8 +79,14 @@ img.profile-picture {
 
 @media (max-width: 480px) {
   .welcome-container {
+<<<<<<< HEAD
     margin: 1.5rem 0.75rem;
     padding: 1.25rem;
+=======
+    margin: 1.5rem 8px;
+    padding: 1.25rem;
+    width: calc(100% - 16px);
+>>>>>>> origin/copilot/improve-mobile-ui-design
   }
 
   .welcome-container h1 {

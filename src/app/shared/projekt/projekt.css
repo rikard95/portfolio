@@ -3,6 +3,10 @@
   justify-content: space-evenly;
   align-items: flex-start;
   max-width: 800px;
+<<<<<<< HEAD
+=======
+  width: 100%;
+>>>>>>> origin/copilot/improve-mobile-ui-design
   margin: 4rem auto;
   padding: 2rem;
   background-color: #000000;
@@ -54,7 +58,12 @@
     flex-direction: column;  
     align-items: center;    
     padding: 1.5rem;
+<<<<<<< HEAD
     margin: 3rem 1.5rem;
+=======
+    margin: 3rem 10px;
+    width: calc(100% - 20px);
+>>>>>>> origin/copilot/improve-mobile-ui-design
   }
 
   .project-container h1 {
@@ -66,7 +75,12 @@
   }
 
   .todo-btn {
+<<<<<<< HEAD
     width: 80%;             
+=======
+    width: 100%;
+    max-width: 300px;
+>>>>>>> origin/copilot/improve-mobile-ui-design
     padding: 12px 0;
   }
 }
@@ -74,7 +88,12 @@
 @media (max-width: 480px) {
   .project-container {
     padding: 1rem;
+<<<<<<< HEAD
     margin: 2rem 1rem;
+=======
+    margin: 2rem 8px;
+    width: calc(100% - 16px);
+>>>>>>> origin/copilot/improve-mobile-ui-design
   }
 
   .project-container h1 {
@@ -86,7 +105,12 @@
   }
 
   .todo-btn {
+<<<<<<< HEAD
     width: 100%;         
+=======
+    width: 100%;
+    max-width: 100%;
+>>>>>>> origin/copilot/improve-mobile-ui-design
     padding: 10px 0;
   }
 }

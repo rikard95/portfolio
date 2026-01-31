@@ -1,6 +1,10 @@
 .timer-alarm-container {
   max-width: 900px;        
+<<<<<<< HEAD
   width: 90%;             
+=======
+  width: 100%;             
+>>>>>>> origin/copilot/improve-mobile-ui-design
   margin: 4rem auto;       
   padding: 2rem;
   background-color: #000000;
@@ -176,9 +180,15 @@
 /* Responsivitet */
 @media (max-width: 768px) {
   .timer-alarm-container {
+<<<<<<< HEAD
     margin: 2rem auto;
     padding: 1.5rem;
     width: 95%;
+=======
+    margin: 2rem 10px;
+    padding: 1.5rem;
+    width: calc(100% - 20px);
+>>>>>>> origin/copilot/improve-mobile-ui-design
   }
 
   .timer-alarm-container h1 {
@@ -240,9 +250,15 @@
 
 @media (max-width: 480px) {
   .timer-alarm-container {
+<<<<<<< HEAD
     margin: 1rem auto;
     padding: 1rem;
     width: 98%;
+=======
+    margin: 1rem 8px;
+    padding: 1rem;
+    width: calc(100% - 16px);
+>>>>>>> origin/copilot/improve-mobile-ui-design
   }
 
   .timer-alarm-container h1 {
@@ -251,6 +267,7 @@
   }
 
   .timer-alarm-container h2 {
+<<<<<<< HEAD
     font-size: 1.3rem;
     margin: 0.8rem 0;
   }
@@ -258,17 +275,25 @@
   .timer-section,
   .alarm-section {
     width: 100%;
+=======
+    font-size: 1.4rem;
+>>>>>>> origin/copilot/improve-mobile-ui-design
   }
 
   .time-display {
     font-size: 1.5rem;
     max-width: 100%;
+<<<<<<< HEAD
     padding: 15px;
+=======
+    padding: 10px;
+>>>>>>> origin/copilot/improve-mobile-ui-design
   }
 
   .timer-controls,
   .alarm-picker {
     gap: 6px;
+<<<<<<< HEAD
     width: 100%;
   }
 
@@ -301,28 +326,58 @@
   .alarm-picker select {
     width: auto;
     max-width: 80px;
+=======
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .timer-controls input,
+  .alarm-section input,
+  .alarm-picker select {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .timer-controls button,
+  .alarm-section button,
+  .alarm-picker button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+>>>>>>> origin/copilot/improve-mobile-ui-design
   }
 
   .alarm-item {
     flex-direction: column;
     align-items: stretch;
+<<<<<<< HEAD
     gap: 8px;
     padding: 0.8rem;
     background-color: #1a1a1a;
     border: 1px solid #ffcc00;
     border-radius: 8px;
     margin-bottom: 0.5rem;
+=======
+    gap: 6px;
+>>>>>>> origin/copilot/improve-mobile-ui-design
   }
 
   .alarm-item span {
     width: 100%;
+<<<<<<< HEAD
     text-align: center;
     font-size: 1rem;
     padding: 0.5rem;
+=======
+    min-width: 0;
+    text-align: center;
+>>>>>>> origin/copilot/improve-mobile-ui-design
   }
 
   .alarm-item button {
     width: 100%;
+<<<<<<< HEAD
     padding: 12px;
     font-size: 1rem;
     min-height: 46px;
@@ -339,6 +394,16 @@
     padding: 0.8rem 1.2rem;
     font-size: 1rem;
     min-height: 46px;
+=======
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .alarm-popup {
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin: 0 0.5rem;
+>>>>>>> origin/copilot/improve-mobile-ui-design
   }
 }
 

@@ -34,14 +34,25 @@ a {
 }
  
 .klocka-link {
+<<<<<<< HEAD
   display: inline-block; /* gör att a bara tar upp innehållets storlek */
   text-decoration: none;
   width: 268px;
+=======
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  max-width: 268px;
+>>>>>>> origin/copilot/improve-mobile-ui-design
   border: 2px solid #ffcc00;
   border-radius: 50%;
   color: inherit;
   background-color: #1a0032;
   margin-top: 30px;
+<<<<<<< HEAD
+=======
+  box-sizing: border-box;
+>>>>>>> origin/copilot/improve-mobile-ui-design
 }
 
 /* Mobile styles */
@@ -58,7 +69,12 @@ a {
   }
 
   .klocka-link {
+<<<<<<< HEAD
     width: 200px;
+=======
+    width: 100%;
+    max-width: 200px;
+>>>>>>> origin/copilot/improve-mobile-ui-design
     margin-top: 15px;
   }
 }
@@ -76,7 +92,12 @@ a {
   }
 
   .klocka-link {
+<<<<<<< HEAD
     width: 170px;
+=======
+    width: 100%;
+    max-width: 170px;
+>>>>>>> origin/copilot/improve-mobile-ui-design
     margin-top: 10px;
   }
 }
