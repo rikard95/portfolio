@@ -1,3 +1,5 @@
+# Workflow for deploying to Vercel
+# This workflow builds the project and optionally deploys to Vercel if secrets are configured
 name: Deploy to Vercel
 
 on:
