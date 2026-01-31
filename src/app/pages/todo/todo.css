@@ -10,6 +10,7 @@
   font-family: 'Segoe UI', Tahoma, sans-serif;
   color: #fff;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -35,7 +36,7 @@ h2 {
 .category-input input,
 .filter-section select {
   flex: 1 1 140px;
-  max-width: 70%;
+  max-width: 100%;
   padding: 12px;
   border-radius: 10px;
   border: 1px solid #444;
@@ -43,6 +44,8 @@ h2 {
   color: #fff;
   font-size: 1rem;
   transition: all 0.2s;
+  box-sizing: border-box;
+  min-height: 48px;
 }
 
 .todo-input input:focus,
@@ -66,7 +69,10 @@ h2 {
   cursor: pointer;
   transition: all 0.2s;
   flex: 1 1 100px;
-  max-width: 30%;
+  max-width: 100%;
+  min-height: 48px;
+  box-sizing: border-box;
+  touch-action: manipulation;
 }
 
 .todo-input button { background-color: #007bff; }
@@ -192,6 +198,7 @@ h2 {
   .todo-container {
     padding: 20px;
     width: 95%;
+    max-width: 100%;
   }
 
   .todo-input input,
@@ -203,20 +210,22 @@ h2 {
     flex: 1 1 100%;
     max-width: 100%;
     font-size: 1rem;
-    padding: 12px;
-    min-height: 44px;
+    padding: 14px;
+    min-height: 48px;
   }
 
   .todo-input select {
     flex: 1 1 100%;
     max-width: 100%;
     font-size: 1rem;
-    padding: 12px;
+    padding: 14px;
+    min-height: 48px;
   }
 
   .filter-section label {
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
   }
 
   .todo-item {
@@ -232,9 +241,9 @@ h2 {
 
   .todo-actions button {
     flex: 1 1 auto;
-    padding: 8px 10px;
-    font-size: 0.85rem;
-    min-height: 40px;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    min-height: 44px;
   }
 
   .todo-left {
@@ -245,7 +254,8 @@ h2 {
 @media (max-width: 480px) {
   .todo-container { 
     padding: 15px;
-    margin: 30px auto;
+    margin: 20px auto;
+    width: 95%;
   }
 
   h2 { 
@@ -256,22 +266,23 @@ h2 {
   .todo-input input,
   .category-input input,
   .filter-section select {
-    font-size: 0.95rem;
-    padding: 12px;
+    font-size: 1rem;
+    padding: 14px;
+    min-height: 48px;
   }
 
   .todo-input,
   .category-input,
   .filter-section { 
-    gap: 8px;
-    margin-bottom: 12px;
+    gap: 10px;
+    margin-bottom: 15px;
   }
 
   .todo-item {
     flex-direction: column; 
     align-items: stretch;
     gap: 12px;
-    padding: 12px;
+    padding: 14px;
   }
 
   .todo-left {
@@ -283,30 +294,31 @@ h2 {
   .todo-text {
     width: 100%;
     margin-top: 5px;
+    font-size: 1rem;
   }
 
   .todo-category {
-    font-size: 0.75rem;
-    padding: 3px 8px;
+    font-size: 0.8rem;
+    padding: 4px 10px;
   }
 
   .todo-actions {
     width: 100%;
     justify-content: stretch;
     flex-wrap: nowrap;
-    gap: 6px;
+    gap: 8px;
   }
 
   .todo-actions .up-down,
   .todo-actions .edit-delete {
     flex: 1;
-    gap: 6px;
+    gap: 8px;
   }
 
   .todo-actions button {
-    padding: 10px 6px;
-    font-size: 0.8rem;
-    min-height: 42px;
+    padding: 12px 8px;
+    font-size: 0.85rem;
+    min-height: 46px;
     width: 100%;
   }
 
@@ -317,8 +329,9 @@ h2 {
   .todo-input button,
   .category-input button,
   .delete-category-btn {
-    padding: 12px;
-    font-size: 0.95rem;
+    padding: 14px;
+    font-size: 1rem;
+    min-height: 48px;
   }
 
   .todo-text,
@@ -329,8 +342,10 @@ h2 {
   }
 
   .todo-item input[type="checkbox"] {
-    transform: scale(1.4);
+    transform: scale(1.5);
     margin-right: 12px;
+    min-width: 24px;
+    min-height: 24px;
   }
 }
 

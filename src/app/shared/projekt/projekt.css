@@ -3,6 +3,7 @@
   justify-content: space-evenly;
   align-items: flex-start;
   max-width: 800px;
+  width: 90%;
   margin: 4rem auto;
   padding: 2rem;
   background-color: #000000;
@@ -12,6 +13,7 @@
   color: #ffffff;
   line-height: 1.7;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .project-container:hover {
@@ -32,7 +34,7 @@
 
 .todo-btn {
   display: inline-block;
-  padding: 12px 20px;
+  padding: 14px 20px;
   background-color: #1a0032;
   color: white;
   border-radius: 8px;
@@ -41,7 +43,14 @@
   text-align: center;
   cursor: pointer;
   transition: all 0.2s;
-  margin-top: 1rem; 
+  margin-top: 1rem;
+  min-height: 48px;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+  box-sizing: border-box;
 }
 
 .todo-btn:hover {
@@ -52,9 +61,12 @@
 @media (max-width: 768px) {
   .project-container {
     flex-direction: column;  
-    align-items: center;    
+    align-items: center;
+    flex-wrap: wrap;
     padding: 1.5rem;
-    margin: 3rem 1.5rem;
+    margin: 3rem auto;
+    width: 90%;
+    gap: 12px;
   }
 
   .project-container h1 {
@@ -66,15 +78,20 @@
   }
 
   .todo-btn {
-    width: 80%;             
-    padding: 12px 0;
+    width: 100%;
+    max-width: 300px;
+    padding: 14px;
+    min-height: 50px;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .project-container {
     padding: 1rem;
-    margin: 2rem 1rem;
+    margin: 2rem auto;
+    width: 95%;
+    gap: 10px;
   }
 
   .project-container h1 {
@@ -86,8 +103,11 @@
   }
 
   .todo-btn {
-    width: 100%;         
-    padding: 10px 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 14px;
+    min-height: 50px;
+    font-size: 1rem;
   }
 }
 

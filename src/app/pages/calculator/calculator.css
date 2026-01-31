@@ -1,14 +1,15 @@
-
 .calculator-page {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
   width: 100%;
+  max-width: 100%;
   margin-top: 50px;
   padding: 20px;
   box-sizing: border-box;
   gap: 30px;
+  overflow-x: hidden;
 }
 
 
@@ -67,6 +68,10 @@ button {
   transition: all 0.15s;
   background: #007bff;
   color: white;
+  min-height: 50px;
+  min-width: 50px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button:hover {
@@ -177,18 +182,20 @@ button.zero {
 
 @media (max-width: 600px) {
   .calculator-page {
-    margin-top: 30px;
-    padding: 10px;
+    margin-top: 20px;
+    padding: 15px;
+    gap: 20px;
   }
 
   .calculator-container,
   .notes-container {
-    width: 95%;
+    width: 100%;
+    max-width: 100%;
   }
 
   .display { 
     font-size: 1.2rem; 
-    min-height: 60px; 
+    min-height: 70px; 
     padding: 12px;
   }
 
@@ -197,9 +204,10 @@ button.zero {
   }
 
   button { 
-    padding: 14px; 
-    font-size: 1.05rem;
-    min-height: 50px;
+    padding: 16px; 
+    font-size: 1.1rem;
+    min-height: 54px;
+    min-width: 54px;
     touch-action: manipulation;
   }
 
@@ -209,29 +217,32 @@ button.zero {
 
   .notes-container textarea { 
     height: 200px;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .calculator-page {
-    margin-top: 20px;
+    margin-top: 15px;
+    padding: 10px;
   }
 
   .calculator-container,
   .notes-container {
-    width: 98%;
+    width: 100%;
+    max-width: 100%;
     padding: 15px;
   }
 
   .display { 
-    font-size: 1.15rem; 
-    min-height: 65px;
-    padding: 10px;
+    font-size: 1.2rem; 
+    min-height: 75px;
+    padding: 12px;
   }
 
   .display input {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
 
   .result {
@@ -239,18 +250,20 @@ button.zero {
   }
 
   button { 
-    padding: 12px; 
+    padding: 14px; 
     font-size: 1rem;
-    min-height: 48px;
+    min-height: 52px;
+    min-width: 52px;
   }
 
   .buttons {
-    gap: 8px;
+    gap: 10px;
   }
 
   .notes-container textarea { 
     height: 180px;
     padding: 12px;
+    width: 100%;
   }
 
   .notes-container h3 {
@@ -260,6 +273,7 @@ button.zero {
   .notes-container button {
     padding: 14px;
     font-size: 1rem;
+    min-height: 48px;
   }
 }
 
