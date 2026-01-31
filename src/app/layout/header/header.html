@@ -3,12 +3,14 @@
     <div class="logo">
       <img class="logga-ut" src="logo.png" alt="Angular Logo" routerLink="hem" routerLinkActive="active" >
     </div>
-    <a class="logga-ut" routerLink="hem" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Hem</a>
-    <a class="logga-ut" routerLink="om-mig" routerLinkActive="active">Om mig</a>
-    <!-- <a class="logga-ut" routerLink="kontakt" routerLinkActive="active">Kontakt</a>
-    <a class="logga-ut" routerLink="" routerLinkActive="">Logga ut</a> -->
-    <button class="dark-mode-toggle logga-ut" (click)="toggleDarkMode()" [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'">
-      {{ isDarkMode ? '☀️' : '🌙' }}
-    </button>
+    <div class="nav-links">
+      <a class="logga-ut" routerLink="hem" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Hem</a>
+      <a class="logga-ut" routerLink="om-mig" routerLinkActive="active">Om mig</a>
+      <!-- <a class="logga-ut" routerLink="kontakt" routerLinkActive="active">Kontakt</a>
+      <a class="logga-ut" routerLink="" routerLinkActive="">Logga ut</a> -->
+      <button class="dark-mode-toggle logga-ut" (click)="toggleDarkMode()" [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'">
+        {{ isDarkMode ? '☀️' : '🌙' }}
+      </button>
+    </div>
   </nav>
 </header>
