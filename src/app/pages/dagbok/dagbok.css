@@ -1,6 +1,6 @@
 .dagbok-container {
   max-width: 800px;
-  width: 90%; 
+  width: 100%; 
   margin: 4rem auto;
   padding: 2rem;
   background-color: #000000;
@@ -138,7 +138,8 @@ textarea {
 @media (max-width: 768px) {
   .dagbok-container {
     padding: 1.5rem;
-    width: 95%;
+    width: calc(100% - 20px);
+    margin: 3rem 10px;
   }
 
   .entry {
@@ -198,8 +199,8 @@ textarea {
 @media (max-width: 480px) {
   .dagbok-container {
     padding: 1rem;
-    margin: 2rem auto;
-    width: 98%;
+    margin: 2rem 8px;
+    width: calc(100% - 16px);
   }
 
   .dagbok-container h1 {
@@ -248,6 +249,10 @@ textarea {
 
   .entry-buttons button {
     width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}
     padding: 0.7rem;
     font-size: 1rem;
     min-height: 44px;

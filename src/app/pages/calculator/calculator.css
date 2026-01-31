@@ -5,16 +5,18 @@
   align-items: flex-start;
   flex-wrap: wrap;
   width: 100%;
+  max-width: 100vw;
   margin-top: 50px;
   padding: 20px;
   box-sizing: border-box;
   gap: 30px;
+  overflow-x: hidden;
 }
 
 
 .calculator-container {
-  width: 380px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 380px;
   padding: 20px;
   background: #1a1a1a;
   border-radius: 15px;
@@ -24,6 +26,7 @@
   flex-direction: column;
   font-family: 'Segoe UI', sans-serif;
   color: #fff;
+  box-sizing: border-box;
 }
 
 .display {
@@ -89,9 +92,10 @@ button.zero {
 
 
 .notes-container {
-  width: 380px;
-  max-width: 100%;
-  height: 415px;
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  min-height: 415px;
   background: #1a1a1a;
   border-radius: 15px;
   border: 2px solid #ffcc00;
@@ -101,7 +105,8 @@ button.zero {
   font-family: 'Segoe UI', sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .notes-container textarea {
@@ -164,26 +169,29 @@ button.zero {
   .calculator-page {
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
     padding: 15px;
+    margin-top: 30px;
   }
 
   .calculator-container,
   .notes-container {
-    width: 90%;
+    width: 100%;
     max-width: 420px;
   }
 }
 
 @media (max-width: 600px) {
   .calculator-page {
-    margin-top: 30px;
-    padding: 10px;
+    margin-top: 20px;
+    padding: 15px 10px;
   }
 
   .calculator-container,
   .notes-container {
-    width: 95%;
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
   }
 
   .display { 
@@ -205,6 +213,7 @@ button.zero {
 
   .notes-container {
     height: auto;
+    min-height: auto;
   }
 
   .notes-container textarea { 
@@ -215,13 +224,15 @@ button.zero {
 
 @media (max-width: 480px) {
   .calculator-page {
-    margin-top: 20px;
+    margin-top: 15px;
+    padding: 10px 8px;
   }
 
   .calculator-container,
   .notes-container {
-    width: 98%;
-    padding: 15px;
+    width: 100%;
+    max-width: 100%;
+    padding: 12px;
   }
 
   .display { 

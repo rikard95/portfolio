@@ -1,6 +1,6 @@
 .todo-container {
   max-width: 600px;
-  width: 90%;
+  width: 100%;
   margin: 50px auto;
   padding: 30px;
   background: #1a1a1a;
@@ -191,7 +191,8 @@ h2 {
 @media (max-width: 768px) {
   .todo-container {
     padding: 20px;
-    width: 95%;
+    width: calc(100% - 20px);
+    margin: 30px 10px;
   }
 
   .todo-input input,
@@ -245,7 +246,8 @@ h2 {
 @media (max-width: 480px) {
   .todo-container { 
     padding: 15px;
-    margin: 30px auto;
+    margin: 20px 8px;
+    width: calc(100% - 16px);
   }
 
   h2 { 

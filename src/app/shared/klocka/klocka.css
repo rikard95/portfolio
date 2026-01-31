@@ -34,14 +34,16 @@ a {
 }
  
 .klocka-link {
-  display: inline-block; /* gör att a bara tar upp innehållets storlek */
+  display: inline-block;
   text-decoration: none;
-  width: 268px;
+  width: 100%;
+  max-width: 268px;
   border: 2px solid #ffcc00;
   border-radius: 50%;
   color: inherit;
   background-color: #1a0032;
   margin-top: 30px;
+  box-sizing: border-box;
 }
 
 /* Mobile styles */
@@ -58,7 +60,8 @@ a {
   }
 
   .klocka-link {
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
     margin-top: 15px;
   }
 }
@@ -76,7 +79,8 @@ a {
   }
 
   .klocka-link {
-    width: 170px;
+    width: 100%;
+    max-width: 170px;
     margin-top: 10px;
   }
 }

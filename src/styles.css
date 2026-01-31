@@ -3,9 +3,13 @@ html, body {
   padding: 0;
   height: 100%;
   font-family: 'Inter', sans-serif;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   scrollbar-width: none; 
-  -ms-overflow-style: none; 
+  -ms-overflow-style: none;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
 }
 
 html::-webkit-scrollbar,
@@ -30,6 +34,7 @@ body {
   background-color: #1a0032;
   color: #ffffff;
   transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
 }
 
 /* Light mode styles */
@@ -140,4 +145,11 @@ app-root {
   display: flex;
   flex-direction: column;
   flex: 1;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }

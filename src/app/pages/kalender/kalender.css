@@ -1,6 +1,6 @@
 .kalender-container {
   max-width: 900px;
-  width: 90%;
+  width: 100%;
   margin: 4rem auto;
   padding: 2rem;
   background-color: #000000;
@@ -154,7 +154,8 @@ textarea::placeholder {
 @media (max-width: 768px) {
   .kalender-container {
     padding: 1.5rem;
-    margin: 2rem auto;
+    margin: 2rem 10px;
+    width: calc(100% - 20px);
   }
 
   .kalender-grid {
@@ -193,8 +194,8 @@ textarea::placeholder {
 @media (max-width: 480px) {
   .kalender-container {
     padding: 1rem;
-    margin: 1rem auto;
-    width: 95%;
+    margin: 1rem 8px;
+    width: calc(100% - 16px);
   }
 
   .kalender-container h1 {
@@ -227,6 +228,15 @@ textarea::placeholder {
     font-size: 0.9rem;
     padding: 0.4rem;
   }
+
+  .kalender-header select,
+  .kalender-header input,
+  .kalender-header button {
+    flex: 1 1 100%;
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+}
 
   .kalender-header {
     gap: 0.6rem;
