@@ -71,10 +71,6 @@ body.light-mode .dark-mode-toggle {
   border-color: #ffcc00;
 }
 
-body.light-mode header .logo img {
-  filter: invert(0%);
-}
-
 body.light-mode app-hem {
   background-color: #f5f5f5;
 }
