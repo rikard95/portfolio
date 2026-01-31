@@ -1,10 +1,6 @@
 .dagbok-container {
   max-width: 800px;
-<<<<<<< HEAD
-  width: 90%; 
-=======
   width: 100%; 
->>>>>>> origin/copilot/improve-mobile-ui-design
   margin: 4rem auto;
   padding: 2rem;
   background-color: #000000;
@@ -142,12 +138,8 @@ textarea {
 @media (max-width: 768px) {
   .dagbok-container {
     padding: 1.5rem;
-<<<<<<< HEAD
-    width: 95%;
-=======
     width: calc(100% - 20px);
     margin: 3rem 10px;
->>>>>>> origin/copilot/improve-mobile-ui-design
   }
 
   .entry {
@@ -207,13 +199,8 @@ textarea {
 @media (max-width: 480px) {
   .dagbok-container {
     padding: 1rem;
-<<<<<<< HEAD
-    margin: 2rem auto;
-    width: 98%;
-=======
     margin: 2rem 8px;
     width: calc(100% - 16px);
->>>>>>> origin/copilot/improve-mobile-ui-design
   }
 
   .dagbok-container h1 {
@@ -262,23 +249,8 @@ textarea {
 
   .entry-buttons button {
     width: 100%;
-<<<<<<< HEAD
-    padding: 0.7rem;
-    font-size: 1rem;
-    min-height: 44px;
-  }
-
-  .timestamp {
-    font-size: 0.9rem;
-  }
-
-  textarea {
-    padding: 0.5rem;
-    font-size: 0.95rem;
-=======
     padding: 0.8rem;
     font-size: 1rem;
->>>>>>> origin/copilot/improve-mobile-ui-design
   }
 }
 
