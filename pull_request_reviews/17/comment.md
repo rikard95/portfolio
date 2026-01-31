@@ -1,0 +1,1 @@
+From the screenshots provided, I still can't read the links in the header. Please thoroughly check the entire site to ensure everything works correctly with both dark and light modes and that it looks good across the board.
