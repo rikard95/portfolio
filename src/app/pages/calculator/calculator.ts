@@ -47,13 +47,93 @@ export class CalculatorComponent implements OnInit {
   }
 
   private safeEvaluate(expr: string): number {
-    // Remove any potential harmful characters
-    const sanitized = expr.replace(/[^0-9+\-*/.() ]/g, '');
+    // Remove whitespace and validate characters
+    const sanitized = expr.replace(/\s/g, '');
     
-    // Use Function constructor instead of eval - still evaluates but in isolated scope
-    // This is safer than direct eval but still has risks with user input
-    const fn = new Function('return (' + sanitized + ')');
-    return fn();
+    // Only allow numbers, operators, decimal points, and parentheses
+    if (!/^[0-9+\-*/.()]+$/.test(sanitized)) {
+      throw new Error('Invalid characters in expression');
+    }
+    
+    // Check for balanced parentheses
+    let balance = 0;
+    for (const char of sanitized) {
+      if (char === '(') balance++;
+      if (char === ')') balance--;
+      if (balance < 0) throw new Error('Unbalanced parentheses');
+    }
+    if (balance !== 0) throw new Error('Unbalanced parentheses');
+    
+    // Parse and evaluate the expression safely
+    return this.parseExpression(sanitized);
+  }
+
+  private parseExpression(expr: string): number {
+    // Recursive descent parser for mathematical expressions
+    let pos = 0;
+
+    const peek = (): string => expr[pos] || '';
+    const consume = (): string => expr[pos++] || '';
+
+    const parseNumber = (): number => {
+      let num = '';
+      while (/[0-9.]/.test(peek())) {
+        num += consume();
+      }
+      if (num === '') throw new Error('Expected number');
+      return parseFloat(num);
+    };
+
+    const parseFactor = (): number => {
+      if (peek() === '(') {
+        consume(); // (
+        const val = parseAddSub();
+        if (consume() !== ')') throw new Error('Expected )');
+        return val;
+      } else if (peek() === '-') {
+        consume(); // -
+        return -parseFactor();
+      } else if (peek() === '+') {
+        consume(); // +
+        return parseFactor();
+      }
+      return parseNumber();
+    };
+
+    const parseMulDiv = (): number => {
+      let val = parseFactor();
+      while (peek() === '*' || peek() === '/') {
+        const op = consume();
+        const right = parseFactor();
+        if (op === '*') {
+          val *= right;
+        } else {
+          if (right === 0) throw new Error('Division by zero');
+          val /= right;
+        }
+      }
+      return val;
+    };
+
+    const parseAddSub = (): number => {
+      let val = parseMulDiv();
+      while (peek() === '+' || (peek() === '-' && pos > 0)) {
+        const op = consume();
+        const right = parseMulDiv();
+        if (op === '+') {
+          val += right;
+        } else {
+          val -= right;
+        }
+      }
+      return val;
+    };
+
+    const result = parseAddSub();
+    if (pos < expr.length) {
+      throw new Error('Unexpected character: ' + peek());
+    }
+    return result;
   }
 
 
