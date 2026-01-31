@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Klocka } from '../../shared/klocka/klocka';
 import { Projekt } from '../../shared/projekt/projekt';
@@ -10,14 +10,10 @@ import { Projekt } from '../../shared/projekt/projekt';
   templateUrl: './kontakt.html',
   styleUrls: ['./kontakt.css']
 })
-export class Kontakt implements OnInit{
+export class Kontakt {
   name: string = '';
   email: string = '';
   message: string = '';
-
-  ngOnInit(): void {
-    document.body.style.backgroundColor = '#000e2fff';
-  }
 
   submitForm() {
     //TODO koppla till back-end eller utveckla bättre
