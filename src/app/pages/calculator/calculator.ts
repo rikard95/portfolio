@@ -39,12 +39,21 @@ export class CalculatorComponent implements OnInit {
   calculate() {
     try {
       const expr = this.input.replace(/÷/g, '/').replace(/×/g, '*').replace(/−/g, '-');
-      // eslint-disable-next-line no-eval
-      const val = eval(expr);
+      const val = this.safeEvaluate(expr);
       this.result = (val === undefined || Number.isNaN(val)) ? 'Fel' : String(val);
     } catch {
       this.result = 'Fel';
     }
+  }
+
+  private safeEvaluate(expr: string): number {
+    // Remove any potential harmful characters
+    const sanitized = expr.replace(/[^0-9+\-*/.() ]/g, '');
+    
+    // Use Function constructor instead of eval - still evaluates but in isolated scope
+    // This is safer than direct eval but still has risks with user input
+    const fn = new Function('return (' + sanitized + ')');
+    return fn();
   }
 
 
