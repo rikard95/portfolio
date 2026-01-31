@@ -175,3 +175,63 @@ button:hover {
     font-size: 28px;
   }
 }
+
+/* Light mode styles */
+body.light-mode .slides-container {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+body.light-mode .slides-container h1 {
+  color: #333333;
+}
+
+body.light-mode .new-entry-textarea,
+body.light-mode input[type="text"] {
+  background-color: #f5f5f5;
+  color: #333333;
+  border-color: #ccc;
+}
+
+body.light-mode button {
+  background-color: #f5f5f5;
+  color: #333333;
+  border-color: #ccc;
+}
+
+body.light-mode button:hover {
+  background-color: #e0e0e0;
+}
+
+body.light-mode .projects-list span {
+  background-color: #f5f5f5;
+  color: #333333;
+  border-color: #ccc;
+}
+
+body.light-mode .projects-list .active-project {
+  background-color: #e0e0e0;
+}
+
+body.light-mode .remove-project-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+body.light-mode .slide {
+  background-color: #f5f5f5;
+  color: #333333;
+  border-color: #ccc;
+}
+
+body.light-mode .nav-button {
+  color: #333333;
+}
+
+body.light-mode .dot {
+  background-color: #999;
+}
+
+body.light-mode .dot.active {
+  background-color: #ffcc00;
+}

@@ -76,3 +76,39 @@
 .back-button:hover {
   background-color: #5a6268;
 }
+
+/* Light mode styles */
+body.light-mode .register-box {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #333333;
+}
+
+body.light-mode .register-box input {
+  background-color: #f5f5f5;
+  color: #333333;
+  border-color: #ccc;
+}
+
+body.light-mode .register-box input:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 6px #ffcc00;
+}
+
+body.light-mode .register-box button {
+  background-color: #ffcc00;
+  color: #333333;
+}
+
+body.light-mode .register-box button:hover {
+  background-color: #e6b800;
+}
+
+body.light-mode .back-button {
+  background-color: #e0e0e0;
+  color: #333333;
+}
+
+body.light-mode .back-button:hover {
+  background-color: #cccccc;
+}
