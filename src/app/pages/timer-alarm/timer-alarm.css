@@ -176,8 +176,9 @@
 /* Responsivitet */
 @media (max-width: 768px) {
   .timer-alarm-container {
-    margin: 2rem 1rem;
+    margin: 2rem auto;
     padding: 1.5rem;
+    width: 95%;
   }
 
   .timer-alarm-container h1 {
@@ -189,26 +190,154 @@
   }
 
   .time-display {
-    font-size: 1.5rem;
-    max-width: 250px;
+    font-size: 1.6rem;
+    max-width: 280px;
+    padding: 12px;
+  }
+
+  .timer-controls,
+  .alarm-picker {
+    gap: 8px;
   }
 
   .timer-controls input,
   .alarm-section input,
   .alarm-picker select {
-    width: 60px;
-    font-size: 0.9rem;
-    padding: 6px;
+    width: 75px;
+    font-size: 0.95rem;
+    padding: 10px;
+    min-height: 44px;
   }
 
   .timer-controls button,
   .alarm-section button,
   .alarm-picker button {
-    padding: 6px 10px;
-    font-size: 0.85rem;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    min-height: 44px;
+  }
+
+  .alarm-item {
+    gap: 8px;
   }
 
   .alarm-item span {
+    min-width: 90px;
+    font-size: 0.95rem;
+  }
+
+  .alarm-item button {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  .alarm-popup {
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timer-alarm-container {
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 98%;
+  }
+
+  .timer-alarm-container h1 {
+    font-size: 1.7rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .timer-alarm-container h2 {
+    font-size: 1.3rem;
+    margin: 0.8rem 0;
+  }
+
+  .timer-section,
+  .alarm-section {
+    width: 100%;
+  }
+
+  .time-display {
+    font-size: 1.5rem;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .timer-controls,
+  .alarm-picker {
+    gap: 6px;
+    width: 100%;
+  }
+
+  .timer-controls input,
+  .alarm-picker select {
+    flex: 1;
     min-width: 70px;
+    font-size: 1rem;
+    padding: 12px 8px;
+    min-height: 46px;
+  }
+
+  .timer-controls button,
+  .alarm-picker button {
+    flex: 1;
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    min-height: 46px;
+  }
+
+  .alarm-section {
+    width: 100%;
+  }
+
+  .alarm-picker {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .alarm-picker select {
+    width: auto;
+    max-width: 80px;
+  }
+
+  .alarm-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 0.8rem;
+    background-color: #1a1a1a;
+    border: 1px solid #ffcc00;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+  }
+
+  .alarm-item span {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .alarm-item button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    min-height: 46px;
+  }
+
+  .alarm-popup {
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    margin: 0 0.5rem;
+    max-width: 90%;
+  }
+
+  .alarm-popup button {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    min-height: 46px;
   }
 }
