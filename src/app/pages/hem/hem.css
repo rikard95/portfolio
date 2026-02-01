@@ -44,6 +44,9 @@ h1 {
   text-align: left;
   margin-bottom: 1.5rem;
   line-height: 1.8;
+}
+
+body:not(.light-mode) .welcome-container p {
   color: rgba(255, 255, 255, 0.95);
 }
 
@@ -158,7 +161,7 @@ body.light-mode .welcome-container h1 {
 }
 
 body.light-mode .welcome-container p {
-  color: var(--light-text-secondary) !important;
+  color: var(--light-text-primary) !important;
 }
 
 body.light-mode h1 {
