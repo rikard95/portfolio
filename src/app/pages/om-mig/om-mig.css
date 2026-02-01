@@ -3,15 +3,18 @@
   max-width: 800px;
   width: 90%;
   margin: 4rem auto;       
-  padding: 2rem;
-  background-color: #000000; 
-  border: 2px solid #ffcc00;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 2.5rem;
+  background: linear-gradient(135deg, rgba(30, 10, 62, 0.95), rgba(26, 0, 50, 0.9));
+  border: 2px solid rgba(255, 204, 0, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 60px rgba(255, 204, 0, 0.1);
   color: #ffffff; 
   line-height: 1.8;
   box-sizing: border-box;
   overflow-x: hidden;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 img.profile-picture {
@@ -21,11 +24,21 @@ img.profile-picture {
   height: auto;
   border-radius: 10%;
   margin: 2rem auto 0 auto;
-  border: 1px solid #ffcc00;
+  border: 3px solid rgba(255, 204, 0, 0.8);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 204, 0, 0.2);
+  transition: var(--transition-smooth);
+}
+
+img.profile-picture:hover {
+  transform: scale(1.05);
+  border-color: #00ff88;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 255, 136, 0.3);
 }
 
 .welcome-container:hover {
-    border: 2px solid #238b5a; 
+  border-color: #00ff88; 
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4), 0 0 80px rgba(0, 255, 136, 0.15);
+  transform: translateY(-2px);
 }
 
 .welcome-container h1 {
@@ -33,6 +46,8 @@ img.profile-picture {
   margin-bottom: 1.5rem;
   color: #ffffff;      
   text-align: center;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(255, 204, 0, 0.3);
 }
 
 .welcome-container p {
@@ -40,6 +55,7 @@ img.profile-picture {
   text-align: left;
   margin-bottom: 1.5rem;
   line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .welcome-container p:last-of-type {
@@ -93,9 +109,34 @@ img.profile-picture {
 
 /* Light mode styles */
 body.light-mode .welcome-container {
-  background-color: #ffffff;
-  color: #333333;
-  border-color: #ccc;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 249, 250, 0.95));
+  color: var(--light-text-primary);
+  border-color: var(--light-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 60px rgba(255, 149, 0, 0.05);
+}
+
+body.light-mode .welcome-container:hover {
+  border-color: var(--light-accent);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12), 0 0 80px rgba(255, 149, 0, 0.1);
+}
+
+body.light-mode .welcome-container h1 {
+  color: var(--light-text-primary);
+  text-shadow: 0 2px 10px rgba(255, 149, 0, 0.1);
+}
+
+body.light-mode .welcome-container p {
+  color: var(--light-text-secondary);
+}
+
+body.light-mode img.profile-picture {
+  border-color: var(--light-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1), 0 0 30px rgba(255, 149, 0, 0.1);
+}
+
+body.light-mode img.profile-picture:hover {
+  border-color: var(--light-accent);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15), 0 0 40px rgba(255, 149, 0, 0.2);
 }
 
 body.light-mode .welcome-container:hover {

@@ -8,15 +8,23 @@
 }
 
 .login-box {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(6px);
-    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(30, 10, 62, 0.95), rgba(26, 0, 50, 0.9));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
     padding: 30px 35px;
     width: 100%;
     max-width: 320px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.25);
-    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 60px rgba(255, 204, 0, 0.1);
+    border: 2px solid rgba(255, 204, 0, 0.5);
     box-sizing: border-box;
+    transition: var(--transition-smooth);
+}
+
+.login-box:hover {
+    border-color: #00ff88;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5), 0 0 80px rgba(0, 255, 136, 0.15);
+    transform: translateY(-2px);
 }
 
 
@@ -32,16 +40,18 @@
     box-sizing: border-box;
     padding: 12px;
     margin-bottom: 20px;
-    border: 1px solid #5c438a;
-    background-color: #2b0050;
+    border: 1px solid rgba(255, 204, 0, 0.3);
+    background: rgba(20, 10, 40, 0.8);
     color: #fff;
-    border-radius: 6px;
+    border-radius: 12px;
     outline: none;
+    transition: var(--transition-fast);
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .login-box input:focus {
-    border-color: #9f5bff;
-    box-shadow: 0 0 6px #9f5bff;
+    border-color: #ffcc00;
+    box-shadow: 0 0 16px rgba(255, 204, 0, 0.5), inset 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -50,18 +60,21 @@
     box-sizing: border-box;
     padding: 12px;
     margin-bottom: 10px;
-    background-color: #9f5bff;
+    background: linear-gradient(135deg, #9f5bff, #7a3fd9);
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
-    transition: 0.2s;
+    transition: var(--transition-fast);
+    box-shadow: 0 4px 16px rgba(159, 91, 255, 0.3);
 }
 
 .login-box button:hover {
-    background-color: #b77bff;
+    background: linear-gradient(135deg, #b77bff, #9f5bff);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(159, 91, 255, 0.5);
 }
 
 
@@ -139,33 +152,38 @@ img {
 
 /* Light mode styles */
 body.light-mode .login-box {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 249, 250, 0.95));
+  border: 2px solid var(--light-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 60px rgba(255, 149, 0, 0.05);
+}
+
+body.light-mode .login-box:hover {
+  border-color: var(--light-accent);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12), 0 0 80px rgba(255, 149, 0, 0.1);
 }
 
 body.light-mode .login-box label {
-  color: #333333;
+  color: var(--light-text-primary);
 }
 
 body.light-mode .login-box input {
-  background-color: #f5f5f5;
-  color: #333333;
-  border-color: #ccc;
+  background: rgba(248, 249, 250, 0.9);
+  color: var(--light-text-primary);
+  border-color: var(--light-border);
 }
 
 body.light-mode .login-box input:focus {
-  border-color: #ffcc00;
-  box-shadow: 0 0 6px rgba(255, 204, 0, 0.5);
+  border-color: var(--light-accent);
+  box-shadow: 0 0 16px rgba(255, 149, 0, 0.3), inset 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 body.light-mode .login-box button {
-  background-color: #ffcc00;
-  color: #333333;
+  background: linear-gradient(135deg, var(--light-accent), var(--light-accent-hover));
+  color: #ffffff;
 }
 
 body.light-mode .login-box button:hover {
-  background-color: #e6b800;
+  background: linear-gradient(135deg, var(--light-accent-hover), #cc8400);
 }
 
 body.light-mode img {

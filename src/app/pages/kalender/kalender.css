@@ -2,21 +2,32 @@
   max-width: 900px;
   width: 90%;
   margin: 4rem auto;
-  padding: 2rem;
-  background-color: #000000;
-  border: 2px solid #ffcc00;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 2.5rem;
+  background: linear-gradient(135deg, rgba(30, 10, 62, 0.95), rgba(26, 0, 50, 0.9));
+  border: 2px solid rgba(255, 204, 0, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 60px rgba(255, 204, 0, 0.1);
   color: #ffffff;
   line-height: 1.7;
   box-sizing: border-box;
   overflow-x: hidden;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.kalender-container:hover {
+  border-color: #00ff88;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4), 0 0 80px rgba(0, 255, 136, 0.15);
+  transform: translateY(-2px);
 }
 
 .kalender-container h1 {
   text-align: center;
   color: #ffffff;
   margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(255, 204, 0, 0.3);
 }
 
 .kalender-header {
@@ -30,10 +41,10 @@
 
 .kalender-header select,
 .kalender-header input {
-  background-color: #1a1a1a;
+  background: rgba(20, 10, 40, 0.8);
   color: #ffffff;
-  border: 1px solid #ffcc00;
-  border-radius: 6px;
+  border: 1px solid rgba(255, 204, 0, 0.3);
+  border-radius: 12px;
   padding: 0.6rem;
   font-size: 1rem;
   width: auto;
@@ -41,25 +52,38 @@
   min-height: 44px;
   flex: 1 1 auto;
   box-sizing: border-box;
+  transition: var(--transition-fast);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.kalender-header select:focus,
+.kalender-header input:focus {
+  outline: none;
+  border-color: #ffcc00;
+  box-shadow: 0 0 16px rgba(255, 204, 0, 0.5), inset 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .kalender-header button {
-  background-color: #1a1a1a;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: #ffffff;
-  border: 1px solid #ffcc00;
-  border-radius: 8px;
+  border: none;
+  border-radius: 12px;
   padding: 0.6rem 1rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: var(--transition-fast);
   flex: 0 0 auto;
   min-height: 44px;
   font-size: 1rem;
   touch-action: manipulation;
   box-sizing: border-box;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
 }
 
 .kalender-header button:hover {
-  background-color: #238b5a;
+  background: linear-gradient(135deg, #00ff88, #00c86b);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 255, 136, 0.4);
 }
 
 .kalender-grid {
@@ -69,19 +93,24 @@
 }
 
 .day {
-  background-color: #1a1a1a;
-  border: 2px solid #40005d;
-  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(42, 13, 62, 0.9), rgba(26, 0, 50, 0.8));
+  border: 2px solid rgba(64, 0, 93, 0.8);
+  border-radius: 16px;
   min-height: 120px;
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  transition: border 0.2s;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .day:hover {
-  border: 1px solid #238b5a;
+  border-color: #00ff88;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 255, 136, 0.3);
 }
 
 .day.empty {
@@ -90,7 +119,8 @@
 }
 
 .day.today {
-  border: 2px solid #238b5a;
+  border: 2px solid #00ff88;
+  box-shadow: 0 0 24px rgba(0, 255, 136, 0.5);
 }
 
 .day-name {
@@ -99,6 +129,7 @@
   color: #ffcc00;
   margin-bottom: 0.3rem;
   font-size: 0.9rem;
+  text-shadow: 0 0 8px rgba(255, 204, 0, 0.3);
 }
 
 .day-number {
@@ -111,12 +142,21 @@
 textarea {
   width: 100%;
   height: 60px;
-  background: transparent;
-  border: none;
+  background: rgba(20, 10, 40, 0.6);
+  border: 1px solid rgba(255, 204, 0, 0.2);
   color: #ffffff;
   resize: none;
   font-size: 0.9rem;
   outline: none;
+  border-radius: 8px;
+  padding: 0.3rem;
+  transition: var(--transition-fast);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+textarea:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.4), inset 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 textarea::placeholder {
@@ -130,18 +170,21 @@ textarea::placeholder {
 }
 
 .scroll-top-btn {
-  background-color: #ffcc00;
+  background: linear-gradient(135deg, #ffcc00, #ff9800);
   color: #000;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 0.5rem 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(255, 204, 0, 0.3);
 }
 
 .scroll-top-btn:hover {
-  background-color: #e6b800;
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 204, 0, 0.5);
 }
 
 
@@ -259,69 +302,82 @@ textarea::placeholder {
 
 /* Light mode styles */
 body.light-mode .kalender-container {
-  background-color: #ffffff;
-  color: #333333;
-  border-color: #ccc;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 249, 250, 0.95));
+  color: var(--light-text-primary);
+  border-color: var(--light-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 60px rgba(255, 149, 0, 0.05);
+}
+
+body.light-mode .kalender-container:hover {
+  border-color: var(--light-accent);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12), 0 0 80px rgba(255, 149, 0, 0.1);
 }
 
 body.light-mode .kalender-container h1 {
-  color: #333333;
+  color: var(--light-text-primary);
+  text-shadow: 0 2px 10px rgba(255, 149, 0, 0.1);
 }
 
 body.light-mode .kalender-header select,
 body.light-mode .kalender-header input {
-  background-color: #f5f5f5;
-  color: #333333;
-  border-color: #ccc;
+  background: rgba(248, 249, 250, 0.9);
+  color: var(--light-text-primary);
+  border-color: var(--light-border);
 }
 
 body.light-mode .kalender-header select:focus,
 body.light-mode .kalender-header input:focus {
-  border-color: #ffcc00;
-  box-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
+  border-color: var(--light-accent);
+  box-shadow: 0 0 16px rgba(255, 149, 0, 0.3), inset 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 body.light-mode .kalender-header button {
-  background-color: #f5f5f5;
-  color: #333333;
-  border-color: #ccc;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #ffffff;
 }
 
 body.light-mode .kalender-header button:hover {
-  background-color: #ffcc00;
-  border-color: #ffcc00;
+  background: linear-gradient(135deg, var(--light-accent), var(--light-accent-hover));
 }
 
 body.light-mode .day {
-  background-color: #f5f5f5;
-  border-color: #ccc;
-  color: #333333;
+  background: linear-gradient(135deg, rgba(248, 249, 250, 0.95), rgba(255, 255, 255, 0.9));
+  border-color: var(--light-border);
+  color: var(--light-text-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 body.light-mode .day:hover {
-  border-color: #ffcc00;
-  box-shadow: 0 3px 8px rgba(255, 204, 0, 0.2);
+  border-color: var(--light-accent);
+  box-shadow: 0 6px 20px rgba(255, 149, 0, 0.2);
 }
 
 body.light-mode .day.today {
-  border-color: #ffcc00;
-  background-color: #fff9e6;
-  box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+  border-color: var(--light-accent);
+  background: linear-gradient(135deg, rgba(255, 249, 230, 0.98), rgba(255, 253, 240, 0.95));
+  box-shadow: 0 0 24px rgba(255, 149, 0, 0.3);
 }
 
 body.light-mode .day-name {
-  color: #ff8800;
+  color: var(--light-accent);
+  text-shadow: 0 0 8px rgba(255, 149, 0, 0.2);
 }
 
 body.light-mode textarea {
-  color: #333333;
+  color: var(--light-text-primary);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: var(--light-border);
+}
+
+body.light-mode textarea:focus {
+  border-color: var(--light-accent);
+  box-shadow: 0 0 12px rgba(255, 149, 0, 0.3), inset 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 body.light-mode textarea::placeholder {
   color: #999;
 }
 
-body.light-mode textarea:focus {
-  box-shadow: 0 0 5px rgba(255, 204, 0, 0.3);
+body.light-mode .scroll-top-btn {
+  background: linear-gradient(135deg, var(--light-accent), var(--light-accent-hover));
 }

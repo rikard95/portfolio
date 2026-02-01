@@ -5,19 +5,24 @@
   max-width: 800px;
   width: 90%;
   margin: 4rem auto;
-  padding: 2rem;
-  background-color: #000000;
-  border: 2px solid #ffcc00;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 2.5rem;
+  background: linear-gradient(135deg, rgba(30, 10, 62, 0.95), rgba(26, 0, 50, 0.9));
+  border: 2px solid rgba(255, 204, 0, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 60px rgba(255, 204, 0, 0.1);
   color: #ffffff;
   line-height: 1.7;
   box-sizing: border-box;
   overflow-x: hidden;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .project-container:hover {
-  border: 2px solid #238b5a;
+  border-color: #00ff88;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4), 0 0 80px rgba(0, 255, 136, 0.15);
+  transform: translateY(-2px);
 }
 
 .project-container h1 {
@@ -25,6 +30,8 @@
   margin-bottom: 1rem;
   color: #ffffff;
   text-align: center;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(255, 204, 0, 0.3);
 }
 
 .project-container p {
@@ -35,14 +42,14 @@
 .todo-btn {
   display: inline-block;
   padding: 14px 20px;
-  background-color: #1a0032;
+  background: linear-gradient(135deg, rgba(26, 0, 50, 0.9), rgba(10, 1, 24, 0.8));
   color: white;
-  border-radius: 8px;
-  border: 1px solid #ffcc00;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 204, 0, 0.7);
   text-decoration: none;
   text-align: center;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: var(--transition-smooth);
   margin-top: 1rem;
   min-height: 48px;
   min-width: 120px;
@@ -51,10 +58,15 @@
   justify-content: center;
   touch-action: manipulation;
   box-sizing: border-box;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .todo-btn:hover {
-  background-color: #002f23;
+  background: linear-gradient(135deg, rgba(0, 47, 35, 0.9), rgba(0, 31, 23, 0.8));
+  border-color: #00ff88;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 255, 136, 0.3);
 }
 
 
@@ -113,27 +125,32 @@
 
 /* Light mode styles */
 body.light-mode .project-container {
-  background-color: #ffffff;
-  color: #333333;
-  border-color: #ccc;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 249, 250, 0.95));
+  color: var(--light-text-primary);
+  border-color: var(--light-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 60px rgba(255, 149, 0, 0.05);
 }
 
 body.light-mode .project-container:hover {
-  border-color: #ffcc00;
+  border-color: var(--light-accent);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12), 0 0 80px rgba(255, 149, 0, 0.1);
 }
 
 body.light-mode .project-container h1 {
-  color: #1e1e2f;
+  color: var(--light-text-primary);
+  text-shadow: 0 2px 10px rgba(255, 149, 0, 0.1);
 }
 
 body.light-mode .todo-btn {
-  background-color: #f5f5f5;
-  color: #333333;
-  border-color: #ccc;
+  background: linear-gradient(135deg, rgba(248, 249, 250, 0.98), rgba(255, 255, 255, 0.95));
+  color: var(--light-text-primary);
+  border-color: var(--light-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 body.light-mode .todo-btn:hover {
-  background-color: #ffcc00;
-  color: #333333;
-  border-color: #ffcc00;
+  background: linear-gradient(135deg, rgba(255, 149, 0, 0.15), rgba(255, 170, 51, 0.1));
+  color: var(--light-text-primary);
+  border-color: var(--light-accent);
+  box-shadow: 0 6px 20px rgba(255, 149, 0, 0.2);
 }

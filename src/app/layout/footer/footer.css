@@ -4,15 +4,17 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   min-height: 79px;
-  padding: 1rem 2rem;
-  background-color: #000000;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 1, 24, 0.98) 100%);
   color: #ffffff;
-  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-  border-top: 2px solid #ffcc00;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 204, 0, 0.05);
+  border-top: 2px solid rgba(255, 204, 0, 0.8);
   margin-top: auto;
   font-size: 0.9rem;
   width: 100%;
   box-sizing: border-box;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 
@@ -21,15 +23,34 @@ footer a {
   color: #ffffff;
   text-decoration: none;
   margin-left: 1rem;
-  transition: color 0.3s;
+  transition: var(--transition-smooth);
   padding: 0.5rem;
   min-height: 44px;
   display: inline-flex;
   align-items: center;
+  position: relative;
+  font-weight: 500;
+}
+
+footer a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffcc00;
+  transition: var(--transition-fast);
 }
 
 footer a:hover {
   color: #ffcc00;
+  transform: translateY(-2px);
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+}
+
+footer a:hover::after {
+  width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -66,14 +87,21 @@ footer a:hover {
 
 /* Light mode styles using :host-context */
 :host-context(body.light-mode) footer {
-  background-color: #ffffff;
-  color: #333333;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.98) 100%);
+  color: #1a1a2e;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.08), 0 0 40px rgba(255, 149, 0, 0.05);
+  border-top-color: rgba(255, 149, 0, 0.8);
 }
 
 :host-context(body.light-mode) footer a {
-  color: #333333;
+  color: #1a1a2e;
+}
+
+:host-context(body.light-mode) footer a::after {
+  background: #ff9500;
 }
 
 :host-context(body.light-mode) footer a:hover {
-  color: #ffcc00;
+  color: #ff9500;
+  text-shadow: 0 0 10px rgba(255, 149, 0, 0.3);
 }
