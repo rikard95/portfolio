@@ -160,7 +160,7 @@ textarea:focus {
 }
 
 textarea::placeholder {
-  color: #777;
+  color: #999;
 }
 
 .scroll-top-container {
@@ -375,7 +375,7 @@ body.light-mode textarea:focus {
 }
 
 body.light-mode textarea::placeholder {
-  color: #999;
+  color: #6b6b6b;
 }
 
 body.light-mode .scroll-top-btn {
