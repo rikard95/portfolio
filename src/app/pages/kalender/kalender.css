@@ -276,14 +276,17 @@ textarea::placeholder {
   }
 
   .weekday-header {
-    grid-template-columns: 1fr;
+    display: flex;
+    justify-content: space-around;
     gap: 4px;
     padding: 0 0 8px 0;
+    overflow-x: auto;
   }
 
   .weekday-name {
-    font-size: 0.9rem;
-    padding: 0.3rem;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.4rem;
+    flex-shrink: 0;
   }
 
   .kalender-grid {
@@ -292,7 +295,7 @@ textarea::placeholder {
   }
 
   .day {
-    min-height: 100px;
+    min-height: 85px;
     padding: 0.8rem;
   }
 
