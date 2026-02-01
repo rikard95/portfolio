@@ -13,20 +13,26 @@ The project is configured for automatic deployment to Vercel via GitHub Actions.
 
 ### Required GitHub Secrets
 
-To enable automated deployments, you need to add the following secrets to your GitHub repository:
+To enable automated deployments, you need to add the following secret to your GitHub repository:
 
-1. **VERCEL_TOKEN**
+1. **VERCEL_TOKEN** (Required)
    - Get your Vercel token from: https://vercel.com/account/tokens
    - Click "Create Token" and give it an appropriate name
    - Copy the token and add it to GitHub Secrets
 
-2. **VERCEL_ORG_ID** (Optional, but recommended)
+### Optional GitHub Secrets
+
+These secrets are optional but can improve deployment reliability:
+
+2. **VERCEL_ORG_ID** (Optional)
    - Get your organization/team ID from Vercel settings
    - Found in your Vercel team/account settings
+   - If not provided, Vercel will use your linked project configuration
 
-3. **VERCEL_PROJECT_ID** (Optional, but recommended)
+3. **VERCEL_PROJECT_ID** (Optional)
    - Get your project ID from your Vercel project settings
    - Found in Settings → General of your Vercel project
+   - If not provided, Vercel will use your linked project configuration
 
 ### Adding Secrets to GitHub
 
