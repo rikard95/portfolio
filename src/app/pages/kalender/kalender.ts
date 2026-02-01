@@ -95,13 +95,7 @@ export class Kalender implements OnInit {
     this.closeModal();
   }
 
-  updateModalNote(event: Event): void {
-    const input = event.target as HTMLTextAreaElement;
-    this.modalNote = input.value;
-  }
-
   getDateString(date: Date): string {
-    if (this.isInvalidDate(date)) return '';
     const weekday = this.getWeekdayName(date);
     return `${weekday} ${date.getDate()} ${this.months[date.getMonth()]} ${date.getFullYear()}`;
   }
