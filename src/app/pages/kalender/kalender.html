@@ -29,13 +29,17 @@
     <div class="kalender-grid">
       <div *ngFor="let day of monthDays" class="day" 
            [class.empty]="isInvalidDate(day.date)"
-           [class.today]="isToday(day.date)">
+           [class.today]="isToday(day.date)"
+           [class.has-note]="!isInvalidDate(day.date) && day.note"
+           (click)="!isInvalidDate(day.date) && openModal(day)">
         <div *ngIf="!isInvalidDate(day.date)" class="day-content">
           <div class="day-number">{{ day.date.getDate() }}</div>
-          <textarea 
-            [value]="day.note" 
-            (input)="saveNote(day, $event)" 
-            placeholder="Anteckning..."></textarea>
+          <div class="note-preview" *ngIf="day.note">
+            {{ getNotePreview(day.note) }}
+          </div>
+          <div class="note-placeholder" *ngIf="!day.note">
+            Klicka för att lägga till anteckning
+          </div>
         </div>
       </div>
     </div>
@@ -46,6 +50,26 @@
   <button type="button" (click)="scrollToTop()" class="scroll-top-btn">
     Gå till datumväljare ↑
   </button>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" *ngIf="isModalOpen" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>{{ selectedDay && getDateString(selectedDay.date) }}</h2>
+      <button type="button" class="modal-close" (click)="closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <textarea 
+        [(ngModel)]="modalNote"
+        placeholder="Skriv din anteckning här..."
+        autofocus></textarea>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn-cancel" (click)="closeModal()">Avbryt</button>
+      <button type="button" class="btn-save" (click)="saveModalNote()">Spara</button>
+    </div>
+  </div>
 </div>
 
 <app-projekt></app-projekt>
