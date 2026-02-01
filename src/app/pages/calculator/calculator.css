@@ -58,12 +58,20 @@
   text-align: right;
 }
 
-.result {
+body:not(.light-mode) .result {
   color: #ffcc00;
   font-size: 1.2rem;
   margin-top: 5px;
   font-weight: 600;
   text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+}
+
+body.light-mode .result {
+  color: var(--light-text-primary);
+  font-size: 1.2rem;
+  margin-top: 5px;
+  font-weight: 600;
+  text-shadow: none;
 }
 
 .buttons {
@@ -151,13 +159,22 @@ button.zero {
   transform: translateY(-2px);
 }
 
-.notes-container h3 {
+body:not(.light-mode) .notes-container h3 {
   color: #ffcc00;
   text-align: center;
   margin-bottom: 10px;
   font-size: 1.4rem;
   font-weight: 700;
   text-shadow: 0 2px 8px rgba(255, 204, 0, 0.4);
+}
+
+body.light-mode .notes-container h3 {
+  color: var(--light-text-primary);
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-shadow: none;
 }
 
 .notes-container textarea {
@@ -354,7 +371,3 @@ body.light-mode .notes-container textarea:focus {
   box-shadow: 0 0 16px rgba(255, 149, 0, 0.3), inset 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-body.light-mode .notes-container h3 {
-  color: var(--light-accent);
-  text-shadow: 0 2px 8px rgba(255, 149, 0, 0.2);
-}

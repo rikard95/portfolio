@@ -163,12 +163,20 @@ button:hover {
   align-items: flex-end;
 }
 
-.timestamp {
+body:not(.light-mode) .timestamp {
   font-size: 0.85rem;
   color: #ffcc00;
   margin-bottom: 0.3rem;
   font-weight: 600;
   text-shadow: 0 0 8px rgba(255, 204, 0, 0.3);
+}
+
+body.light-mode .timestamp {
+  color: var(--light-text-primary);
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  text-shadow: none;
 }
 
 .entry-text {
@@ -393,10 +401,6 @@ body.light-mode .entry:hover {
   box-shadow: 0 6px 20px rgba(255, 149, 0, 0.2);
 }
 
-body.light-mode .timestamp {
-  color: var(--light-accent);
-  text-shadow: 0 0 8px rgba(255, 149, 0, 0.2);
-}
 
 body.light-mode textarea {
   background: rgba(255, 255, 255, 0.9);

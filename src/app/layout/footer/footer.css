@@ -88,20 +88,20 @@ footer a:hover::after {
 /* Light mode styles using :host-context */
 :host-context(body.light-mode) footer {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.98) 100%);
-  color: #1a1a2e;
+  color: var(--light-text-primary);
   box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.08), 0 0 40px rgba(255, 149, 0, 0.05);
   border-top-color: rgba(255, 149, 0, 0.8);
 }
 
 :host-context(body.light-mode) footer a {
-  color: #1a1a2e;
+  color: var(--light-text-primary);
 }
 
 :host-context(body.light-mode) footer a::after {
-  background: #ff9500;
+  background: var(--light-accent);
 }
 
 :host-context(body.light-mode) footer a:hover {
-  color: #ff9500;
+  color: var(--light-accent);
   text-shadow: 0 0 10px rgba(255, 149, 0, 0.3);
 }

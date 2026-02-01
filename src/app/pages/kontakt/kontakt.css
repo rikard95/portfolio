@@ -1,6 +1,11 @@
-h1 {
+body:not(.light-mode) h1 {
     color: #ffffff;  
     text-shadow: 0 2px 10px rgba(255, 204, 0, 0.3);
+}
+
+body.light-mode h1 {
+    color: var(--light-text-primary);
+    text-shadow: none;
 }
 
 .welcome-container {

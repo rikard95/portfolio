@@ -202,31 +202,31 @@ header .logo img {
 /* Light mode styles using :host-context */
 :host-context(body.light-mode) header {
   background: rgba(255, 255, 255, 0.9);
-  color: #1a1a2e;
+  color: var(--light-text-primary);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 0 40px rgba(255, 149, 0, 0.1);
   border-bottom-color: rgba(255, 149, 0, 0.8);
 }
 
 :host-context(body.light-mode) header nav a {
-  color: #1a1a2e;
+  color: var(--light-text-primary);
 }
 
 :host-context(body.light-mode) header nav a:hover {
-  color: #ff9500;
+  color: var(--light-accent);
   text-shadow: 0 0 10px rgba(255, 149, 0, 0.3);
 }
 
 :host-context(body.light-mode) header nav a.active {
-  color: #ff9500;
+  color: var(--light-accent);
   text-shadow: 0 0 8px rgba(255, 149, 0, 0.2);
 }
 
 :host-context(body.light-mode) header nav a::after {
-  background: linear-gradient(90deg, transparent, #ff9500, transparent);
+  background: linear-gradient(90deg, transparent, var(--light-accent), transparent);
 }
 
 :host-context(body.light-mode) .dark-mode-toggle {
-  color: #1a1a2e;
+  color: var(--light-text-primary);
   border-color: rgba(255, 149, 0, 0.8);
   background: linear-gradient(135deg, rgba(255, 149, 0, 0.1), rgba(255, 149, 0, 0.05));
   box-shadow: 0 2px 8px rgba(255, 149, 0, 0.2);
@@ -234,7 +234,7 @@ header .logo img {
 
 :host-context(body.light-mode) .dark-mode-toggle:hover {
   background: linear-gradient(135deg, rgba(255, 149, 0, 0.25), rgba(255, 149, 0, 0.15));
-  border-color: #ff9500;
+  border-color: var(--light-accent);
   box-shadow: 0 4px 16px rgba(255, 149, 0, 0.4);
 }
 
