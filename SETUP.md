@@ -1,39 +1,40 @@
 # Quick Start: Vercel Deployment Setup
 
-This project is now configured for automated deployment to Vercel via GitHub Actions.
+This project is configured for automated deployment to Vercel using Vercel's native GitHub integration.
 
-## Required Setup Steps
+## Deployment Setup
 
-To enable automated deployments, you need to add **one secret** to your GitHub repository:
+Deployment is now handled automatically by Vercel's GitHub integration - **no tokens or secrets required!**
 
-### 1. Get Your Vercel Token
+### Enable Vercel GitHub Integration
 
-1. Go to https://vercel.com/account/tokens
-2. Click "Create Token"
-3. Give it a name like "GitHub Actions Deploy"
-4. Copy the generated token
+1. Go to https://vercel.com and log in with your GitHub account
+2. Click **"Add New..."** → **"Project"**
+3. Import your GitHub repository
+4. Configure your project:
+   - **Framework Preset**: Angular
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist/text/browser`
+5. Click **Deploy**
 
-### 2. Add Secret to GitHub
-
-1. Go to your GitHub repository settings
-2. Click **Settings** (in the repository menu)
-3. Navigate to **Secrets and variables** → **Actions**
-4. Click **New repository secret**
-5. Add the secret:
-   - **Name**: `VERCEL_TOKEN`
-   - **Value**: (paste your token from step 1)
-6. Click **Add secret**
-
-## That's It!
-
-Once the secret is added:
+That's it! Once set up:
 - ✅ Pushes to `main` branch will automatically deploy to production
 - ✅ Pull requests will get preview deployments
 - ✅ Your site will be live at your Vercel project URL
 
+## CI/CD Workflow
+
+This repository includes a GitHub Actions CI workflow that:
+- Runs on every push to `main` and on pull requests
+- Installs dependencies
+- Builds the project
+- Runs tests
+
+Deployment is handled separately by Vercel's integration.
+
 ## Manual Deployment (Alternative)
 
-If you prefer to deploy manually without GitHub Actions:
+If you prefer to deploy manually without the GitHub integration:
 
 ```bash
 # Install Vercel CLI
