@@ -383,8 +383,6 @@
     align-items: stretch;
     gap: 8px;
     padding: 0.8rem;
-    background-color: #1a1a1a;
-    border: 1px solid #ffcc00;
     border-radius: 8px;
     margin-bottom: 0.5rem;
   }
