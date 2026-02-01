@@ -86,6 +86,30 @@
   box-shadow: 0 4px 16px rgba(0, 255, 136, 0.4);
 }
 
+.kalender-grid-wrapper {
+  width: 100%;
+}
+
+.weekday-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 0 0 12px 0;
+  border-bottom: 2px solid rgba(255, 204, 0, 0.3);
+}
+
+.weekday-name {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ffcc00;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.5rem;
+  text-shadow: 0 0 8px rgba(255, 204, 0, 0.3);
+}
+
 .kalender-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -95,8 +119,8 @@
 .day {
   background: linear-gradient(135deg, rgba(42, 13, 62, 0.9), rgba(26, 0, 50, 0.8));
   border: 2px solid rgba(64, 0, 93, 0.8);
-  border-radius: 16px;
-  min-height: 120px;
+  border-radius: 12px;
+  min-height: 100px;
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -116,6 +140,7 @@
 .day.empty {
   background: transparent;
   border: none;
+  min-height: 0;
 }
 
 .day.today {
@@ -123,20 +148,12 @@
   box-shadow: 0 0 24px rgba(0, 255, 136, 0.5);
 }
 
-.day-name {
-  font-weight: bold;
-  text-align: left;
-  color: #ffcc00;
-  margin-bottom: 0.3rem;
-  font-size: 0.9rem;
-  text-shadow: 0 0 8px rgba(255, 204, 0, 0.3);
-}
-
 .day-number {
-  font-weight: bold;
+  font-weight: 700;
   text-align: right;
-  margin-bottom: 0.3rem;
-  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #ffffff;
 }
 
 textarea {
@@ -196,6 +213,10 @@ textarea::placeholder {
 
 
 @media (max-width: 1024px) {
+  .weekday-header {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .kalender-grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -208,18 +229,18 @@ textarea::placeholder {
     width: 90%;
   }
 
+  .weekday-header {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .kalender-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
   }
 
   .day {
-    min-height: 140px;
+    min-height: 120px;
     padding: 0.8rem;
-  }
-
-  .day-name {
-    font-size: 0.9rem;
   }
 
   .day-number {
@@ -254,19 +275,28 @@ textarea::placeholder {
     margin-bottom: 1rem;
   }
 
+  .weekday-header {
+    display: flex;
+    justify-content: space-around;
+    gap: 4px;
+    padding: 0 0 8px 0;
+    overflow-x: auto;
+  }
+
+  .weekday-name {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.4rem;
+    flex-shrink: 0;
+  }
+
   .kalender-grid {
     grid-template-columns: 1fr;
     gap: 10px;
   }
 
   .day {
-    min-height: 120px;
+    min-height: 85px;
     padding: 0.8rem;
-  }
-
-  .day-name {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
   }
 
   .day-number {
@@ -301,11 +331,20 @@ textarea::placeholder {
 }
 
 /* Light mode styles */
+body.light-mode .weekday-header {
+  border-bottom: 2px solid var(--light-border);
+}
+
+body.light-mode .weekday-name {
+  color: var(--light-accent);
+  text-shadow: 0 0 8px rgba(255, 140, 66, 0.2);
+}
+
 body.light-mode .kalender-container {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 249, 250, 0.95));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(245, 243, 240, 0.95));
   color: var(--light-text-primary);
   border-color: var(--light-border);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 60px rgba(255, 149, 0, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 60px rgba(255, 140, 66, 0.05);
 }
 
 body.light-mode .kalender-container:hover {
@@ -355,12 +394,11 @@ body.light-mode .day:hover {
 body.light-mode .day.today {
   border-color: var(--light-accent);
   background: linear-gradient(135deg, rgba(255, 249, 230, 0.98), rgba(255, 253, 240, 0.95));
-  box-shadow: 0 0 24px rgba(255, 149, 0, 0.3);
+  box-shadow: 0 0 24px rgba(255, 140, 66, 0.3);
 }
 
-body.light-mode .day-name {
-  color: var(--light-accent);
-  text-shadow: 0 0 8px rgba(255, 149, 0, 0.2);
+body.light-mode .day-number {
+  color: var(--light-text-primary);
 }
 
 body.light-mode textarea {

@@ -15,17 +15,28 @@
     <button type="button" (click)="changeMonth(1)">&#8594;</button>
   </div>
 
-  <div class="kalender-grid">
-    <div *ngFor="let day of monthDays" class="day" 
-         [class.empty]="isInvalidDate(day.date)"
-         [class.today]="isToday(day.date)">
-      <div *ngIf="!isInvalidDate(day.date)" class="day-content">
-        <div class="day-name">{{ getWeekdayName(day.date) }}</div>
-        <div class="day-number">{{ day.date.getDate() }}</div>
-        <textarea 
-          [value]="day.note" 
-          (input)="saveNote(day, $event)" 
-          placeholder="Anteckning..."></textarea>
+  <div class="kalender-grid-wrapper">
+    <div class="weekday-header">
+      <div class="weekday-name">Mån</div>
+      <div class="weekday-name">Tis</div>
+      <div class="weekday-name">Ons</div>
+      <div class="weekday-name">Tors</div>
+      <div class="weekday-name">Fre</div>
+      <div class="weekday-name">Lör</div>
+      <div class="weekday-name">Sön</div>
+    </div>
+    
+    <div class="kalender-grid">
+      <div *ngFor="let day of monthDays" class="day" 
+           [class.empty]="isInvalidDate(day.date)"
+           [class.today]="isToday(day.date)">
+        <div *ngIf="!isInvalidDate(day.date)" class="day-content">
+          <div class="day-number">{{ day.date.getDate() }}</div>
+          <textarea 
+            [value]="day.note" 
+            (input)="saveNote(day, $event)" 
+            placeholder="Anteckning..."></textarea>
+        </div>
       </div>
     </div>
   </div>
