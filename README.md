@@ -62,11 +62,12 @@ This project is automatically deployed to Vercel when changes are pushed to the 
 
 ### Deployment Configuration
 
-- The project uses Vercel for hosting and automatic deployments
+- The project uses Vercel's native GitHub integration for automatic deployments
 - Build configuration is defined in `vercel.json`
-- GitHub Actions workflow (`.github/workflows/deploy.yml`) handles automated deployments
-- Production deployments are triggered on push to `main` branch
-- Preview deployments are created for pull requests
+- GitHub Actions workflow (`.github/workflows/ci.yml`) runs CI checks (build + test)
+- Production deployments are automatically triggered by Vercel on push to `main` branch
+- Preview deployments are automatically created for pull requests
+- **No tokens or GitHub secrets required** - deployments handled by Vercel's GitHub integration
 
 ### Manual Deployment
 
@@ -77,7 +78,7 @@ npm install -g vercel
 vercel --prod
 ```
 
-Note: You'll need to configure Vercel secrets (`VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`) in your GitHub repository settings for automated deployments to work.
+For detailed deployment setup instructions, see `SETUP.md`.
 
 ## Additional Resources
 
