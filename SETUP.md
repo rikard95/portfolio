@@ -15,7 +15,7 @@ To enable automated deployments, you need to add **one secret** to your GitHub r
 
 ### 2. Add Secret to GitHub
 
-1. Go to your GitHub repository: https://github.com/rikard95/portfolio
+1. Go to your GitHub repository settings
 2. Click **Settings** (in the repository menu)
 3. Navigate to **Secrets and variables** → **Actions**
 4. Click **New repository secret**
@@ -29,7 +29,7 @@ To enable automated deployments, you need to add **one secret** to your GitHub r
 Once the secret is added:
 - ✅ Pushes to `main` branch will automatically deploy to production
 - ✅ Pull requests will get preview deployments
-- ✅ Your site will be live at: https://portfolio-rho-one-80.vercel.app/
+- ✅ Your site will be live at your Vercel project URL
 
 ## Manual Deployment (Alternative)
 
