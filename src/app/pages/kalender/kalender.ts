@@ -25,6 +25,11 @@ export class Kalender implements OnInit {
     'Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni',
     'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December'
   ];
+  
+  // Modal state
+  isModalOpen: boolean = false;
+  selectedDay: CalendarDay | null = null;
+  modalNote: string = '';
 
   constructor() {
     const today = new Date();
@@ -69,11 +74,41 @@ export class Kalender implements OnInit {
     return `kalender-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
   }
 
-  saveNote(day: CalendarDay, event: Event): void {
+  openModal(day: CalendarDay): void {
+    this.selectedDay = day;
+    this.modalNote = day.note;
+    this.isModalOpen = true;
+  }
+
+  closeModal(): void {
+    this.isModalOpen = false;
+    this.selectedDay = null;
+    this.modalNote = '';
+  }
+
+  saveModalNote(): void {
+    if (this.selectedDay) {
+      const key = this.getStorageKey(this.selectedDay.date);
+      localStorage.setItem(key, this.modalNote);
+      this.selectedDay.note = this.modalNote;
+    }
+    this.closeModal();
+  }
+
+  updateModalNote(event: Event): void {
     const input = event.target as HTMLTextAreaElement;
-    const key = this.getStorageKey(day.date);
-    localStorage.setItem(key, input.value);
-    day.note = input.value;
+    this.modalNote = input.value;
+  }
+
+  getDateString(date: Date): string {
+    if (this.isInvalidDate(date)) return '';
+    const weekday = this.getWeekdayName(date);
+    return `${weekday} ${date.getDate()} ${this.months[date.getMonth()]} ${date.getFullYear()}`;
+  }
+
+  getNotePreview(note: string): string {
+    if (!note) return '';
+    return note.length > 50 ? note.substring(0, 50) + '...' : note;
   }
 
   changeMonth(offset: number): void {
