@@ -17,25 +17,36 @@
   width: 380px;
   max-width: 100%;
   padding: 20px;
-  background: #1a1a1a;
-  border-radius: 15px;
-  border: 2px solid #ffcc00;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, rgba(30, 10, 62, 0.95), rgba(26, 0, 50, 0.9));
+  border-radius: 20px;
+  border: 2px solid rgba(255, 204, 0, 0.8);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 60px rgba(255, 204, 0, 0.1);
   display: flex;
   flex-direction: column;
   font-family: 'Segoe UI', sans-serif;
   color: #fff;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.calculator-container:hover {
+  border-color: #00ff88;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4), 0 0 80px rgba(0, 255, 136, 0.15);
+  transform: translateY(-2px);
 }
 
 .display {
-  background: #2c2c2c;
-  border-radius: 10px;
+  background: rgba(20, 10, 40, 0.8);
+  border-radius: 12px;
   padding: 15px;
   margin-bottom: 15px;
   text-align: right;
   font-size: 1.5rem;
   word-wrap: break-word;
   min-height: 60px;
+  border: 1px solid rgba(255, 204, 0, 0.3);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .display input {
@@ -51,6 +62,8 @@
   color: #ffcc00;
   font-size: 1.2rem;
   margin-top: 5px;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
 }
 
 .buttons {
@@ -62,30 +75,50 @@
 button {
   padding: 15px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: all 0.15s;
-  background: #007bff;
+  transition: var(--transition-fast);
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
   min-height: 50px;
   min-width: 50px;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
 }
 
 button:hover {
   transform: translateY(-2px);
-  background: #0056b3;
+  background: linear-gradient(135deg, #0056b3, #004085);
+  box-shadow: 0 4px 16px rgba(0, 123, 255, 0.5);
+}
+
+button:active {
+  transform: translateY(0);
 }
 
 button.function {
-  background: #28a745;
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+button.function:hover {
+  background: linear-gradient(135deg, #1e7e34, #145523);
+  box-shadow: 0 4px 16px rgba(40, 167, 69, 0.5);
 }
 
 button.equals {
-  background: #ffc107;
+  background: linear-gradient(135deg, #ffc107, #ff9800);
   color: #000;
+  box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+  font-weight: 700;
+}
+
+button.equals:hover {
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+  box-shadow: 0 4px 16px rgba(255, 193, 7, 0.5);
 }
 
 button.zero {
@@ -97,16 +130,25 @@ button.zero {
   width: 380px;
   max-width: 100%;
   height: 415px;
-  background: #1a1a1a;
-  border-radius: 15px;
-  border: 2px solid #ffcc00;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, rgba(30, 10, 62, 0.95), rgba(26, 0, 50, 0.9));
+  border-radius: 20px;
+  border: 2px solid rgba(255, 204, 0, 0.8);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 60px rgba(255, 204, 0, 0.1);
   padding: 20px;
   color: #fff;
   font-family: 'Segoe UI', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center; 
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.notes-container:hover {
+  border-color: #00ff88;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4), 0 0 80px rgba(0, 255, 136, 0.15);
+  transform: translateY(-2px);
 }
 
 .notes-container textarea {
@@ -127,41 +169,49 @@ button.zero {
   color: #ffcc00;
   text-align: center;
   margin-bottom: 10px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(255, 204, 0, 0.4);
 }
 
 .notes-container textarea {
   width: 93%;
   height: 250px;
-  border-radius: 10px;
-  border: 1px solid #444;
-  background: #2c2c2c;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 204, 0, 0.3);
+  background: rgba(20, 10, 40, 0.8);
   color: white;
   padding: 10px;
   font-size: 1rem;
   resize: none;
+  transition: var(--transition-fast);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .notes-container textarea:focus {
   outline: none;
   border-color: #ffcc00;
-  box-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
+  box-shadow: 0 0 16px rgba(255, 204, 0, 0.5), inset 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .notes-container button {
   width: 100%;
   margin-top: 10px;
   padding: 12px;
-  border-radius: 10px;
+  border-radius: 12px;
   border: none;
-  background: #dc3545;
+  background: linear-gradient(135deg, #dc3545, #b02a37);
   color: white;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
 }
 
 .notes-container button:hover {
-  background: #b02a37;
+  background: linear-gradient(135deg, #b02a37, #8b1f2b);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(220, 53, 69, 0.5);
 }
 
 /* responsiv */
@@ -280,36 +330,45 @@ button.zero {
 /* Light mode styles */
 body.light-mode .calculator-container,
 body.light-mode .notes-container {
-  background: #ffffff;
-  color: #333333;
-  border-color: #ccc;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 249, 250, 0.95));
+  color: var(--light-text-primary);
+  border-color: var(--light-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 60px rgba(255, 149, 0, 0.05);
+}
+
+body.light-mode .calculator-container:hover,
+body.light-mode .notes-container:hover {
+  border-color: var(--light-accent);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12), 0 0 80px rgba(255, 149, 0, 0.1);
 }
 
 body.light-mode .display {
-  background: #f5f5f5;
-  color: #333333;
+  background: rgba(248, 249, 250, 0.9);
+  color: var(--light-text-primary);
+  border-color: var(--light-border);
 }
 
 body.light-mode .display input {
-  color: #333333;
+  color: var(--light-text-primary);
 }
 
 body.light-mode .result {
-  color: #ff8800;
+  color: var(--light-accent);
+  text-shadow: 0 0 8px rgba(255, 149, 0, 0.3);
 }
 
 body.light-mode .notes-container textarea {
-  background: #f5f5f5;
-  color: #333333;
-  border-color: #ccc;
+  background: rgba(248, 249, 250, 0.9);
+  color: var(--light-text-primary);
+  border-color: var(--light-border);
 }
 
 body.light-mode .notes-container textarea:focus {
-  border-color: #ffcc00;
-  box-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
+  border-color: var(--light-accent);
+  box-shadow: 0 0 16px rgba(255, 149, 0, 0.3), inset 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 body.light-mode .notes-container h3 {
-  color: #ff8800;
+  color: var(--light-accent);
+  text-shadow: 0 2px 8px rgba(255, 149, 0, 0.2);
 }

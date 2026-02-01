@@ -6,24 +6,30 @@
   height: 50px;
   margin: 2rem auto 1rem auto;
   padding: 1rem;
-  border: 2px solid #ffcc00;
+  border: 2px solid rgba(255, 204, 0, 0.8);
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  background-color: #000000; 
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 204, 0, 0.15);
+  background: linear-gradient(135deg, rgba(30, 10, 62, 0.95), rgba(26, 0, 50, 0.9));
   color: #ffffff;
   text-align: center;
-  cursor: pointer; /* visa att det är klickbart */
-  transition: border 0.2s;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .klocka-container:hover {
-  border: 2px solid #238b5a; 
+  border-color: #00ff88; 
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4), 0 0 50px rgba(0, 255, 136, 0.2);
+  transform: scale(1.05);
 }
 
 .klocka-container h1 {
   font-size: 2.5rem;
   margin: 0;
   letter-spacing: 1px;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(255, 204, 0, 0.3);
 }
 
 /* ta bort standard länk-styling */
@@ -34,14 +40,21 @@ a {
 }
  
 .klocka-link {
-  display: inline-block; /* gör att a bara tar upp innehållets storlek */
+  display: inline-block;
   text-decoration: none;
   width: 268px;
-  border: 2px solid #ffcc00;
+  border: 2px solid rgba(255, 204, 0, 0.8);
   border-radius: 50%;
   color: inherit;
-  background-color: #1a0032;
+  background: linear-gradient(135deg, rgba(26, 0, 50, 0.8), rgba(10, 1, 24, 0.7));
   margin-top: 30px;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.klocka-link:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* Mobile styles */
@@ -83,20 +96,26 @@ a {
 
 /* Light mode styles */
 body.light-mode .klocka-container {
-  background-color: #ffffff !important;
-  color: #1e1e2f !important;
-  border-color: #ccc !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 249, 250, 0.95)) !important;
+  color: var(--light-text-primary) !important;
+  border-color: var(--light-border) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 0 30px rgba(255, 149, 0, 0.1) !important;
 }
 
 body.light-mode .klocka-container:hover {
-  border-color: #ffcc00 !important;
+  border-color: var(--light-accent) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12), 0 0 50px rgba(255, 149, 0, 0.15) !important;
+}
+
+body.light-mode .klocka-container h1 {
+  text-shadow: 0 2px 10px rgba(255, 149, 0, 0.1);
 }
 
 body.light-mode .klocka-link {
-  background-color: #ffffff !important;
-  border-color: #ccc !important;
+  background: linear-gradient(135deg, rgba(248, 249, 250, 0.95), rgba(255, 255, 255, 0.9)) !important;
+  border-color: var(--light-border) !important;
 }
 
 body.light-mode .klocka-link:hover {
-  border-color: #ffcc00 !important;
+  border-color: var(--light-accent) !important;
 }
