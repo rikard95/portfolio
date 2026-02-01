@@ -32,7 +32,7 @@ Once connected:
 
 ## Continuous Integration (GitHub Actions)
 
-The repository includes a CI workflow (`.github/workflows/ci.yml`) that runs on every push:
+The repository includes a CI workflow (`.github/workflows/ci.yml`) that runs on pushes to the `main` branch and on pull requests targeting `main`:
 
 1. Checks out the code
 2. Sets up Node.js environment (v20)
