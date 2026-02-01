@@ -383,8 +383,6 @@
     align-items: stretch;
     gap: 8px;
     padding: 0.8rem;
-    background-color: #1a1a1a;
-    border: 1px solid #ffcc00;
     border-radius: 8px;
     margin-bottom: 0.5rem;
   }
@@ -464,7 +462,7 @@ body.light-mode .active-alarm {
 }
 
 body.light-mode .inactive-alarm {
-  color: #666;
+  color: #4a4a68;
 }
 
 body.light-mode .alarm-item {

@@ -476,3 +476,7 @@ body.light-mode .todo-edit input {
   color: var(--light-text-primary);
   border-color: var(--light-border);
 }
+
+body.light-mode .todo-item input[type="checkbox"] {
+  accent-color: #00c853;
+}

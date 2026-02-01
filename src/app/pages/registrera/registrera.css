@@ -67,12 +67,12 @@
 }
 
 .register-message {
-  color: red;
+  color: #ff3333;
   margin-top: 10px;
 }
 
 .error {
-  color: red;
+  color: #ff3333;
   font-size: 12px;
   margin-bottom: 5px;
 }
@@ -134,6 +134,11 @@ body.light-mode .back-button {
 
 body.light-mode .back-button:hover {
   background: linear-gradient(135deg, #cccccc, #b8b8b8);
+}
+
+body.light-mode .error,
+body.light-mode .register-message {
+  color: #c41e3a;
 }
 
 /* Mobile styles */

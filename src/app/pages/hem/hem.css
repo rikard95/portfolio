@@ -87,7 +87,7 @@ a:hover::after {
   border: 2px solid #ffcc00;
   border-radius: 50%;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  background-color: #000000; 
+  background: linear-gradient(135deg, rgba(30, 10, 62, 0.95), rgba(26, 0, 50, 0.9));
   color: #ffffff;
   text-align: center;
 }

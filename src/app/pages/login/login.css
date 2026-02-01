@@ -140,13 +140,13 @@ img {
 }
 
 .error {
-  color: red;
+  color: #ff3333;
   font-size: 12px;
   margin-bottom: 5px;
 }
 
 .login-message {
-  color: red;
+  color: #ff3333;
   margin-top: 10px;
 }
 
@@ -188,4 +188,9 @@ body.light-mode .login-box button:hover {
 
 body.light-mode img {
   filter: invert(0%);
+}
+
+body.light-mode .error,
+body.light-mode .login-message {
+  color: #c41e3a;
 }
