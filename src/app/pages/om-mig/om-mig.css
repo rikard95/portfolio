@@ -2,7 +2,7 @@
 .welcome-container {
   max-width: 800px;
   width: 90%;
-  margin: 4rem auto;       
+  margin: 0 auto 4rem auto;       
   padding: 2.5rem;
   background: linear-gradient(135deg, rgba(30, 10, 62, 0.95), rgba(26, 0, 50, 0.9));
   border: 2px solid rgba(255, 204, 0, 0.8);
@@ -68,7 +68,7 @@ body:not(.light-mode) .welcome-container p {
 /* Responsiv styling */
 @media (max-width: 768px) {
   .welcome-container {
-    margin: 2rem auto;
+    margin: 0 auto 2rem auto;
     padding: 1.5rem;
     width: 90%;
   }
@@ -91,7 +91,7 @@ body:not(.light-mode) .welcome-container p {
 
 @media (max-width: 480px) {
   .welcome-container {
-    margin: 1.5rem auto;
+    margin: 0 auto 1.5rem auto;
     padding: 1.25rem;
     width: 95%;
   }
