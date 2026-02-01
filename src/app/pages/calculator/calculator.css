@@ -355,6 +355,6 @@ body.light-mode .notes-container textarea:focus {
 }
 
 body.light-mode .notes-container h3 {
-  color: var(--light-accent);
-  text-shadow: 0 2px 8px rgba(255, 149, 0, 0.2);
+  color: var(--light-text-primary);
+  text-shadow: none;
 }

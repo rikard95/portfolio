@@ -376,8 +376,8 @@ body.light-mode .weekday-header {
 }
 
 body.light-mode .weekday-name {
-  color: var(--light-accent);
-  text-shadow: 0 0 8px rgba(255, 140, 66, 0.2);
+  color: var(--light-text-primary);
+  text-shadow: none;
 }
 
 body.light-mode .kalender-container {
