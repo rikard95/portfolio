@@ -1,0 +1,30 @@
+# Dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Testing
+coverage
+*.spec.ts
+karma.conf.js
+tsconfig.spec.json
+__screenshots__
+
+# Development
+.vscode
+.idea
+*.log
+
+# Git
+.git
+.github
+
+# Documentation
+README.md
+DEPLOYMENT.md
+pull_request_reviews
+
+# Misc
+.DS_Store
+Thumbs.db
+.editorconfig
