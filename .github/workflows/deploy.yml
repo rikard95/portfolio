@@ -29,19 +29,37 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Check if VERCEL_TOKEN is set
+        id: check_token
+        run: |
+          if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then
+            echo "has_token=false" >> $GITHUB_OUTPUT
+            echo "### ⚠️ Deployment Skipped" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "The \`VERCEL_TOKEN\` secret is not configured." >> $GITHUB_STEP_SUMMARY
+            echo "Please see [SETUP.md](https://github.com/${{ github.repository }}/blob/${{ github.sha }}/SETUP.md) for configuration instructions." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "has_token=true" >> $GITHUB_OUTPUT
+          fi
+
       - name: Install Vercel CLI
+        if: steps.check_token.outputs.has_token == 'true'
         run: npm install -g vercel
 
       - name: Pull Vercel Environment Information
+        if: steps.check_token.outputs.has_token == 'true'
         run: vercel pull --yes --environment=${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }} --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Build Project Artifacts
+        if: steps.check_token.outputs.has_token == 'true'
         run: vercel build ${{ github.ref == 'refs/heads/main' && '--prod' || '' }} --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy to Vercel
+        if: steps.check_token.outputs.has_token == 'true'
         run: vercel deploy --prebuilt ${{ github.ref == 'refs/heads/main' && '--prod' || '' }} --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deployment Summary
+        if: steps.check_token.outputs.has_token == 'true'
         run: |
           echo "### Deployment Complete! 🚀" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
