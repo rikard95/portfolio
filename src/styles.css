@@ -13,15 +13,15 @@
   --dark-success: #00ff88;
   
   /* Light mode colors */
-  --light-bg-primary: #faf9f6;
-  --light-bg-secondary: #f5f3f0;
-  --light-bg-card: #ffffff;
+  --light-bg-primary: #f0f4f8;
+  --light-bg-secondary: #e1e8ed;
+  --light-bg-card: #f8fafb;
   --light-text-primary: #000000;
   --light-text-secondary: #1a1a1a;
-  --light-border: #d4d2ce;
-  --light-accent: #ff8c42;
-  --light-accent-hover: #ff6f00;
-  --light-success: #00a651;
+  --light-border: #cbd5e0;
+  --light-accent: #3b82f6;
+  --light-accent-hover: #2563eb;
+  --light-success: #10b981;
   
   /* Shared */
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
