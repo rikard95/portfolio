@@ -126,28 +126,16 @@ body.light-mode .welcome-container h1 {
 }
 
 body.light-mode .welcome-container p {
-  color: var(--light-text-secondary);
+  color: var(--light-text-primary);
 }
 
 body.light-mode img.profile-picture {
   border-color: var(--light-border);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1), 0 0 30px rgba(255, 149, 0, 0.1);
+  filter: none;
 }
 
 body.light-mode img.profile-picture:hover {
   border-color: var(--light-accent);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15), 0 0 40px rgba(255, 149, 0, 0.2);
-}
-
-body.light-mode .welcome-container:hover {
-  border-color: #ffcc00;
-}
-
-body.light-mode .welcome-container h1 {
-  color: #1e1e2f;
-}
-
-body.light-mode img.profile-picture {
-  filter: none;
-  border-color: #ccc;
 }
