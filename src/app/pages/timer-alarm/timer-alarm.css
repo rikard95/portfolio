@@ -2,11 +2,11 @@
   max-width: 900px;        
   width: 90%;             
   margin: 4rem auto;       
-  padding: 2rem;
-  background-color: #000000;
-  border: 2px solid #ffcc00;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 2.5rem;
+  background: linear-gradient(135deg, rgba(30, 10, 62, 0.95), rgba(26, 0, 50, 0.9));
+  border: 2px solid rgba(255, 204, 0, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 60px rgba(255, 204, 0, 0.1);
   color: #ffffff;
   text-align: center;
   line-height: 1.7;
@@ -14,29 +14,51 @@
   display: flex;
   flex-direction: column;
   align-items: center;     
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.timer-alarm-container:hover {
+  border-color: #00ff88;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4), 0 0 80px rgba(0, 255, 136, 0.15);
+  transform: translateY(-2px);
 }
 
 .timer-alarm-container h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(255, 204, 0, 0.3);
 }
 
 .timer-alarm-container h2 {
   font-size: 1.8rem;
   margin: 1rem 0;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(255, 204, 0, 0.2);
 }
 
 .time-display {
   font-size: 2rem;
   margin: 1rem auto;   
-  background-color: #1a0032;
+  background: linear-gradient(135deg, rgba(42, 13, 62, 0.9), rgba(26, 0, 50, 0.8));
   padding: 10px;
-  border-radius: 10px;
-  border: 2px solid #ffcc00;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 204, 0, 0.8);
   width: 100%;
   max-width: 300px;      
   text-align: center;    
   box-sizing: border-box;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: var(--transition-smooth);
+}
+
+.time-display:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4), inset 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -55,44 +77,59 @@
 .alarm-picker select {
   width: 80px;
   padding: 8px;
-  border-radius: 8px;
-  border: 1px solid #444;
-  background-color: #2c2c2c;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 204, 0, 0.3);
+  background: rgba(20, 10, 40, 0.8);
   color: #fff;
   font-size: 1rem;
   text-align: center;
   box-sizing: border-box;
+  transition: var(--transition-fast);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.timer-controls input:focus,
+.alarm-section input:focus,
+.alarm-picker select:focus {
+  outline: none;
+  border-color: #ffcc00;
+  box-shadow: 0 0 16px rgba(255, 204, 0, 0.5), inset 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .timer-controls button,
 .alarm-section button,
 .alarm-picker button {
   padding: 8px 12px;
-  border-radius: 8px;
+  border-radius: 12px;
   border: none;
   cursor: pointer;
   font-weight: bold;
-  transition: all 0.2s;
+  transition: var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .timer-controls button {
-  background-color: #007bff;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
 }
 
 .timer-controls button:hover {
-  background-color: #0056b3;
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 123, 255, 0.5);
 }
 
 .alarm-section button,
 .alarm-picker button {
-  background-color: #28a745;
+  background: linear-gradient(135deg, #28a745, #1e7e34);
   color: white;
 }
 
 .alarm-section button:hover,
 .alarm-picker button:hover {
-  background-color: #1e7e34;
+  background: linear-gradient(135deg, #1e7e34, #145523);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(40, 167, 69, 0.5);
 }
 
 .alarm-overlay {
@@ -101,36 +138,58 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .alarm-popup {
-  background: #00926d;
-  border: 3px solid #00ff59;
-  color: #000000;
+  background: linear-gradient(135deg, #00926d, #006d51);
+  border: 3px solid #00ff88;
+  color: #ffffff;
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: 20px;
   text-align: center;
   font-size: 1.3rem;
-  box-shadow: 0 0 20px rgb(46, 250, 0);
+  box-shadow: 0 0 40px rgba(0, 255, 136, 0.8), 0 8px 32px rgba(0, 0, 0, 0.5);
+  animation: pulse 0.8s ease-in-out infinite;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
 .alarm-popup button {
   margin-top: 1rem;
   padding: 0.7rem 1.5rem;
-  border: 1px solid #ffcc00;
-  background: #1a1a1a;
+  border: 2px solid #ffcc00;
+  background: linear-gradient(135deg, #1a1a1a, #000000);
   color: #fff;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
+  font-weight: 700;
+  transition: var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
 .alarm-popup button:hover {
-  background: #fd0000;
+  background: linear-gradient(135deg, #dc3545, #b02a37);
+  border-color: #ff0000;
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(220, 53, 69, 0.6);
 }
 
 .alarm-item {
@@ -140,6 +199,17 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 5px;
+  background: linear-gradient(135deg, rgba(42, 13, 62, 0.8), rgba(26, 0, 50, 0.7));
+  padding: 0.5rem;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 204, 0, 0.3);
+  transition: var(--transition-smooth);
+}
+
+.alarm-item:hover {
+  border-color: #00ff88;
+  box-shadow: 0 4px 16px rgba(0, 255, 136, 0.3);
+  transform: translateY(-2px);
 }
 
 .alarm-item span {
@@ -147,8 +217,9 @@
 }
 
 .active-alarm {
-  color: #00ff99;
+  color: #00ff88;
   font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
 }
 
 .inactive-alarm {
@@ -156,21 +227,25 @@
 }
 
 .alarm-item button:first-of-type {
-  background-color: #007bff;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: #fff;
 }
 
 .alarm-item button:first-of-type:hover {
-  background-color: #0056b3;
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 123, 255, 0.5);
 }
 
 .alarm-item button:last-of-type {
-  background-color: #dc3545;
+  background: linear-gradient(135deg, #dc3545, #b02a37);
   color: #fff;
 }
 
 .alarm-item button:last-of-type:hover {
-  background-color: #a71d2a;
+  background: linear-gradient(135deg, #b02a37, #8b1f2b);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(220, 53, 69, 0.5);
 }
 
 /* Responsivitet */
@@ -344,40 +419,48 @@
 
 /* Light mode styles */
 body.light-mode .timer-alarm-container {
-  background-color: #ffffff;
-  color: #333333;
-  border-color: #ccc;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 249, 250, 0.95));
+  color: var(--light-text-primary);
+  border-color: var(--light-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 60px rgba(255, 149, 0, 0.05);
+}
+
+body.light-mode .timer-alarm-container:hover {
+  border-color: var(--light-accent);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12), 0 0 80px rgba(255, 149, 0, 0.1);
 }
 
 body.light-mode .timer-alarm-container h1,
 body.light-mode .timer-alarm-container h2 {
-  color: #333333;
+  color: var(--light-text-primary);
+  text-shadow: 0 2px 10px rgba(255, 149, 0, 0.1);
 }
 
 body.light-mode .time-display {
-  background-color: #f5f5f5;
-  color: #333333;
-  border-color: #ccc;
+  background: linear-gradient(135deg, rgba(248, 249, 250, 0.95), rgba(255, 255, 255, 0.9));
+  color: var(--light-text-primary);
+  border-color: var(--light-border);
+  text-shadow: 0 0 10px rgba(255, 149, 0, 0.3);
 }
 
 body.light-mode .timer-controls input,
 body.light-mode .alarm-section input,
 body.light-mode .alarm-picker select {
-  background-color: #f5f5f5;
-  color: #333333;
-  border-color: #ccc;
+  background: rgba(248, 249, 250, 0.9);
+  color: var(--light-text-primary);
+  border-color: var(--light-border);
 }
 
 body.light-mode .timer-controls input:focus,
 body.light-mode .alarm-section input:focus,
 body.light-mode .alarm-picker select:focus {
-  border-color: #ffcc00;
-  box-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
+  border-color: var(--light-accent);
+  box-shadow: 0 0 16px rgba(255, 149, 0, 0.3), inset 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 body.light-mode .active-alarm {
-  color: #28a745;
+  color: var(--light-success);
+  text-shadow: 0 0 10px rgba(0, 200, 83, 0.3);
 }
 
 body.light-mode .inactive-alarm {
@@ -385,6 +468,11 @@ body.light-mode .inactive-alarm {
 }
 
 body.light-mode .alarm-item {
-  background-color: #f5f5f5;
-  border-color: #ccc;
+  background: linear-gradient(135deg, rgba(248, 249, 250, 0.9), rgba(255, 255, 255, 0.85));
+  border-color: var(--light-border);
+}
+
+body.light-mode .alarm-item:hover {
+  border-color: var(--light-accent);
+  box-shadow: 0 4px 16px rgba(255, 149, 0, 0.2);
 }
