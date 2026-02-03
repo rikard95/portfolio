@@ -24,32 +24,60 @@
 
 /* Light mode styles */
 body.light-mode .project-container {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 249, 250, 0.95)) !important;
-  color: var(--light-text-primary);
+  background: linear-gradient(135deg, rgba(248, 249, 250, 0.98), rgba(241, 243, 245, 0.95)) !important;
+  color: #1a1a1a;
   border-color: var(--light-border) !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 60px rgba(255, 149, 0, 0.05) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 60px rgba(59, 130, 246, 0.05) !important;
 }
 
 body.light-mode .project-container:hover {
   border-color: var(--light-accent) !important;
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12), 0 0 80px rgba(255, 149, 0, 0.1) !important;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12), 0 0 80px rgba(59, 130, 246, 0.1) !important;
 }
 
 body.light-mode .project-container h1 {
-  color: var(--light-text-primary);
-  text-shadow: 0 2px 10px rgba(255, 149, 0, 0.1);
+  color: #1a1a1a;
+  text-shadow: 0 2px 10px rgba(59, 130, 246, 0.1);
 }
 
 body.light-mode .todo-btn {
-  background: linear-gradient(135deg, rgba(248, 249, 250, 0.98), rgba(255, 255, 255, 0.95)) !important;
-  color: var(--light-text-primary);
+  background: linear-gradient(135deg, rgba(241, 243, 245, 0.98), rgba(248, 249, 250, 0.95)) !important;
+  color: #1a1a1a;
   border-color: var(--light-border) !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
 }
 
 body.light-mode .todo-btn:hover {
-  background: linear-gradient(135deg, rgba(255, 149, 0, 0.15), rgba(255, 170, 51, 0.1)) !important;
-  color: var(--light-text-primary);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(96, 165, 250, 0.1)) !important;
+  color: #1a1a1a;
   border-color: var(--light-accent) !important;
-  box-shadow: 0 6px 20px rgba(255, 149, 0, 0.2) !important;
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Override Tailwind classes in light mode */
+body.light-mode a {
+  color: #1a1a1a !important;
+}
+
+body.light-mode a:hover {
+  color: var(--light-accent) !important;
+}
+
+body.light-mode .group div {
+  color: #1a1a1a !important;
+}
+
+body.light-mode .group:hover div {
+  color: var(--light-accent) !important;
+}
+
+body.light-mode .bg-slate-800\/50,
+body.light-mode .dark\:bg-slate-800\/50 {
+  background: rgba(241, 243, 245, 0.95) !important;
+  border-color: var(--light-border) !important;
+}
+
+body.light-mode .border-slate-700,
+body.light-mode .dark\:border-slate-700 {
+  border-color: var(--light-border) !important;
 }

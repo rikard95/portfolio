@@ -42,10 +42,10 @@ header.scrolled {
 
 /* Light mode overrides */
 :host-context(body.light-mode) header {
-  background: rgba(255, 255, 255, 0.9) !important;
-  color: var(--light-text-primary);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 0 40px rgba(255, 149, 0, 0.1) !important;
-  border-bottom-color: rgba(255, 149, 0, 0.8) !important;
+  background: rgba(248, 249, 250, 0.95) !important;
+  color: #1a1a1a;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 0 40px rgba(59, 130, 246, 0.1) !important;
+  border-bottom-color: rgba(59, 130, 246, 0.3) !important;
 }
 
 :host-context(body.light-mode) .logo img {
@@ -53,17 +53,17 @@ header.scrolled {
 }
 
 :host-context(body.light-mode) .nav-link {
-  color: var(--light-text-primary);
+  color: #1a1a1a;
 }
 
 :host-context(body.light-mode) .nav-link:hover {
   color: var(--light-accent);
-  text-shadow: 0 0 10px rgba(255, 149, 0, 0.3);
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
 }
 
 :host-context(body.light-mode) .nav-link.active {
   color: var(--light-accent);
-  text-shadow: 0 0 8px rgba(255, 149, 0, 0.2);
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
 }
 
 :host-context(body.light-mode) .nav-link::after {
@@ -71,16 +71,16 @@ header.scrolled {
 }
 
 :host-context(body.light-mode) .dark-mode-toggle {
-  color: var(--light-text-primary);
-  border-color: rgba(255, 149, 0, 0.8) !important;
-  background: linear-gradient(135deg, rgba(255, 149, 0, 0.1), rgba(255, 149, 0, 0.05)) !important;
-  box-shadow: 0 2px 8px rgba(255, 149, 0, 0.2) !important;
+  color: #1a1a1a;
+  border-color: rgba(59, 130, 246, 0.5) !important;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05)) !important;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2) !important;
 }
 
 :host-context(body.light-mode) .dark-mode-toggle:hover {
-  background: linear-gradient(135deg, rgba(255, 149, 0, 0.25), rgba(255, 149, 0, 0.15)) !important;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(59, 130, 246, 0.15)) !important;
   border-color: var(--light-accent) !important;
-  box-shadow: 0 4px 16px rgba(255, 149, 0, 0.4) !important;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4) !important;
 }
 
 /* Responsive adjustments */

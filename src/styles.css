@@ -25,9 +25,31 @@
     @apply bg-slate-950 text-slate-100 transition-colors duration-300;
   }
 
-  /* Light mode - Clean white background */
+  /* Light mode - Clean light background (NOT pure white) */
   body.light-mode {
-    @apply bg-white text-slate-900;
+    @apply bg-[#f8f9fa] text-[#1a1a1a];
+  }
+  
+  /* Override Tailwind text classes in light mode */
+  body.light-mode .text-slate-100,
+  body.light-mode .dark\:text-slate-100,
+  body.light-mode .text-slate-200,
+  body.light-mode .dark\:text-slate-200,
+  body.light-mode .text-slate-300,
+  body.light-mode .dark\:text-slate-300 {
+    color: #1a1a1a !important;
+  }
+  
+  body.light-mode .bg-slate-800\/50,
+  body.light-mode .dark\:bg-slate-800\/50 {
+    background: rgba(241, 243, 245, 0.95) !important;
+  }
+  
+  body.light-mode .border-slate-700,
+  body.light-mode .dark\:border-slate-700,
+  body.light-mode .border-slate-600,
+  body.light-mode .dark\:border-slate-600 {
+    border-color: #dee2e6 !important;
   }
 }
 
