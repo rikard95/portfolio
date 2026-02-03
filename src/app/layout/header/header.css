@@ -12,7 +12,7 @@ header.scrolled {
 
 /* Light mode scrolled header */
 :host-context(body.light-mode) header.scrolled {
-  background: rgba(96, 165, 250, 0.98) !important;
+  background: rgba(248, 249, 250, 0.98) !important;
   box-shadow: 0 6px 32px rgba(0, 0, 0, 0.15), 0 0 60px rgba(59, 130, 246, 0.2) !important;
 }
 
@@ -58,7 +58,7 @@ header.scrolled {
 
 /* Light mode overrides */
 :host-context(body.light-mode) header {
-  background: rgba(96, 165, 250, 0.95) !important;
+  background: rgba(248, 249, 250, 0.95) !important;
   color: #1a1a1a;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 0 40px rgba(59, 130, 246, 0.1) !important;
   border-bottom-color: rgba(59, 130, 246, 0.3) !important;
