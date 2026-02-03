@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Transition variables */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.15s ease;
+  
+  /* Light mode colors (for CSS usage) */
+  --light-text-primary: #000000;
+  --light-border: #cbd5e0;
+  --light-accent: #3b82f6;
+}
+
 @layer base {
   html {
     @apply scroll-smooth;
