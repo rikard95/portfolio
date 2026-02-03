@@ -126,7 +126,7 @@ body.light-mode .notes-heading {
 /* Light mode overrides */
 body.light-mode .calculator-container,
 body.light-mode .notes-container {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 249, 250, 0.95));
+  background: linear-gradient(135deg, rgba(241, 245, 249, 0.98), rgba(226, 232, 240, 0.95));
   color: var(--light-text-primary);
   border-color: var(--light-border);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 60px rgba(255, 149, 0, 0.05);
@@ -139,7 +139,7 @@ body.light-mode .notes-container:hover {
 }
 
 body.light-mode .display {
-  background: rgba(248, 249, 250, 0.9);
+  background: rgba(226, 232, 240, 0.9);
   color: var(--light-text-primary);
   border-color: var(--light-border);
 }
@@ -154,7 +154,7 @@ body.light-mode .result {
 }
 
 body.light-mode .notes-textarea {
-  background: rgba(248, 249, 250, 0.9);
+  background: rgba(226, 232, 240, 0.9);
   color: var(--light-text-primary);
   border-color: var(--light-border);
 }
