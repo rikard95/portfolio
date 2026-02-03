@@ -3,36 +3,28 @@ module.exports = {
   content: [
     "./src/**/*.{html,ts}",
   ],
+  darkMode: 'class',
   theme: {
-    screens: {
-      // Max-width breakpoints to match original CSS behavior
-      'xs': {'max': '480px'},
-      'sm': {'max': '600px'},
-      'md': {'max': '900px'},
-      'lg': {'max': '1024px'},
-      'xl': {'max': '1280px'},
-      '2xl': {'max': '1536px'},
-    },
     extend: {
       colors: {
-        // Dark mode colors
-        'dark-bg-primary': '#0a0118',
-        'dark-bg-secondary': '#1a0032',
-        'dark-bg-card': '#1e0a3e',
-        'dark-text-primary': '#ffffff',
-        'dark-text-secondary': '#b8b8d0',
-        'dark-border': '#3d1f5c',
-        'dark-accent': '#ffcc00',
-        'dark-accent-hover': '#ffd633',
-        'dark-success': '#00ff88',
+        // Dark mode colors - Professional slate-based palette
+        'dark-bg-primary': '#0f172a',
+        'dark-bg-secondary': '#1e293b',
+        'dark-bg-card': '#334155',
+        'dark-text-primary': '#f1f5f9',
+        'dark-text-secondary': '#94a3b8',
+        'dark-border': '#475569',
+        'dark-accent': '#3b82f6',
+        'dark-accent-hover': '#60a5fa',
+        'dark-success': '#10b981',
         
-        // Light mode colors
-        'light-bg-primary': '#f0f4f8',
-        'light-bg-secondary': '#e1e8ed',
-        'light-bg-card': '#f8fafb',
-        'light-text-primary': '#000000',
-        'light-text-secondary': '#1a1a1a',
-        'light-border': '#cbd5e0',
+        // Light mode colors - Clean, bright palette
+        'light-bg-primary': '#ffffff',
+        'light-bg-secondary': '#f8fafc',
+        'light-bg-card': '#f1f5f9',
+        'light-text-primary': '#0f172a',
+        'light-text-secondary': '#475569',
+        'light-border': '#e2e8f0',
         'light-accent': '#3b82f6',
         'light-accent-hover': '#2563eb',
         'light-success': '#10b981',
@@ -41,16 +33,8 @@ module.exports = {
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       boxShadow: {
-        'sm-custom': '0 2px 8px rgba(0, 0, 0, 0.1)',
-        'md-custom': '0 4px 16px rgba(0, 0, 0, 0.15)',
-        'lg-custom': '0 8px 32px rgba(0, 0, 0, 0.2)',
-        'xl-custom': '0 12px 48px rgba(0, 0, 0, 0.25)',
-      },
-      borderRadius: {
-        'sm-custom': '8px',
-        'md-custom': '12px',
-        'lg-custom': '16px',
-        'xl-custom': '24px',
+        'glow': '0 0 20px rgba(59, 130, 246, 0.5)',
+        'glow-lg': '0 0 30px rgba(59, 130, 246, 0.6)',
       },
       transitionTimingFunction: {
         'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
@@ -58,5 +42,4 @@ module.exports = {
     },
   },
   plugins: [],
-  darkMode: 'class',
 }

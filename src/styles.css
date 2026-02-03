@@ -5,15 +5,6 @@
 :root {
   /* Navbar height */
   --navbar-height: 80px;
-  
-  /* Transition variables */
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-fast: all 0.15s ease;
-  
-  /* Light mode colors (for CSS usage) */
-  --light-text-primary: #000000;
-  --light-border: #cbd5e0;
-  --light-accent: #3b82f6;
 }
 
 @layer base {
@@ -22,38 +13,28 @@
   }
 
   html, body {
-    @apply m-0 p-0 min-h-full font-sans overflow-x-hidden overflow-y-auto box-border;
-    scrollbar-width: none; 
-    -ms-overflow-style: none;
+    @apply m-0 p-0 min-h-full font-sans overflow-x-hidden box-border;
   }
 
   *, *::before, *::after {
     @apply box-border;
   }
 
-  html::-webkit-scrollbar,
-  body::-webkit-scrollbar {
-    display: none; 
-  }
-
+  /* Dark mode - Professional slate background */
   body {
-    @apply flex text-center flex-col min-h-screen w-full max-w-full text-base leading-relaxed;
-    background: linear-gradient(135deg, #0a0118 0%, #1a0032 100%);
-    color: #ffffff;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @apply bg-slate-950 text-slate-100 transition-colors duration-300;
   }
 
-  /* Light mode styles */
+  /* Light mode - Clean white background */
   body.light-mode {
-    background: linear-gradient(135deg, #f0f4f8 0%, #e1e8ed 100%);
-    @apply text-light-text-primary;
+    @apply bg-white text-slate-900;
   }
 }
 
 @layer components {
-  body.login-page .logga-ut {
+  /* Hide elements on login/register pages */
+  body.login-page .logga-ut,
+  body.login-page .top {
     @apply hidden;
   }
 
@@ -61,43 +42,10 @@
     @apply hidden;
   }
 
-  body.login-page .top {
-    @apply hidden;
-  }
-
-  app-hem {
-    @apply bg-transparent;
-  }
-
   app-root {
-    @apply flex flex-col flex-1;
+    @apply flex flex-col min-h-screen;
   }
-
-  /* Light mode header overrides */
-  body.light-mode header {
-    background-color: rgba(255, 255, 255, 0.95);
-    @apply text-light-text-primary border-b-2 border-light-accent;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  }
-
-  body.light-mode header nav a {
-    @apply text-light-text-primary;
-  }
-
-  body.light-mode header nav a:hover,
-  body.light-mode header nav a.active {
-    @apply text-light-accent;
-  }
-
-  body.light-mode .dark-mode-toggle {
-    @apply text-light-text-primary border-light-accent;
-  }
-
-  /* Global light mode overrides for all components */
-  body.light-mode .welcome-container {
-    background: #f8fafb !important;
-    color: #000000 !important;
-    border-color: #cbd5e0 !important;
+}
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
   }
 
