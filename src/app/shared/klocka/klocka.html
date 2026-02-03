@@ -1,5 +1,13 @@
-<a routerLink="/timer-alarm" routerLinkActive="active" class="klocka-link">
-  <div class="klocka-container">
-    <h1>{{ currentTime }}</h1>
-  </div>
-</a>
+<div class="flex justify-center items-center pt-8 sm:pt-12 mb-[47px]">
+  <a 
+    routerLink="/timer-alarm" 
+    routerLinkActive="active" 
+    class="group inline-block no-underline transition-all duration-300"
+  >
+    <div class="bg-slate-800/50 dark:bg-slate-800/50 backdrop-blur-sm border-2 border-slate-600 dark:border-slate-600 rounded-full px-8 py-4 sm:px-12 sm:py-6 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-glow transition-all">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-100 dark:text-slate-100 tracking-wide group-hover:text-blue-400 dark:group-hover:text-blue-400 transition-colors">
+        {{ currentTime }}
+      </h1>
+    </div>
+  </a>
+</div>

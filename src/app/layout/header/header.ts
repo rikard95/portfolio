@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 })
 export class Header implements OnInit, AfterViewInit {
   isDarkMode = true;
+  isScrolled = false;
   private headerElement: HTMLElement | null = null;
 
   constructor(private elementRef: ElementRef) {}
@@ -27,8 +28,9 @@ export class Header implements OnInit, AfterViewInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
+    this.isScrolled = window.scrollY > 50;
     if (this.headerElement) {
-      if (window.scrollY > 50) {
+      if (this.isScrolled) {
         this.headerElement.classList.add('scrolled');
       } else {
         this.headerElement.classList.remove('scrolled');

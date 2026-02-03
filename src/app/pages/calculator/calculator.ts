@@ -50,8 +50,8 @@ export class CalculatorComponent implements OnInit {
     // Remove whitespace and validate characters
     const sanitized = expr.replace(/\s/g, '');
     
-    // Only allow numbers, operators, decimal points, and parentheses
-    if (!/^[0-9+\-*/.()]+$/.test(sanitized)) {
+    // Only allow numbers, operators, decimal points, parentheses, and percentage
+    if (!/^[0-9+\-*/.()%]+$/.test(sanitized)) {
       throw new Error('Invalid characters in expression');
     }
     
@@ -85,19 +85,29 @@ export class CalculatorComponent implements OnInit {
     };
 
     const parseFactor = (): number => {
+      let val: number;
+      
       if (peek() === '(') {
         consume(); // (
-        const val = parseAddSub();
+        val = parseAddSub();
         if (consume() !== ')') throw new Error('Expected )');
-        return val;
       } else if (peek() === '-') {
         consume(); // -
-        return -parseFactor();
+        val = -parseFactor();
       } else if (peek() === '+') {
         consume(); // +
-        return parseFactor();
+        val = parseFactor();
+      } else {
+        val = parseNumber();
       }
-      return parseNumber();
+      
+      // Handle percentage as postfix operator
+      if (peek() === '%') {
+        consume(); // %
+        val = val / 100;
+      }
+      
+      return val;
     };
 
     const parseMulDiv = (): number => {

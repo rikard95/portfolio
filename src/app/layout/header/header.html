@@ -1,14 +1,45 @@
-<header class="top">
-  <nav>
-    <div class="logo">
-      <img class="logga-ut" src="logo.png" alt="Angular Logo" routerLink="hem" routerLinkActive="active" >
-    </div>
-    <a class="logga-ut" routerLink="hem" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Hem</a>
-    <a class="logga-ut" routerLink="om-mig" routerLinkActive="active">Om mig</a>
-    <!-- <a class="logga-ut" routerLink="kontakt" routerLinkActive="active">Kontakt</a>
-    <a class="logga-ut" routerLink="" routerLinkActive="">Logga ut</a> -->
-    <button class="dark-mode-toggle logga-ut" (click)="toggleDarkMode()" [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'">
-      {{ isDarkMode ? '☀️' : '🌙' }}
-    </button>
-  </nav>
+<header [class.scrolled]="isScrolled" class="fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-lg bg-slate-900/90 dark:bg-slate-900/90 border-b border-slate-700/50 dark:border-slate-700/50 transition-all duration-300">
+  <!-- Mobile-first container -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="flex items-center justify-between h-16 sm:h-20">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <img 
+          class="logga-ut h-8 sm:h-10 lg:h-12 w-auto object-contain cursor-pointer transition-transform hover:scale-105 dark:invert" 
+          src="logo.png" 
+          alt="Angular Logo" 
+          routerLink="hem" 
+          routerLinkActive="active"
+        >
+      </div>
+
+      <!-- Navigation Links - Mobile optimized -->
+      <div class="flex items-center gap-2 sm:gap-4 lg:gap-6">
+        <a 
+          class="logga-ut nav-link relative px-2 sm:px-3 lg:px-4 py-2 text-sm sm:text-base font-medium text-slate-100 dark:text-slate-100 hover:text-blue-400 dark:hover:text-blue-400 transition-colors no-underline"
+          routerLink="hem" 
+          routerLinkActive="active" 
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Hem
+        </a>
+        <a 
+          class="logga-ut nav-link relative px-2 sm:px-3 lg:px-4 py-2 text-sm sm:text-base font-medium text-slate-100 dark:text-slate-100 hover:text-blue-400 dark:hover:text-blue-400 transition-colors no-underline"
+          routerLink="om-mig" 
+          routerLinkActive="active"
+        >
+          Om mig
+        </a>
+        
+        <!-- Dark Mode Toggle -->
+        <button 
+          class="dark-mode-toggle logga-ut p-2 sm:p-2.5 rounded-lg bg-slate-800/50 dark:bg-slate-800/50 border border-slate-600 dark:border-slate-600 hover:bg-slate-700 dark:hover:bg-slate-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all text-lg sm:text-xl"
+          (click)="toggleDarkMode()" 
+          [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
+        >
+          {{ isDarkMode ? '☀️' : '🌙' }}
+        </button>
+      </div>
+    </nav>
+  </div>
 </header>

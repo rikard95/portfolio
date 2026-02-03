@@ -1,55 +1,55 @@
 <app-klocka></app-klocka>
 
-<div class="timer-alarm-container welcome-container">
-  <h1>Timer & Alarm</h1>
+<div class="welcome-container timer-alarm-container max-w-[900px] w-[90%] mb-[47px] mx-auto p-10 bg-gradient-to-br from-[rgba(30,10,62,0.95)] to-[rgba(26,0,50,0.9)] border-2 border-[rgba(255,204,0,0.8)] rounded-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.3),0_0_60px_rgba(255,204,0,0.1)] text-white text-center leading-[1.7] box-border flex flex-col items-center transition-smooth backdrop-blur-[10px] hover:border-[#00ff88] hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_0_80px_rgba(0,255,136,0.15)] hover:-translate-y-0.5 max-[768px]:p-6 max-[768px]:w-[95%] max-[480px]:p-4 max-[480px]:w-[98%] [body.light-mode_&]:bg-gradient-to-br [body.light-mode_&]:from-[rgba(255,255,255,0.98)] [body.light-mode_&]:to-[rgba(248,249,250,0.95)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:shadow-[0_8px_32px_rgba(0,0,0,0.08),0_0_60px_rgba(255,149,0,0.05)] [body.light-mode_&]:hover:border-[var(--light-accent)] [body.light-mode_&]:hover:shadow-[0_12px_48px_rgba(0,0,0,0.12),0_0_80px_rgba(255,149,0,0.1)]">
+  <h1 class="text-[2.5rem] mb-4 font-bold shadow-[0_2px_10px_rgba(255,204,0,0.3)] max-[768px]:text-[2rem] max-[480px]:text-[1.7rem] max-[480px]:mb-[0.8rem] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:shadow-[0_2px_10px_rgba(255,149,0,0.1)]">Timer & Alarm</h1>
 
   <!-- TIMER -->
-  <div class="timer-section">
-    <h2>Timer</h2>
-    <div class="time-display">{{ displayTime }}</div>
-    <div class="timer-controls">
-      <input type="number" placeholder="Timmar" min="0" (input)="onHoursChange($event)" />
-      <input type="number" placeholder="Minuter" min="0" (input)="onMinutesChange($event)" />
-      <input type="number" placeholder="Sekunder" min="0" max="59" (input)="onSecondsChange($event)" />
-      <button type="button" (click)="startTimer()">Start</button>
-      <button type="button" (click)="pauseTimer()">Pausa</button>
-      <button type="button" (click)="resetTimer()">Reset</button>
+  <div class="timer-section max-[480px]:w-full">
+    <h2 class="text-[1.8rem] my-4 font-semibold shadow-[0_2px_8px_rgba(255,204,0,0.2)] max-[768px]:text-[1.5rem] max-[480px]:text-[1.3rem] max-[480px]:my-[0.8rem] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:shadow-[0_2px_10px_rgba(255,149,0,0.1)]">Timer</h2>
+    <div class="time-display text-[2rem] my-4 mx-auto bg-gradient-to-br from-[rgba(42,13,62,0.9)] to-[rgba(26,0,50,0.8)] p-2.5 rounded-2xl border-2 border-[rgba(255,204,0,0.8)] w-full max-w-[300px] text-center box-border font-bold shadow-[0_0_10px_rgba(255,204,0,0.5)] transition-smooth shadow-[0_4px_16px_rgba(0,0,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.2)] hover:scale-[1.02] hover:shadow-[0_6px_24px_rgba(0,0,0,0.4),inset_0_2px_8px_rgba(0,0,0,0.2)] max-[768px]:text-[1.6rem] max-[768px]:max-w-[280px] max-[768px]:p-3 max-[480px]:text-[1.5rem] max-[480px]:max-w-full max-[480px]:p-[15px] [body.light-mode_&]:bg-gradient-to-br [body.light-mode_&]:from-[rgba(248,249,250,0.95)] [body.light-mode_&]:to-[rgba(255,255,255,0.9)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:shadow-[0_0_10px_rgba(255,149,0,0.3)]">{{ displayTime }}</div>
+    <div class="timer-controls flex flex-wrap justify-center gap-[5px] mb-4 max-[768px]:gap-2 max-[480px]:gap-[6px] max-[480px]:w-full">
+      <input type="number" placeholder="Timmar" min="0" (input)="onHoursChange($event)" class="w-20 p-2 rounded-xl border border-[rgba(255,204,0,0.3)] bg-[rgba(20,10,40,0.8)] text-white text-base text-center box-border transition-fast shadow-[inset_0_2px_8px_rgba(0,0,0,0.2)] focus:outline-none focus:border-[#ffcc00] focus:shadow-[0_0_16px_rgba(255,204,0,0.5),inset_0_2px_8px_rgba(0,0,0,0.2)] max-[768px]:w-[75px] max-[768px]:text-[0.95rem] max-[768px]:p-2.5 max-[768px]:min-h-[44px] max-[480px]:flex-1 max-[480px]:min-w-[70px] max-[480px]:text-base max-[480px]:py-3 max-[480px]:px-2 max-[480px]:min-h-[46px] [body.light-mode_&]:bg-[rgba(248,249,250,0.9)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:focus:border-[var(--light-accent)] [body.light-mode_&]:focus:shadow-[0_0_16px_rgba(255,149,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.05)]" />
+      <input type="number" placeholder="Minuter" min="0" (input)="onMinutesChange($event)" class="w-20 p-2 rounded-xl border border-[rgba(255,204,0,0.3)] bg-[rgba(20,10,40,0.8)] text-white text-base text-center box-border transition-fast shadow-[inset_0_2px_8px_rgba(0,0,0,0.2)] focus:outline-none focus:border-[#ffcc00] focus:shadow-[0_0_16px_rgba(255,204,0,0.5),inset_0_2px_8px_rgba(0,0,0,0.2)] max-[768px]:w-[75px] max-[768px]:text-[0.95rem] max-[768px]:p-2.5 max-[768px]:min-h-[44px] max-[480px]:flex-1 max-[480px]:min-w-[70px] max-[480px]:text-base max-[480px]:py-3 max-[480px]:px-2 max-[480px]:min-h-[46px] [body.light-mode_&]:bg-[rgba(248,249,250,0.9)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:focus:border-[var(--light-accent)] [body.light-mode_&]:focus:shadow-[0_0_16px_rgba(255,149,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.05)]" />
+      <input type="number" placeholder="Sekunder" min="0" max="59" (input)="onSecondsChange($event)" class="w-20 p-2 rounded-xl border border-[rgba(255,204,0,0.3)] bg-[rgba(20,10,40,0.8)] text-white text-base text-center box-border transition-fast shadow-[inset_0_2px_8px_rgba(0,0,0,0.2)] focus:outline-none focus:border-[#ffcc00] focus:shadow-[0_0_16px_rgba(255,204,0,0.5),inset_0_2px_8px_rgba(0,0,0,0.2)] max-[768px]:w-[75px] max-[768px]:text-[0.95rem] max-[768px]:p-2.5 max-[768px]:min-h-[44px] max-[480px]:flex-1 max-[480px]:min-w-[70px] max-[480px]:text-base max-[480px]:py-3 max-[480px]:px-2 max-[480px]:min-h-[46px] [body.light-mode_&]:bg-[rgba(248,249,250,0.9)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:focus:border-[var(--light-accent)] [body.light-mode_&]:focus:shadow-[0_0_16px_rgba(255,149,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.05)]" />
+      <button type="button" (click)="startTimer()" class="py-2 px-3 rounded-xl border-none cursor-pointer font-bold transition-fast shadow-[0_2px_8px_rgba(0,0,0,0.3)] bg-gradient-to-br from-[#007bff] to-[#0056b3] text-white hover:bg-gradient-to-br hover:from-[#0056b3] hover:to-[#004085] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,123,255,0.5)] max-[768px]:py-2.5 max-[768px]:px-3 max-[768px]:text-[0.9rem] max-[768px]:min-h-[44px] max-[480px]:flex-1 max-[480px]:text-[0.95rem] max-[480px]:py-3 max-[480px]:px-2.5 max-[480px]:min-h-[46px]">Start</button>
+      <button type="button" (click)="pauseTimer()" class="py-2 px-3 rounded-xl border-none cursor-pointer font-bold transition-fast shadow-[0_2px_8px_rgba(0,0,0,0.3)] bg-gradient-to-br from-[#007bff] to-[#0056b3] text-white hover:bg-gradient-to-br hover:from-[#0056b3] hover:to-[#004085] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,123,255,0.5)] max-[768px]:py-2.5 max-[768px]:px-3 max-[768px]:text-[0.9rem] max-[768px]:min-h-[44px] max-[480px]:flex-1 max-[480px]:text-[0.95rem] max-[480px]:py-3 max-[480px]:px-2.5 max-[480px]:min-h-[46px]">Pausa</button>
+      <button type="button" (click)="resetTimer()" class="py-2 px-3 rounded-xl border-none cursor-pointer font-bold transition-fast shadow-[0_2px_8px_rgba(0,0,0,0.3)] bg-gradient-to-br from-[#007bff] to-[#0056b3] text-white hover:bg-gradient-to-br hover:from-[#0056b3] hover:to-[#004085] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,123,255,0.5)] max-[768px]:py-2.5 max-[768px]:px-3 max-[768px]:text-[0.9rem] max-[768px]:min-h-[44px] max-[480px]:flex-1 max-[480px]:text-[0.95rem] max-[480px]:py-3 max-[480px]:px-2.5 max-[480px]:min-h-[46px]">Reset</button>
     </div>
   </div>
 
   <!-- ALARM -->
-  <div class="alarm-section">
-    <h2>Alarm</h2>
+  <div class="alarm-section flex flex-wrap justify-center gap-[5px] mb-4 max-[480px]:w-full">
+    <h2 class="text-[1.8rem] my-4 font-semibold shadow-[0_2px_8px_rgba(255,204,0,0.2)] max-[768px]:text-[1.5rem] max-[480px]:text-[1.3rem] max-[480px]:my-[0.8rem] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:shadow-[0_2px_10px_rgba(255,149,0,0.1)]">Alarm</h2>
 
-    <div class="alarm-picker">
-      <select [(ngModel)]="selectedHour">
+    <div class="alarm-picker flex flex-wrap justify-center gap-[5px] mb-4 max-[768px]:gap-2 max-[480px]:gap-[6px] max-[480px]:w-full max-[480px]:items-center max-[480px]:justify-center">
+      <select [(ngModel)]="selectedHour" class="w-20 p-2 rounded-xl border border-[rgba(255,204,0,0.3)] bg-[rgba(20,10,40,0.8)] text-white text-base text-center box-border transition-fast shadow-[inset_0_2px_8px_rgba(0,0,0,0.2)] focus:outline-none focus:border-[#ffcc00] focus:shadow-[0_0_16px_rgba(255,204,0,0.5),inset_0_2px_8px_rgba(0,0,0,0.2)] max-[768px]:w-[75px] max-[768px]:text-[0.95rem] max-[768px]:p-2.5 max-[768px]:min-h-[44px] max-[480px]:w-auto max-[480px]:max-w-20 [body.light-mode_&]:bg-[rgba(248,249,250,0.9)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:focus:border-[var(--light-accent)] [body.light-mode_&]:focus:shadow-[0_0_16px_rgba(255,149,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.05)]">
         <option *ngFor="let h of hours" [value]="h">{{ h.toString().padStart(2, '0') }}</option>
       </select>
       :
-      <select [(ngModel)]="selectedMinute">
+      <select [(ngModel)]="selectedMinute" class="w-20 p-2 rounded-xl border border-[rgba(255,204,0,0.3)] bg-[rgba(20,10,40,0.8)] text-white text-base text-center box-border transition-fast shadow-[inset_0_2px_8px_rgba(0,0,0,0.2)] focus:outline-none focus:border-[#ffcc00] focus:shadow-[0_0_16px_rgba(255,204,0,0.5),inset_0_2px_8px_rgba(0,0,0,0.2)] max-[768px]:w-[75px] max-[768px]:text-[0.95rem] max-[768px]:p-2.5 max-[768px]:min-h-[44px] max-[480px]:w-auto max-[480px]:max-w-20 [body.light-mode_&]:bg-[rgba(248,249,250,0.9)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:focus:border-[var(--light-accent)] [body.light-mode_&]:focus:shadow-[0_0_16px_rgba(255,149,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.05)]">
         <option *ngFor="let m of minutes" [value]="m">{{ m.toString().padStart(2, '0') }}</option>
       </select>
 
-      <button type="button" (click)="addAlarmFromDropdown()">Sätt Alarm</button>
+      <button type="button" (click)="addAlarmFromDropdown()" class="py-2 px-3 rounded-xl border-none cursor-pointer font-bold transition-fast shadow-[0_2px_8px_rgba(0,0,0,0.3)] bg-gradient-to-br from-[#28a745] to-[#1e7e34] text-white hover:bg-gradient-to-br hover:from-[#1e7e34] hover:to-[#145523] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(40,167,69,0.5)] max-[768px]:py-2.5 max-[768px]:px-3 max-[768px]:text-[0.9rem] max-[768px]:min-h-[44px] max-[480px]:text-[0.95rem] max-[480px]:py-3 max-[480px]:px-2.5 max-[480px]:min-h-[46px]">Sätt Alarm</button>
     </div>
 
-    <div *ngFor="let alarm of alarms" class="alarm-item">
-      <span [class.active-alarm]="alarm.active" [class.inactive-alarm]="!alarm.active">
+    <div *ngFor="let alarm of alarms" class="alarm-item mt-2.5 flex items-center flex-wrap justify-center gap-[5px] bg-gradient-to-br from-[rgba(42,13,62,0.8)] to-[rgba(26,0,50,0.7)] p-2 rounded-xl border-2 border-[rgba(255,204,0,0.3)] transition-smooth hover:border-[#00ff88] hover:shadow-[0_4px_16px_rgba(0,255,136,0.3)] hover:-translate-y-0.5 max-[768px]:gap-2 max-[480px]:flex-col max-[480px]:items-stretch max-[480px]:gap-2 max-[480px]:p-[0.8rem] max-[480px]:rounded-lg max-[480px]:mb-2 [body.light-mode_&]:bg-gradient-to-br [body.light-mode_&]:from-[rgba(248,249,250,0.9)] [body.light-mode_&]:to-[rgba(255,255,255,0.85)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:hover:border-[var(--light-accent)] [body.light-mode_&]:hover:shadow-[0_4px_16px_rgba(255,149,0,0.2)]">
+      <span [class.active-alarm]="alarm.active" [class.inactive-alarm]="!alarm.active" class="min-w-[100px] max-[768px]:min-w-[90px] max-[768px]:text-[0.95rem] max-[480px]:w-full max-[480px]:text-center max-[480px]:text-base max-[480px]:p-2">
        {{ alarm.time }} ({{ alarm.active ? 'På' : 'Av' }})
       </span>
-      <button type="button" (click)="toggleAlarm(alarm)">
+      <button type="button" (click)="toggleAlarm(alarm)" class="py-2 px-3 rounded-xl border-none cursor-pointer font-bold transition-fast shadow-[0_2px_8px_rgba(0,0,0,0.3)] bg-gradient-to-br from-[#007bff] to-[#0056b3] text-white hover:bg-gradient-to-br hover:from-[#0056b3] hover:to-[#004085] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,123,255,0.5)] max-[768px]:py-2 max-[768px]:px-3 max-[768px]:text-[0.85rem] max-[480px]:w-full max-[480px]:py-3 max-[480px]:text-base max-[480px]:min-h-[46px]">
         {{ alarm.active ? 'Stoppa' : 'Starta' }}
       </button>
-      <button type="button" (click)="removeAlarm(alarm)">Ta bort</button>
+      <button type="button" (click)="removeAlarm(alarm)" class="py-2 px-3 rounded-xl border-none cursor-pointer font-bold transition-fast shadow-[0_2px_8px_rgba(0,0,0,0.3)] bg-gradient-to-br from-[#dc3545] to-[#b02a37] text-white hover:bg-gradient-to-br hover:from-[#b02a37] hover:to-[#8b1f2b] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(220,53,69,0.5)] max-[768px]:py-2 max-[768px]:px-3 max-[768px]:text-[0.85rem] max-[480px]:w-full max-[480px]:py-3 max-[480px]:text-base max-[480px]:min-h-[46px]">Ta bort</button>
     </div>
   </div>
 </div>
 
 <!-- Alarm Popup -->
-<div *ngIf="alarmRinging" class="alarm-overlay">
-  <div class="alarm-popup">
+<div *ngIf="alarmRinging" class="alarm-overlay fixed top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.9)] flex justify-center items-center z-[1000] backdrop-blur-[10px] animate-fadeIn">
+  <div class="alarm-popup bg-gradient-to-br from-[#00926d] to-[#006d51] border-[3px] border-[#00ff88] text-white p-8 rounded-[20px] text-center text-[1.3rem] shadow-[0_0_40px_rgba(0,255,136,0.8),0_8px_32px_rgba(0,0,0,0.5)] animate-pulse font-bold shadow-[0_2px_8px_rgba(0,0,0,0.5)] max-[768px]:p-6 max-[768px]:text-[1.2rem] max-[768px]:mx-4 max-[480px]:p-6 max-[480px]:text-[1.1rem] max-[480px]:mx-2 max-[480px]:max-w-[90%]">
     {{ ringingMessage }}
-    <button type="button" (click)="stopSound()">Stäng av larm</button>
+    <button type="button" (click)="stopSound()" class="mt-4 py-[0.7rem] px-6 border-2 border-[#ffcc00] bg-gradient-to-br from-[#1a1a1a] to-[#000000] text-white rounded-xl cursor-pointer font-bold transition-fast shadow-[0_4px_16px_rgba(0,0,0,0.5)] hover:bg-gradient-to-br hover:from-[#dc3545] hover:to-[#b02a37] hover:border-[#ff0000] hover:scale-110 hover:shadow-[0_6px_24px_rgba(220,53,69,0.6)] max-[480px]:py-[0.8rem] max-[480px]:px-[1.2rem] max-[480px]:text-base max-[480px]:min-h-[46px]">Stäng av larm</button>
   </div>
 </div>
 

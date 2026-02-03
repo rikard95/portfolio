@@ -1,38 +1,5 @@
-footer {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  min-height: 79px;
-  padding: 1.5rem 2rem;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 1, 24, 0.98) 100%);
-  color: #ffffff;
-  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 204, 0, 0.05);
-  border-top: 2px solid rgba(255, 204, 0, 0.8);
-  margin-top: auto;
-  font-size: 0.9rem;
-  width: 100%;
-  box-sizing: border-box;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-
-
-footer a {
-  color: #ffffff;
-  text-decoration: none;
-  margin-left: 1rem;
-  transition: var(--transition-smooth);
-  padding: 0.5rem;
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  position: relative;
-  font-weight: 500;
-}
-
-footer a::after {
+/* Footer link underline effect */
+.footer-link::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -40,68 +7,34 @@ footer a::after {
   width: 0;
   height: 2px;
   background: #ffcc00;
-  transition: var(--transition-fast);
+  transition: width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-footer a:hover {
-  color: #ffcc00;
-  transform: translateY(-2px);
-  text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
-}
-
-footer a:hover::after {
+.footer-link:hover::after {
   width: 100%;
 }
 
-@media (max-width: 768px) {
-  footer {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.75rem;
-    padding: 1.25rem 1rem;
-  }
-  
-  footer a {
-    margin-left: 0;
-    padding: 0.5rem 1rem;
-  }
-  
-  .links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-  }
+.footer-link:hover {
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
 }
 
-@media (max-width: 480px) {
-  footer {
-    padding: 1rem;
-    gap: 0.5rem;
-  }
-  
-  footer a {
-    font-size: 0.95rem;
-  }
-}
-
-/* Light mode styles using :host-context */
+/* Light mode styles */
 :host-context(body.light-mode) footer {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.98) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.98) 100%) !important;
   color: var(--light-text-primary);
-  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.08), 0 0 40px rgba(255, 149, 0, 0.05);
-  border-top-color: rgba(255, 149, 0, 0.8);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.08), 0 0 40px rgba(255, 149, 0, 0.05) !important;
+  border-top-color: rgba(255, 149, 0, 0.8) !important;
 }
 
-:host-context(body.light-mode) footer a {
+:host-context(body.light-mode) .footer-link {
   color: var(--light-text-primary);
 }
 
-:host-context(body.light-mode) footer a::after {
+:host-context(body.light-mode) .footer-link::after {
   background: var(--light-accent);
 }
 
-:host-context(body.light-mode) footer a:hover {
+:host-context(body.light-mode) .footer-link:hover {
   color: var(--light-accent);
   text-shadow: 0 0 10px rgba(255, 149, 0, 0.3);
 }

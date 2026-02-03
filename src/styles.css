@@ -1,202 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
+  /* Navbar height */
   --navbar-height: 80px;
-  
-  /* Dark mode colors */
-  --dark-bg-primary: #0a0118;
-  --dark-bg-secondary: #1a0032;
-  --dark-bg-card: #1e0a3e;
-  --dark-text-primary: #ffffff;
-  --dark-text-secondary: #b8b8d0;
-  --dark-border: #3d1f5c;
-  --dark-accent: #ffcc00;
-  --dark-accent-hover: #ffd633;
-  --dark-success: #00ff88;
-  
-  /* Light mode colors */
-  --light-bg-primary: #f0f4f8;
-  --light-bg-secondary: #e1e8ed;
-  --light-bg-card: #f8fafb;
-  --light-text-primary: #000000;
-  --light-text-secondary: #1a1a1a;
-  --light-border: #cbd5e0;
-  --light-accent: #3b82f6;
-  --light-accent-hover: #2563eb;
-  --light-success: #10b981;
-  
-  /* Shared */
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-fast: all 0.15s ease;
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
-  --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.25);
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
 }
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  html, body {
+    @apply m-0 p-0 min-h-full font-sans overflow-x-hidden box-border;
+  }
+
+  *, *::before, *::after {
+    @apply box-border;
+  }
+
+  /* Dark mode - Professional slate background */
+  body {
+    @apply bg-slate-950 text-slate-100 transition-colors duration-300;
+  }
+
+  /* Light mode - Clean white background */
+  body.light-mode {
+    @apply bg-white text-slate-900;
+  }
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  overflow-x: hidden;
-  overflow-y: auto;
-  scrollbar-width: none; 
-  -ms-overflow-style: none;
-  box-sizing: border-box;
-}
+@layer components {
+  /* Hide elements on login/register pages */
+  body.login-page .logga-ut,
+  body.login-page .top {
+    @apply hidden;
+  }
 
-*, *::before, *::after {
-  box-sizing: inherit;
-}
+  body.register-page header {
+    @apply hidden;
+  }
 
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none; 
-}
-
-body.login-page .logga-ut {
-    display: none;
-}
-
-body.register-page header {
-  display: none; /* gömmer hela headern */
-}
-
-
-body {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  min-height: 100vh;
-  width: 100%;
-  max-width: 100vw;
-  background: linear-gradient(135deg, var(--dark-bg-primary) 0%, var(--dark-bg-secondary) 100%);
-  color: var(--dark-text-primary);
-  transition: var(--transition-smooth);
-  font-size: 16px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Light mode styles */
-body.light-mode {
-  background: linear-gradient(135deg, var(--light-bg-primary) 0%, var(--light-bg-secondary) 100%);
-  color: var(--light-text-primary);
-}
-
-body.light-mode header {
-  background-color: rgba(255, 255, 255, 0.95);
-  color: var(--light-text-primary);
-  border-bottom: 2px solid var(--light-accent);
-  box-shadow: var(--shadow-md);
-}
-
-body.light-mode header nav a {
-  color: var(--light-text-primary);
-}
-
-body.light-mode header nav a:hover,
-body.light-mode header nav a.active {
-  color: var(--light-accent);
-}
-
-body.light-mode .dark-mode-toggle {
-  color: var(--light-text-primary);
-  border-color: var(--light-accent);
-}
-
-body.light-mode app-hem {
-  background: transparent;
-}
-
-/* Global light mode overrides for all components */
-body.light-mode .welcome-container {
-  background: var(--light-bg-card) !important;
-  color: var(--light-text-primary) !important;
-  border-color: var(--light-border) !important;
-  box-shadow: var(--shadow-md) !important;
-}
-
-body.light-mode .welcome-container:hover {
-  border-color: var(--light-accent) !important;
-  box-shadow: var(--shadow-lg) !important;
-}
-
-body.light-mode .welcome-container h1 {
-  color: var(--light-text-primary) !important;
-}
-
-body.light-mode .clock-container,
-body.light-mode .klocka-container {
-  background: var(--light-bg-card) !important;
-  color: var(--light-text-primary) !important;
-  border-color: var(--light-border) !important;
-  box-shadow: var(--shadow-md) !important;
-}
-
-body.light-mode .clock-container:hover,
-body.light-mode .klocka-container:hover {
-  border-color: var(--light-accent) !important;
-  box-shadow: var(--shadow-lg) !important;
-}
-
-body.light-mode .klocka-link {
-  background: var(--light-bg-card) !important;
-  border-color: var(--light-border) !important;
-}
-
-body.light-mode .project-container {
-  background: var(--light-bg-card) !important;
-  color: var(--light-text-primary) !important;
-  border-color: var(--light-border) !important;
-  box-shadow: var(--shadow-md) !important;
-}
-
-body.light-mode .project-container:hover {
-  border-color: var(--light-accent) !important;
-  box-shadow: var(--shadow-lg) !important;
-}
-
-body.light-mode .calculator-container,
-body.light-mode .notes-container {
-  background: var(--light-bg-card) !important;
-  color: var(--light-text-primary) !important;
-  border-color: var(--light-border) !important;
-  box-shadow: var(--shadow-md) !important;
-}
-
-body.light-mode .todo-container,
-body.light-mode .dagbok-container,
-body.light-mode .kalender-container,
-body.light-mode .timer-alarm-container,
-body.light-mode .slides-container,
-body.light-mode .contact-container {
-  background: var(--light-bg-card) !important;
-  color: var(--light-text-primary) !important;
-  border-color: var(--light-border) !important;
-  box-shadow: var(--shadow-md) !important;
-}
-
-
-
-app-hem {
-  background: transparent;
-}
-
-body.login-page .top {
-  display: none;
-}
-
-app-root {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+  app-root {
+    @apply flex flex-col min-h-screen;
+  }
 }

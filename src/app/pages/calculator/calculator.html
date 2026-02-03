@@ -1,46 +1,87 @@
-<app-klocka></app-klocka>
-<div class="calculator-page">
-  <div class="calculator-container">
-    <div class="display">
-      <input type="text" [value]="input" readonly placeholder="0" />
-      <div class="result">{{ result }}</div>
-    </div>
-
-    <div class="buttons">
-      <button type="button" class="function" (click)="clear()">C</button>
-      <button type="button" class="function" (click)="deleteLast()">⌫</button>
-      <button type="button" (click)="append('%')">%</button>
-      <button type="button" (click)="append('÷')">÷</button>
-
-      <button type="button" (click)="append('7')">7</button>
-      <button type="button" (click)="append('8')">8</button>
-      <button type="button" (click)="append('9')">9</button>
-      <button type="button" (click)="append('×')">×</button>
-
-      <button type="button" (click)="append('4')">4</button>
-      <button type="button" (click)="append('5')">5</button>
-      <button type="button" (click)="append('6')">6</button>
-      <button type="button" (click)="append('−')">−</button>
-
-      <button type="button" (click)="append('1')">1</button>
-      <button type="button" (click)="append('2')">2</button>
-      <button type="button" (click)="append('3')">3</button>
-      <button type="button" (click)="append('+')">+</button>
-
-      <button type="button" (click)="append('0')" class="zero">0</button>
-      <button type="button" (click)="append('.')">.</button>
-      <button type="button" class="equals" (click)="calculate()">=</button>
-    </div>
-  </div>
-
-  <div class="notes-container">
-    <h3>Anteckningar</h3>
-    <textarea
-      [(ngModel)]="notes"
-      (ngModelChange)="saveNotes()"
-      placeholder="Skriv dina anteckningar här..."></textarea>
-
-    <button type="button" (click)="clearNotes()">Rensa anteckningar</button>
-  </div>
+<!-- Clock Component with consistent spacing -->
+<div class="mb-[47px]">
+  <app-klocka></app-klocka>
 </div>
-<app-projekt></app-projekt>
+
+<!-- Main Content Container - Mobile First -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+  
+  <!-- Calculator & Notes Grid -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto mb-[47px]">
+    
+    <!-- Calculator Card -->
+    <div class="bg-slate-800/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-700 dark:border-slate-700 rounded-2xl p-6 space-y-4 transition-all hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-glow">
+      
+      <!-- Display -->
+      <div class="bg-slate-900/80 dark:bg-slate-900/80 border border-slate-600 dark:border-slate-600 rounded-xl p-4 min-h-[80px] break-words overflow-hidden">
+        <input 
+          type="text" 
+          [value]="input" 
+          readonly 
+          placeholder="0" 
+          class="w-full bg-transparent border-none text-slate-100 dark:text-slate-100 text-2xl sm:text-3xl text-right outline-none"
+        />
+        <div class="text-blue-400 dark:text-blue-400 text-xl sm:text-2xl font-semibold text-right mt-2">
+          {{ result }}
+        </div>
+      </div>
+
+      <!-- Button Grid -->
+      <div class="grid grid-cols-4 gap-2">
+        <button type="button" class="btn-function bg-emerald-600 hover:bg-emerald-700 text-white font-semibold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="clear()">C</button>
+        <button type="button" class="btn-function bg-emerald-600 hover:bg-emerald-700 text-white font-semibold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="deleteLast()">⌫</button>
+        <button type="button" class="btn-operator bg-blue-600 hover:bg-blue-700 text-white font-semibold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="append('%')">%</button>
+        <button type="button" class="btn-operator bg-blue-600 hover:bg-blue-700 text-white font-semibold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="append('÷')">÷</button>
+
+        <button type="button" class="btn-operator bg-blue-600 hover:bg-blue-700 text-white font-semibold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="append('7')">7</button>
+        <button type="button" class="btn-operator bg-blue-600 hover:bg-blue-700 text-white font-semibold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="append('8')">8</button>
+        <button type="button" class="btn-operator bg-blue-600 hover:bg-blue-700 text-white font-semibold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="append('9')">9</button>
+        <button type="button" class="btn-operator bg-blue-600 hover:bg-blue-700 text-white font-semibold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="append('×')">×</button>
+
+        <button type="button" class="btn-operator bg-blue-600 hover:bg-blue-700 text-white font-semibold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="append('4')">4</button>
+        <button type="button" class="btn-operator bg-blue-600 hover:bg-blue-700 text-white font-semibold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="append('5')">5</button>
+        <button type="button" class="btn-operator bg-blue-600 hover:bg-blue-700 text-white font-semibold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="append('6')">6</button>
+        <button type="button" class="btn-operator bg-blue-600 hover:bg-blue-700 text-white font-semibold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="append('−')">−</button>
+
+        <button type="button" class="btn-operator bg-blue-600 hover:bg-blue-700 text-white font-semibold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="append('1')">1</button>
+        <button type="button" class="btn-operator bg-blue-600 hover:bg-blue-700 text-white font-semibold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="append('2')">2</button>
+        <button type="button" class="btn-operator bg-blue-600 hover:bg-blue-700 text-white font-semibold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="append('3')">3</button>
+        <button type="button" class="btn-operator bg-blue-600 hover:bg-blue-700 text-white font-semibold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="append('+')">+</button>
+
+        <button type="button" class="btn-operator col-span-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="append('0')">0</button>
+        <button type="button" class="btn-operator bg-blue-600 hover:bg-blue-700 text-white font-semibold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="append('.')">.</button>
+        <button type="button" class="btn-equals bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold p-4 rounded-xl transition-colors text-lg touch-manipulation" (click)="calculate()">=</button>
+      </div>
+    </div>
+
+    <!-- Notes Card -->
+    <div class="bg-slate-800/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-700 dark:border-slate-700 rounded-2xl p-6 space-y-4 transition-all hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-glow">
+      
+      <h3 class="text-xl sm:text-2xl font-bold text-slate-100 dark:text-slate-100 text-center">
+        Anteckningar
+      </h3>
+      
+      <textarea
+        [(ngModel)]="notes"
+        (ngModelChange)="saveNotes()"
+        placeholder="Skriv dina anteckningar här..."
+        class="w-full h-64 lg:h-96 bg-slate-900/80 dark:bg-slate-900/80 border border-slate-600 dark:border-slate-600 rounded-xl p-4 text-slate-100 dark:text-slate-100 text-base resize-none focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 transition-colors break-words overflow-auto"
+      ></textarea>
+
+      <button 
+        type="button" 
+        (click)="clearNotes()" 
+        class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-xl transition-colors"
+      >
+        Rensa anteckningar
+      </button>
+    </div>
+    
+  </div>
+
+  <!-- Projects Section -->
+  <div class="mt-12">
+    <app-projekt></app-projekt>
+  </div>
+  
+</div>
