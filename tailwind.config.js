@@ -4,15 +4,15 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    screens: {
-      'xs': {'max': '480px'},
-      'sm': {'max': '600px'},
-      'md': {'max': '900px'},
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
-    },
     extend: {
+      screens: {
+        'xs': '480px',
+        'sm': '600px',
+        'md': '900px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+      },
       colors: {
         // Dark mode colors
         'dark-bg-primary': '#0a0118',
