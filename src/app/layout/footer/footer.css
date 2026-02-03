@@ -20,14 +20,14 @@
 
 /* Light mode styles */
 :host-context(body.light-mode) footer {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.98) 100%) !important;
-  color: var(--light-text-primary);
-  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.08), 0 0 40px rgba(255, 149, 0, 0.05) !important;
-  border-top-color: rgba(255, 149, 0, 0.8) !important;
+  background: linear-gradient(180deg, rgba(248, 249, 250, 0.95) 0%, rgba(241, 243, 245, 0.98) 100%) !important;
+  color: #1a1a1a;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.08), 0 0 40px rgba(59, 130, 246, 0.05) !important;
+  border-top-color: rgba(59, 130, 246, 0.3) !important;
 }
 
 :host-context(body.light-mode) .footer-link {
-  color: var(--light-text-primary);
+  color: #1a1a1a;
 }
 
 :host-context(body.light-mode) .footer-link::after {
@@ -36,5 +36,5 @@
 
 :host-context(body.light-mode) .footer-link:hover {
   color: var(--light-accent);
-  text-shadow: 0 0 10px rgba(255, 149, 0, 0.3);
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
 }

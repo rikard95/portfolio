@@ -12,26 +12,45 @@ a.klocka-link:hover {
 
 /* Light mode styles */
 body.light-mode .klocka-container {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 249, 250, 0.95)) !important;
-  color: var(--light-text-primary) !important;
+  background: linear-gradient(135deg, rgba(248, 249, 250, 0.98), rgba(241, 243, 245, 0.95)) !important;
+  color: #1a1a1a !important;
   border-color: var(--light-border) !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 0 30px rgba(255, 149, 0, 0.1) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 0 30px rgba(59, 130, 246, 0.1) !important;
 }
 
 body.light-mode .klocka-container:hover {
   border-color: var(--light-accent) !important;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12), 0 0 50px rgba(255, 149, 0, 0.15) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12), 0 0 50px rgba(59, 130, 246, 0.15) !important;
 }
 
 body.light-mode .klocka-container h1 {
-  text-shadow: 0 2px 10px rgba(255, 149, 0, 0.1) !important;
+  text-shadow: 0 2px 10px rgba(59, 130, 246, 0.1) !important;
 }
 
 body.light-mode a.klocka-link {
-  background: linear-gradient(135deg, rgba(248, 249, 250, 0.95), rgba(255, 255, 255, 0.9)) !important;
+  background: linear-gradient(135deg, rgba(241, 243, 245, 0.95), rgba(248, 249, 250, 0.9)) !important;
   border-color: var(--light-border) !important;
 }
 
 body.light-mode a.klocka-link:hover {
   border-color: var(--light-accent) !important;
+}
+
+/* Override Tailwind text colors in light mode */
+body.light-mode .bg-slate-800\/50 h1,
+body.light-mode .dark\:bg-slate-800\/50 h1,
+body.light-mode .text-slate-100,
+body.light-mode .dark\:text-slate-100,
+body.light-mode h1.text-slate-100 {
+  color: #1a1a1a !important;
+}
+
+body.light-mode .bg-slate-800\/50,
+body.light-mode .dark\:bg-slate-800\/50 {
+  background: rgba(241, 243, 245, 0.95) !important;
+}
+
+body.light-mode .border-slate-600,
+body.light-mode .dark\:border-slate-600 {
+  border-color: var(--light-border) !important;
 }

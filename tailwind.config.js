@@ -18,13 +18,13 @@ module.exports = {
         'dark-accent-hover': '#60a5fa',
         'dark-success': '#10b981',
         
-        // Light mode colors - Clean, bright palette
-        'light-bg-primary': '#ffffff',
-        'light-bg-secondary': '#f8fafc',
-        'light-bg-card': '#f1f5f9',
-        'light-text-primary': '#0f172a',
-        'light-text-secondary': '#475569',
-        'light-border': '#e2e8f0',
+        // Light mode colors - Clean, bright palette (NOT pure white)
+        'light-bg-primary': '#f8f9fa',
+        'light-bg-secondary': '#f1f3f5',
+        'light-bg-card': '#e9ecef',
+        'light-text-primary': '#1a1a1a',
+        'light-text-secondary': '#495057',
+        'light-border': '#dee2e6',
         'light-accent': '#3b82f6',
         'light-accent-hover': '#2563eb',
         'light-success': '#10b981',
