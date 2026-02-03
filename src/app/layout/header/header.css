@@ -64,10 +64,6 @@ header.scrolled {
   border-bottom-color: rgba(59, 130, 246, 0.3) !important;
 }
 
-:host-context(body.light-mode) .logo img {
-  filter: invert(0) brightness(1);
-}
-
 :host-context(body.light-mode) img.logga-ut {
   filter: invert(0) brightness(1) !important;
 }
