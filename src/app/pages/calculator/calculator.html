@@ -1,6 +1,6 @@
 <app-klocka></app-klocka>
-<div class="flex justify-center items-start flex-wrap w-full max-w-full mt-12 px-5 box-border gap-7 overflow-x-hidden md:flex-col md:items-center md:gap-10 md:px-4 sm:mt-5 sm:px-4 sm:gap-5 xs:mt-4 xs:px-2.5">
-  <div class="calculator-container w-96 max-w-full p-5 rounded-[20px] border-2 flex flex-col font-[Segoe_UI,sans-serif] text-white backdrop-blur-[10px] transition-[var(--transition-smooth)] md:w-[90%] md:max-w-[420px] sm:w-full xs:w-full xs:p-4">
+<div class="flex justify-center items-start flex-wrap w-full max-w-full mt-[60px] px-5 box-border gap-7 overflow-x-hidden md:flex-col md:items-center md:gap-10 md:px-4 md:mt-[30px] sm:mt-5 sm:px-4 sm:gap-5 xs:mt-4 xs:px-2.5">
+  <div class="calculator-container w-96 max-w-full h-[415px] p-5 rounded-[20px] border-2 flex flex-col font-[Segoe_UI,sans-serif] text-white backdrop-blur-[10px] transition-[var(--transition-smooth)] md:w-[90%] md:max-w-[420px] md:h-auto sm:w-full sm:h-auto xs:w-full xs:p-4 xs:h-auto">
     <div class="display rounded-xl p-4 mb-4 text-right text-2xl break-words min-h-[60px] border shadow-[inset_0_2px_8px_rgba(0,0,0,0.3)] sm:text-xl sm:min-h-[70px] sm:p-3 xs:text-xl xs:min-h-[75px] xs:p-3">
       <input type="text" [value]="input" readonly placeholder="0" class="w-full border-none bg-transparent text-white text-2xl text-right sm:text-xl xs:text-xl" />
       <div class="result mt-1.5 text-xl font-semibold xs:text-lg">{{ result }}</div>
@@ -33,7 +33,7 @@
     </div>
   </div>
 
-  <div class="notes-container w-96 max-w-full h-[415px] rounded-[20px] border-2 p-5 text-white font-[Segoe_UI,sans-serif] flex flex-col items-center backdrop-blur-[10px] transition-[var(--transition-smooth)] md:w-[90%] md:max-w-[420px] sm:w-full sm:h-auto xs:w-full xs:p-4">
+  <div class="notes-container w-96 max-w-full h-[415px] rounded-[20px] border-2 p-5 text-white font-[Segoe_UI,sans-serif] flex flex-col items-center backdrop-blur-[10px] transition-[var(--transition-smooth)] md:w-[90%] md:max-w-[420px] md:h-auto sm:w-full sm:h-auto xs:w-full xs:p-4 xs:h-auto">
     <h3 class="notes-heading text-center mb-2.5 text-[1.4rem] font-bold xs:text-[1.3rem]">Anteckningar</h3>
     <textarea
       [(ngModel)]="notes"
