@@ -1,74 +1,12 @@
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: rgba(10, 1, 24, 0.85);
-  color: #ffffff;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 204, 0, 0.1);
-  border-bottom: 2px solid rgba(255, 204, 0, 0.8);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  transition: var(--transition-smooth);
-  width: 100%;
-  box-sizing: border-box;
-}
-
+/* Scrolled state */
 header.scrolled {
-  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.6), 0 0 60px rgba(255, 204, 0, 0.15);
-  padding: 0.8rem 2rem;
-  background: rgba(10, 1, 24, 0.95);
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.6), 0 0 60px rgba(255, 204, 0, 0.15) !important;
+  @apply px-8 py-[0.8rem];
+  background: rgba(10, 1, 24, 0.95) !important;
 }
 
-.logo{
-  cursor: pointer;
-}
-
-header .logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 1px;
-}
-
-header .logo img {
-  filter: invert(1);
-  transition: filter 0.3s ease;
-}
-
-
-:host-context(body.light-mode) header .logo img {
-  filter: invert(0);
-}
-
-header nav {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  gap: 1rem;
-}
-
-header nav a {
-  text-decoration: none;
-  color: #ffffff;
-  transition: var(--transition-smooth);
-  position: relative;
-  padding: 0.5rem 0.75rem;
-  font-size: 1rem;
-  white-space: nowrap;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-}
-
-header nav a::after {
+/* Nav link underline effect */
+.nav-link::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -77,180 +15,109 @@ header nav a::after {
   height: 2px;
   background: linear-gradient(90deg, transparent, #ffcc00, transparent);
   transform: translateX(-50%);
-  transition: var(--transition-smooth);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-header nav a:hover {
-  color: #ffcc00;
-  transform: translateY(-2px);
+.nav-link:hover {
   text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
 }
 
-header nav a:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
 }
 
-header nav a.active {
-  color: #ffcc00;
-  font-weight: 600;
+.nav-link.active {
+  @apply text-dark-accent font-semibold;
   text-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
 }
 
-header nav a.active::after {
-  width: 100%;
-}
-
-header .logo img {
-  width: 110px;
-  height: auto;
-  object-fit: contain;
-  z-index: 1001;
-}
-
-.dark-mode-toggle {
-  background: linear-gradient(135deg, rgba(255, 204, 0, 0.1), rgba(255, 204, 0, 0.05));
-  border: 2px solid rgba(255, 204, 0, 0.8);
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 1.5rem;
-  padding: 0.5rem 0.75rem;
-  border-radius: 12px;
-  transition: var(--transition-smooth);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
-  width: auto;
-  height: auto;
-  box-shadow: 0 2px 8px rgba(255, 204, 0, 0.2);
-}
-
+/* Dark mode toggle hover */
 .dark-mode-toggle:hover {
-  background: linear-gradient(135deg, rgba(255, 204, 0, 0.25), rgba(255, 204, 0, 0.15));
-  border-color: #ffcc00;
+  background: linear-gradient(135deg, rgba(255, 204, 0, 0.25), rgba(255, 204, 0, 0.15)) !important;
+  border-color: #ffcc00 !important;
   transform: scale(1.1) rotate(20deg);
-  box-shadow: 0 4px 16px rgba(255, 204, 0, 0.4);
+  box-shadow: 0 4px 16px rgba(255, 204, 0, 0.4) !important;
 }
 
-
-@media (max-width: 768px) {
-  header {
-    padding: 0.75rem 1rem;
-  }
-  
-  header nav {
-    justify-content: space-evenly;
-    width: 100%;
-    gap: 0.5rem;
-  }
-  
-  .logo {
-    margin-right: 0;
-    flex-shrink: 0;
-  }
-  
-  header nav a {
-    font-size: 0.9rem;
-    padding: 0.5rem;
-    min-height: 44px;
-  }
-  
-  .dark-mode-toggle {
-    font-size: 1.1rem;
-    padding: 0.5rem 0.75rem;
-    min-height: 44px;
-    width: auto;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  header .logo img {
-    width: 70px;
-  }
-}
-
-@media (max-width: 480px) {
-  header {
-    padding: 0.5rem 0.75rem;
-  }
-  
-  header nav {
-    justify-content: space-evenly;
-    gap: 0.25rem;
-  }
-  
-  header nav a {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.5rem;
-  }
-  
-  header .logo img {
-    width: 50px;
-  }
-  
-  .dark-mode-toggle {
-    font-size: 1rem;
-    padding: 0.4rem 0.6rem;
-    min-height: 44px;
-    width: auto;
-    height: auto;
-    border-radius: 8px;
-  }
-}
-
-/* Light mode styles using :host-context */
+/* Light mode overrides */
 :host-context(body.light-mode) header {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.9) !important;
   color: var(--light-text-primary);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 0 40px rgba(255, 149, 0, 0.1);
-  border-bottom-color: rgba(255, 149, 0, 0.8);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 0 40px rgba(255, 149, 0, 0.1) !important;
+  border-bottom-color: rgba(255, 149, 0, 0.8) !important;
 }
 
-:host-context(body.light-mode) header nav a {
+:host-context(body.light-mode) .logo img {
+  filter: invert(0);
+}
+
+:host-context(body.light-mode) .nav-link {
   color: var(--light-text-primary);
 }
 
-:host-context(body.light-mode) header nav a:hover {
+:host-context(body.light-mode) .nav-link:hover {
   color: var(--light-accent);
   text-shadow: 0 0 10px rgba(255, 149, 0, 0.3);
 }
 
-:host-context(body.light-mode) header nav a.active {
+:host-context(body.light-mode) .nav-link.active {
   color: var(--light-accent);
   text-shadow: 0 0 8px rgba(255, 149, 0, 0.2);
 }
 
-:host-context(body.light-mode) header nav a::after {
+:host-context(body.light-mode) .nav-link::after {
   background: linear-gradient(90deg, transparent, var(--light-accent), transparent);
 }
 
 :host-context(body.light-mode) .dark-mode-toggle {
   color: var(--light-text-primary);
-  border-color: rgba(255, 149, 0, 0.8);
-  background: linear-gradient(135deg, rgba(255, 149, 0, 0.1), rgba(255, 149, 0, 0.05));
-  box-shadow: 0 2px 8px rgba(255, 149, 0, 0.2);
+  border-color: rgba(255, 149, 0, 0.8) !important;
+  background: linear-gradient(135deg, rgba(255, 149, 0, 0.1), rgba(255, 149, 0, 0.05)) !important;
+  box-shadow: 0 2px 8px rgba(255, 149, 0, 0.2) !important;
 }
 
 :host-context(body.light-mode) .dark-mode-toggle:hover {
-  background: linear-gradient(135deg, rgba(255, 149, 0, 0.25), rgba(255, 149, 0, 0.15));
-  border-color: var(--light-accent);
-  box-shadow: 0 4px 16px rgba(255, 149, 0, 0.4);
+  background: linear-gradient(135deg, rgba(255, 149, 0, 0.25), rgba(255, 149, 0, 0.15)) !important;
+  border-color: var(--light-accent) !important;
+  box-shadow: 0 4px 16px rgba(255, 149, 0, 0.4) !important;
 }
 
-/* Accessibility: Reduce motion for users who prefer it */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header {
+    @apply px-4 py-3 gap-2;
+  }
+  
+  header nav {
+    @apply gap-2;
+  }
+  
+  .logo {
+    @apply mr-0 shrink-0;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    @apply px-3 py-2;
+  }
+  
+  header nav {
+    @apply gap-1;
+  }
+}
+
+/* Accessibility: Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   header,
-  header nav a,
+  .nav-link,
   .dark-mode-toggle {
-    transition: none;
+    transition: none !important;
   }
   
-  header nav a:hover {
-    transform: none;
-  }
-  
+  .nav-link:hover,
   .dark-mode-toggle:hover {
-    transform: none;
+    transform: none !important;
   }
 }

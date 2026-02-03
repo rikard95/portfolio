@@ -1,13 +1,13 @@
-<header class="top">
-  <nav>
-    <div class="logo">
-      <img class="logga-ut" src="logo.png" alt="Angular Logo" routerLink="hem" routerLinkActive="active" >
+<header [class.scrolled]="isScrolled" class="top flex justify-center items-center px-8 py-4 text-white fixed top-0 left-0 right-0 z-[1000] w-full box-border transition-all duration-300 ease-smooth border-b-2" style="background: rgba(10, 1, 24, 0.85); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 204, 0, 0.1); border-bottom-color: rgba(255, 204, 0, 0.8); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%);">
+  <nav class="flex justify-evenly items-center w-full gap-4">
+    <div class="logo cursor-pointer font-bold text-2xl tracking-wide">
+      <img class="logga-ut w-[110px] h-auto object-contain z-[1001] invert transition-[filter] duration-300 ease md:w-[70px] sm:w-[50px]" src="logo.png" alt="Angular Logo" routerLink="hem" routerLinkActive="active" >
     </div>
-    <a class="logga-ut" routerLink="hem" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Hem</a>
-    <a class="logga-ut" routerLink="om-mig" routerLinkActive="active">Om mig</a>
+    <a class="logga-ut nav-link relative px-3 py-2 text-base whitespace-nowrap min-h-[44px] flex items-center font-medium tracking-[0.3px] transition-all duration-300 ease-smooth text-white no-underline hover:text-dark-accent hover:-translate-y-0.5 md:text-sm md:px-2 sm:text-[0.85rem] sm:px-2 sm:py-1.5" routerLink="hem" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Hem</a>
+    <a class="logga-ut nav-link relative px-3 py-2 text-base whitespace-nowrap min-h-[44px] flex items-center font-medium tracking-[0.3px] transition-all duration-300 ease-smooth text-white no-underline hover:text-dark-accent hover:-translate-y-0.5 md:text-sm md:px-2 sm:text-[0.85rem] sm:px-2 sm:py-1.5" routerLink="om-mig" routerLinkActive="active">Om mig</a>
     <!-- <a class="logga-ut" routerLink="kontakt" routerLinkActive="active">Kontakt</a>
     <a class="logga-ut" routerLink="" routerLinkActive="">Logga ut</a> -->
-    <button class="dark-mode-toggle logga-ut" (click)="toggleDarkMode()" [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'">
+    <button class="dark-mode-toggle logga-ut cursor-pointer text-2xl px-3 py-2 rounded-xl transition-all duration-300 ease-smooth flex items-center justify-center min-w-[44px] min-h-[44px] w-auto h-auto text-white border-2 md:text-lg md:px-3 md:py-2 md:rounded-lg sm:text-base sm:px-2.5 sm:py-1.5 sm:rounded-lg" style="background: linear-gradient(135deg, rgba(255, 204, 0, 0.1), rgba(255, 204, 0, 0.05)); border-color: rgba(255, 204, 0, 0.8); box-shadow: 0 2px 8px rgba(255, 204, 0, 0.2);" (click)="toggleDarkMode()" [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'">
       {{ isDarkMode ? '☀️' : '🌙' }}
     </button>
   </nav>

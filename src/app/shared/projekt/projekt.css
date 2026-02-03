@@ -1,139 +1,38 @@
-.project-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 0.5rem;
-  max-width: 800px;
-  width: 90%;
-  margin: 4rem auto;
-  padding: 2.5rem;
-  background: linear-gradient(135deg, rgba(30, 10, 62, 0.95), rgba(26, 0, 50, 0.9));
-  border: 2px solid rgba(255, 204, 0, 0.8);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 60px rgba(255, 204, 0, 0.1);
-  color: #ffffff;
-  line-height: 1.7;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  transition: var(--transition-smooth);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
+/* Project container hover */
 .project-container:hover {
-  border-color: #00ff88;
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4), 0 0 80px rgba(0, 255, 136, 0.15);
+  border-color: #00ff88 !important;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4), 0 0 80px rgba(0, 255, 136, 0.15) !important;
   transform: translateY(-2px);
 }
 
 .project-container h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #ffffff;
-  text-align: center;
-  font-weight: 700;
+  @apply text-[2.5rem] mb-4 text-white text-center font-bold md:text-[2rem] sm:text-[1.7rem];
   text-shadow: 0 2px 10px rgba(255, 204, 0, 0.3);
 }
 
 .project-container p {
-  font-size: 1.1rem;
-  text-align: justify;
+  @apply text-lg text-justify md:text-base sm:text-[0.95rem];
 }
 
-.todo-btn {
-  display: inline-block;
-  padding: 14px 20px;
-  background: linear-gradient(135deg, rgba(26, 0, 50, 0.9), rgba(10, 1, 24, 0.8));
-  color: white;
-  border-radius: 12px;
-  border: 2px solid rgba(255, 204, 0, 0.7);
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  transition: var(--transition-smooth);
-  min-height: 48px;
-  min-width: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  touch-action: manipulation;
-  box-sizing: border-box;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
+/* Button hover effects */
 .todo-btn:hover {
-  background: linear-gradient(135deg, rgba(0, 47, 35, 0.9), rgba(0, 31, 23, 0.8));
-  border-color: #00ff88;
+  background: linear-gradient(135deg, rgba(0, 47, 35, 0.9), rgba(0, 31, 23, 0.8)) !important;
+  border-color: #00ff88 !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 255, 136, 0.3);
-}
-
-
-@media (max-width: 768px) {
-  .project-container {
-    flex-direction: column;  
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 1.5rem;
-    margin: 3rem auto;
-    width: 90%;
-    gap: 12px;
-  }
-
-  .project-container h1 {
-    font-size: 2rem;
-  }
-
-  .project-container p {
-    font-size: 1rem;
-  }
-
-  .todo-btn {
-    width: 100%;
-    max-width: 300px;
-    padding: 14px;
-    min-height: 50px;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .project-container {
-    padding: 1rem;
-    margin: 2rem auto;
-    width: 95%;
-    gap: 10px;
-  }
-
-  .project-container h1 {
-    font-size: 1.7rem;
-  }
-
-  .project-container p {
-    font-size: 0.95rem;
-  }
-
-  .todo-btn {
-    width: 100%;
-    max-width: 100%;
-    padding: 14px;
-    min-height: 50px;
-    font-size: 1rem;
-  }
+  box-shadow: 0 6px 20px rgba(0, 255, 136, 0.3) !important;
 }
 
 /* Light mode styles */
 body.light-mode .project-container {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 249, 250, 0.95));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 249, 250, 0.95)) !important;
   color: var(--light-text-primary);
-  border-color: var(--light-border);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 60px rgba(255, 149, 0, 0.05);
+  border-color: var(--light-border) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 60px rgba(255, 149, 0, 0.05) !important;
 }
 
 body.light-mode .project-container:hover {
-  border-color: var(--light-accent);
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12), 0 0 80px rgba(255, 149, 0, 0.1);
+  border-color: var(--light-accent) !important;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12), 0 0 80px rgba(255, 149, 0, 0.1) !important;
 }
 
 body.light-mode .project-container h1 {
@@ -142,15 +41,15 @@ body.light-mode .project-container h1 {
 }
 
 body.light-mode .todo-btn {
-  background: linear-gradient(135deg, rgba(248, 249, 250, 0.98), rgba(255, 255, 255, 0.95));
+  background: linear-gradient(135deg, rgba(248, 249, 250, 0.98), rgba(255, 255, 255, 0.95)) !important;
   color: var(--light-text-primary);
-  border-color: var(--light-border);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: var(--light-border) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
 }
 
 body.light-mode .todo-btn:hover {
-  background: linear-gradient(135deg, rgba(255, 149, 0, 0.15), rgba(255, 170, 51, 0.1));
+  background: linear-gradient(135deg, rgba(255, 149, 0, 0.15), rgba(255, 170, 51, 0.1)) !important;
   color: var(--light-text-primary);
-  border-color: var(--light-accent);
-  box-shadow: 0 6px 20px rgba(255, 149, 0, 0.2);
+  border-color: var(--light-accent) !important;
+  box-shadow: 0 6px 20px rgba(255, 149, 0, 0.2) !important;
 }

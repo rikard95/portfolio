@@ -1,46 +1,47 @@
 <app-klocka></app-klocka>
-<div class="calculator-page">
-  <div class="calculator-container">
-    <div class="display">
-      <input type="text" [value]="input" readonly placeholder="0" />
-      <div class="result">{{ result }}</div>
+<div class="flex justify-center items-start flex-wrap w-full max-w-full mt-12 px-5 box-border gap-7 overflow-x-hidden md:flex-col md:items-center md:gap-10 md:px-4 sm:mt-5 sm:px-4 sm:gap-5 xs:mt-4 xs:px-2.5">
+  <div class="calculator-container w-96 max-w-full p-5 rounded-[20px] border-2 flex flex-col font-[Segoe_UI,sans-serif] text-white backdrop-blur-[10px] transition-[var(--transition-smooth)] md:w-[90%] md:max-w-[420px] sm:w-full xs:w-full xs:p-4">
+    <div class="display rounded-xl p-4 mb-4 text-right text-2xl break-words min-h-[60px] border shadow-[inset_0_2px_8px_rgba(0,0,0,0.3)] sm:text-xl sm:min-h-[70px] sm:p-3 xs:text-xl xs:min-h-[75px] xs:p-3">
+      <input type="text" [value]="input" readonly placeholder="0" class="w-full border-none bg-transparent text-white text-2xl text-right sm:text-xl xs:text-xl" />
+      <div class="result mt-1.5 text-xl font-semibold xs:text-lg">{{ result }}</div>
     </div>
 
-    <div class="buttons">
-      <button type="button" class="function" (click)="clear()">C</button>
-      <button type="button" class="function" (click)="deleteLast()">⌫</button>
-      <button type="button" (click)="append('%')">%</button>
-      <button type="button" (click)="append('÷')">÷</button>
+    <div class="grid grid-cols-4 gap-2.5 xs:gap-2.5">
+      <button type="button" class="btn-function p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-semibold sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="clear()">C</button>
+      <button type="button" class="btn-function p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-semibold sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="deleteLast()">⌫</button>
+      <button type="button" class="btn-operator p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-semibold sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="append('%')">%</button>
+      <button type="button" class="btn-operator p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-semibold sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="append('÷')">÷</button>
 
-      <button type="button" (click)="append('7')">7</button>
-      <button type="button" (click)="append('8')">8</button>
-      <button type="button" (click)="append('9')">9</button>
-      <button type="button" (click)="append('×')">×</button>
+      <button type="button" class="btn-operator p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-semibold sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="append('7')">7</button>
+      <button type="button" class="btn-operator p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-semibold sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="append('8')">8</button>
+      <button type="button" class="btn-operator p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-semibold sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="append('9')">9</button>
+      <button type="button" class="btn-operator p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-semibold sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="append('×')">×</button>
 
-      <button type="button" (click)="append('4')">4</button>
-      <button type="button" (click)="append('5')">5</button>
-      <button type="button" (click)="append('6')">6</button>
-      <button type="button" (click)="append('−')">−</button>
+      <button type="button" class="btn-operator p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-semibold sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="append('4')">4</button>
+      <button type="button" class="btn-operator p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-semibold sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="append('5')">5</button>
+      <button type="button" class="btn-operator p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-semibold sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="append('6')">6</button>
+      <button type="button" class="btn-operator p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-semibold sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="append('−')">−</button>
 
-      <button type="button" (click)="append('1')">1</button>
-      <button type="button" (click)="append('2')">2</button>
-      <button type="button" (click)="append('3')">3</button>
-      <button type="button" (click)="append('+')">+</button>
+      <button type="button" class="btn-operator p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-semibold sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="append('1')">1</button>
+      <button type="button" class="btn-operator p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-semibold sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="append('2')">2</button>
+      <button type="button" class="btn-operator p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-semibold sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="append('3')">3</button>
+      <button type="button" class="btn-operator p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-semibold sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="append('+')">+</button>
 
-      <button type="button" (click)="append('0')" class="zero">0</button>
-      <button type="button" (click)="append('.')">.</button>
-      <button type="button" class="equals" (click)="calculate()">=</button>
+      <button type="button" class="btn-operator col-span-2 p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-semibold sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="append('0')">0</button>
+      <button type="button" class="btn-operator p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-semibold sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="append('.')">.</button>
+      <button type="button" class="btn-equals p-4 border-none rounded-xl text-xl cursor-pointer min-h-[50px] min-w-[50px] touch-manipulation font-bold text-black sm:p-4 sm:text-lg sm:min-h-[54px] sm:min-w-[54px] xs:p-3.5 xs:text-base xs:min-h-[52px] xs:min-w-[52px]" (click)="calculate()">=</button>
     </div>
   </div>
 
-  <div class="notes-container">
-    <h3>Anteckningar</h3>
+  <div class="notes-container w-96 max-w-full h-[415px] rounded-[20px] border-2 p-5 text-white font-[Segoe_UI,sans-serif] flex flex-col items-center backdrop-blur-[10px] transition-[var(--transition-smooth)] md:w-[90%] md:max-w-[420px] sm:w-full sm:h-auto xs:w-full xs:p-4">
+    <h3 class="notes-heading text-center mb-2.5 text-[1.4rem] font-bold xs:text-[1.3rem]">Anteckningar</h3>
     <textarea
       [(ngModel)]="notes"
       (ngModelChange)="saveNotes()"
-      placeholder="Skriv dina anteckningar här..."></textarea>
+      placeholder="Skriv dina anteckningar här..."
+      class="notes-textarea w-[93%] h-[250px] rounded-xl border bg-transparent text-white p-2.5 text-base resize-none transition-[var(--transition-fast)] shadow-[inset_0_2px_8px_rgba(0,0,0,0.3)] sm:h-[200px] sm:w-full xs:h-[180px] xs:p-3 xs:w-full"></textarea>
 
-    <button type="button" (click)="clearNotes()">Rensa anteckningar</button>
+    <button type="button" (click)="clearNotes()" class="notes-button w-full mt-2.5 p-3 rounded-xl border-none text-white font-bold cursor-pointer transition-[var(--transition-fast)] xs:p-3.5 xs:text-base xs:min-h-[48px]">Rensa anteckningar</button>
   </div>
 </div>
 <app-projekt></app-projekt>
