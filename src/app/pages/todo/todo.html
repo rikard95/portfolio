@@ -1,68 +1,67 @@
 <app-klocka></app-klocka>
 
-<div class="todo-container">
-  <h2>Todos</h2>
+<div class="max-w-[600px] w-[90%] my-[50px] mx-auto p-[30px] bg-gradient-to-br from-[rgba(30,10,62,0.95)] to-[rgba(26,0,50,0.9)] rounded-[20px] border-2 border-[rgba(255,204,0,0.8)] shadow-[0_8px_32px_rgba(0,0,0,0.3),0_0_60px_rgba(255,204,0,0.1)] font-[&#39;Segoe_UI&#39;,Tahoma,sans-serif] text-white box-border overflow-x-hidden transition-[transform_0.3s,box-shadow_0.3s,border-color_0.3s] backdrop-blur-[10px] hover:border-[#00ff88] hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_0_80px_rgba(0,255,136,0.15)] hover:-translate-y-[2px] md:p-5 md:w-[95%] md:max-w-full sm:p-[15px] sm:my-5 sm:w-[95%]">
+  <h2 class="text-center mb-[30px] text-[2rem] tracking-[1px] text-[#ffcc00] font-bold [text-shadow:0_2px_10px_rgba(255,204,0,0.4)] [body:not(.light-mode)_&]:text-[#ffcc00] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:[text-shadow:none] sm:text-[1.6rem] sm:mb-5">Todos</h2>
 
   <!-- Input för nya todos -->
-  <div class="todo-input">
-    <input type="text" [(ngModel)]="newTodo" placeholder="Skriv en uppgift..." (keyup.enter)="addTodo()" />
-    <select [(ngModel)]="selectedCategory">
+  <div class="flex gap-[10px] mb-[15px] flex-wrap">
+    <input type="text" [(ngModel)]="newTodo" placeholder="Skriv en uppgift..." (keyup.enter)="addTodo()" class="flex-[1_1_140px] max-w-full p-3 rounded-xl border border-[rgba(255,204,0,0.3)] bg-[rgba(20,10,40,0.8)] text-white text-base transition-[border-color_0.2s,box-shadow_0.2s] box-border min-h-[48px] shadow-[inset_0_2px_8px_rgba(0,0,0,0.2)] focus:outline-none focus:border-[#ffcc00] focus:shadow-[0_0_16px_rgba(255,204,0,0.5),inset_0_2px_8px_rgba(0,0,0,0.2)] md:flex-[1_1_100%] md:max-w-full md:text-base md:p-[14px] md:min-h-[48px] sm:text-base sm:p-[14px] sm:min-h-[48px] [body.light-mode_&]:bg-[rgba(248,249,250,0.9)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:focus:border-[var(--light-accent)] [body.light-mode_&]:focus:shadow-[0_0_16px_rgba(255,149,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.05)]" />
+    <select [(ngModel)]="selectedCategory" class="flex-[1_1_140px] max-w-full p-3 rounded-xl border border-[rgba(255,204,0,0.3)] bg-[rgba(20,10,40,0.8)] text-white text-base transition-[border-color_0.2s,box-shadow_0.2s] box-border min-h-[48px] shadow-[inset_0_2px_8px_rgba(0,0,0,0.2)] focus:outline-none focus:border-[#ffcc00] focus:shadow-[0_0_16px_rgba(255,204,0,0.5),inset_0_2px_8px_rgba(0,0,0,0.2)] md:flex-[1_1_100%] md:max-w-full md:text-base md:p-[14px] md:min-h-[48px] sm:flex-[1_1_100%] sm:max-w-full sm:text-base sm:p-[14px] sm:min-h-[48px] [body.light-mode_&]:bg-[rgba(248,249,250,0.9)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:focus:border-[var(--light-accent)] [body.light-mode_&]:focus:shadow-[0_0_16px_rgba(255,149,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.05)]">
       <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
     </select>
-    <button (click)="addTodo()">Lägg till</button>
+    <button (click)="addTodo()" class="px-[18px] py-3 border-none rounded-xl text-white font-bold cursor-pointer transition-[background_0.2s,transform_0.2s,box-shadow_0.2s] flex-[1_1_100px] max-w-full min-h-[48px] box-border touch-auto bg-gradient-to-br from-[#007bff] to-[#0056b3] shadow-[0_2px_8px_rgba(0,123,255,0.3)] hover:bg-gradient-to-br hover:from-[#0056b3] hover:to-[#004085] hover:-translate-y-[2px] hover:shadow-[0_4px_16px_rgba(0,123,255,0.5)] md:flex-[1_1_100%] md:max-w-full md:text-base md:p-[14px] md:min-h-[48px] sm:p-[14px] sm:text-base sm:min-h-[48px]">Lägg till</button>
   </div>
 
   <!-- Skapa nya kategorier -->
-  <div class="category-input">
-    <input type="text" [(ngModel)]="newCategory" placeholder="Ny kategori..." />
-    <button (click)="addCategory()">Skapa kategori</button>
+  <div class="flex gap-[10px] mb-[15px] flex-wrap">
+    <input type="text" [(ngModel)]="newCategory" placeholder="Ny kategori..." class="flex-[1_1_140px] max-w-full p-3 rounded-xl border border-[rgba(255,204,0,0.3)] bg-[rgba(20,10,40,0.8)] text-white text-base transition-[border-color_0.2s,box-shadow_0.2s] box-border min-h-[48px] shadow-[inset_0_2px_8px_rgba(0,0,0,0.2)] focus:outline-none focus:border-[#ffcc00] focus:shadow-[0_0_16px_rgba(255,204,0,0.5),inset_0_2px_8px_rgba(0,0,0,0.2)] md:flex-[1_1_100%] md:max-w-full md:text-base md:p-[14px] md:min-h-[48px] sm:text-base sm:p-[14px] sm:min-h-[48px] [body.light-mode_&]:bg-[rgba(248,249,250,0.9)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:focus:border-[var(--light-accent)] [body.light-mode_&]:focus:shadow-[0_0_16px_rgba(255,149,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.05)]" />
+    <button (click)="addCategory()" class="px-[18px] py-3 border-none rounded-xl text-white font-bold cursor-pointer transition-[background_0.2s,transform_0.2s,box-shadow_0.2s] flex-[1_1_100px] max-w-full min-h-[48px] box-border touch-auto bg-gradient-to-br from-[#28a745] to-[#1e7e34] shadow-[0_2px_8px_rgba(40,167,69,0.3)] hover:bg-gradient-to-br hover:from-[#1e7e34] hover:to-[#145523] hover:-translate-y-[2px] hover:shadow-[0_4px_16px_rgba(40,167,69,0.5)] md:flex-[1_1_100%] md:max-w-full md:text-base md:p-[14px] md:min-h-[48px] sm:p-[14px] sm:text-base sm:min-h-[48px]">Skapa kategori</button>
   </div>
 
   <!-- Ta bort kategori -->
-  <div class="filter-section">
-    <label>Ta bort :</label>
-    <select [(ngModel)]="selectedCategory">
+  <div class="flex gap-[10px] mb-[15px] flex-wrap">
+    <label class="md:w-full md:mb-2 md:text-[0.95rem]">Ta bort :</label>
+    <select [(ngModel)]="selectedCategory" class="flex-[1_1_140px] max-w-full p-3 rounded-xl border border-[rgba(255,204,0,0.3)] bg-[rgba(20,10,40,0.8)] text-white text-base transition-[border-color_0.2s,box-shadow_0.2s] box-border min-h-[48px] shadow-[inset_0_2px_8px_rgba(0,0,0,0.2)] focus:outline-none focus:border-[#ffcc00] focus:shadow-[0_0_16px_rgba(255,204,0,0.5),inset_0_2px_8px_rgba(0,0,0,0.2)] md:flex-[1_1_100%] md:max-w-full md:text-base md:p-[14px] md:min-h-[48px] sm:text-base sm:p-[14px] sm:min-h-[48px] [body.light-mode_&]:bg-[rgba(248,249,250,0.9)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:focus:border-[var(--light-accent)] [body.light-mode_&]:focus:shadow-[0_0_16px_rgba(255,149,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.05)]">
       <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
     </select>
-    <button *ngIf="selectedCategory !== 'Allmänt'" class="delete-category-btn"
-            (click)="deleteCategory(categories.indexOf(selectedCategory))">
+    <button *ngIf="selectedCategory !== 'Allmänt'" (click)="deleteCategory(categories.indexOf(selectedCategory))" class="mt-[10px] px-[18px] py-3 border-none rounded-xl text-white font-bold cursor-pointer transition-[background_0.2s,transform_0.2s,box-shadow_0.2s] flex-[1_1_100px] max-w-full min-h-[48px] box-border touch-auto bg-gradient-to-br from-[#dc3545] to-[#b02a37] shadow-[0_2px_8px_rgba(220,53,69,0.3)] hover:bg-gradient-to-br hover:from-[#b02a37] hover:to-[#8b1f2b] hover:-translate-y-[2px] hover:shadow-[0_4px_16px_rgba(220,53,69,0.5)] md:flex-[1_1_100%] md:max-w-full md:text-base md:p-[14px] md:min-h-[48px] sm:p-[14px] sm:text-base sm:min-h-[48px]">
       Ta bort kategori
     </button>
   </div>
 
   <!-- Filtrera todos -->
-  <div class="filter-section">
-    <label>Visa kategori :</label>
-    <select [(ngModel)]="filterCategory">
+  <div class="flex gap-[10px] mb-[15px] flex-wrap">
+    <label class="md:w-full md:mb-2 md:text-[0.95rem]">Visa kategori :</label>
+    <select [(ngModel)]="filterCategory" class="flex-[1_1_140px] max-w-full p-3 rounded-xl border border-[rgba(255,204,0,0.3)] bg-[rgba(20,10,40,0.8)] text-white text-base transition-[border-color_0.2s,box-shadow_0.2s] box-border min-h-[48px] shadow-[inset_0_2px_8px_rgba(0,0,0,0.2)] focus:outline-none focus:border-[#ffcc00] focus:shadow-[0_0_16px_rgba(255,204,0,0.5),inset_0_2px_8px_rgba(0,0,0,0.2)] md:flex-[1_1_100%] md:max-w-full md:text-base md:p-[14px] md:min-h-[48px] sm:text-base sm:p-[14px] sm:min-h-[48px] [body.light-mode_&]:bg-[rgba(248,249,250,0.9)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:focus:border-[var(--light-accent)] [body.light-mode_&]:focus:shadow-[0_0_16px_rgba(255,149,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.05)]">
       <option value="Alla">Alla</option>
       <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
     </select>
   </div>
 
   <!-- Lista med todos -->
-  <div class="todo-list">
-    <div *ngFor="let todo of filteredTodos()" class="todo-item" [class.done]="todo.done">
-      <div class="todo-left">
-        <input type="checkbox" [ngModel]="todo.done" (ngModelChange)="toggleDone(todo)" />
-        <span class="todo-category">{{ todo.category }}</span>
+  <div class="flex flex-col gap-3">
+    <div *ngFor="let todo of filteredTodos()" class="flex justify-between items-center border-2 border-[rgba(0,255,136,0.3)] bg-gradient-to-br from-[rgba(42,13,62,0.9)] to-[rgba(26,0,50,0.8)] p-3 px-[15px] rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.3)] transition-[transform_0.3s,box-shadow_0.3s,border-color_0.3s] flex-wrap backdrop-blur-[5px] hover:-translate-y-[2px] hover:shadow-[0_6px_20px_rgba(0,255,136,0.3)] hover:border-[#00ff88] md:p-[15px] md:gap-[10px] sm:flex-col sm:items-stretch sm:gap-3 sm:p-[14px] [body.light-mode_&]:bg-gradient-to-br [body.light-mode_&]:from-[rgba(248,249,250,0.95)] [body.light-mode_&]:to-[rgba(255,255,255,0.9)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:shadow-[0_4px_12px_rgba(0,0,0,0.08)] [body.light-mode_&]:hover:border-[var(--light-accent)] [body.light-mode_&]:hover:shadow-[0_6px_20px_rgba(255,149,0,0.2)] [&.done_.todo-text]:line-through [&.done_.todo-text]:opacity-60" [class.done]="todo.done">
+      <div class="flex items-center gap-2 flex-1 md:w-full sm:w-full sm:flex-wrap sm:gap-[10px]">
+        <input type="checkbox" [ngModel]="todo.done" (ngModelChange)="toggleDone(todo)" class="scale-[1.3] mr-[10px] accent-[#00ff73] sm:scale-[1.5] sm:mr-3 sm:min-w-[24px] sm:min-h-[24px] [body.light-mode_&]:accent-[#00c853]" />
+        <span class="text-[0.8rem] bg-gradient-to-br from-[rgba(8,50,105,0.9)] to-[rgba(5,32,68,0.8)] px-[10px] py-1 rounded-lg mr-[10px] font-semibold shadow-[0_2px_6px_rgba(0,0,0,0.2)] sm:text-[0.8rem] sm:px-[10px] sm:py-1 sm:inline-block md:inline-block [body.light-mode_&]:bg-gradient-to-br [body.light-mode_&]:from-[rgba(224,224,224,0.9)] [body.light-mode_&]:to-[rgba(200,200,200,0.8)] [body.light-mode_&]:text-[var(--light-text-primary)]">{{ todo.category }}</span>
 
-        <div *ngIf="!todo.editing" class="todo-display">
-          <span class="todo-text">{{ todo.text }}</span>
+        <div *ngIf="!todo.editing">
+          <span class="text-base sm:w-full sm:mt-[5px] sm:text-base sm:break-words sm:overflow-wrap-anywhere sm:max-w-full">{{ todo.text }}</span>
         </div>
 
-        <div *ngIf="todo.editing" class="todo-edit">
-          <input [(ngModel)]="todo.text" />
+        <div *ngIf="todo.editing" class="w-full">
+          <input [(ngModel)]="todo.text" class="w-full py-[6px] px-[10px] rounded-lg border border-[rgba(255,204,0,0.3)] bg-[rgba(20,10,40,0.8)] text-white text-base shadow-[inset_0_2px_6px_rgba(0,0,0,0.2)] [body.light-mode_&]:bg-[rgba(255,255,255,0.95)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)]" />
         </div>
       </div>
 
-<div class="todo-actions">
-  <div class="up-down">
-    <button class="up" (click)="moveUp(todo)">⬆</button>
-    <button class="down" (click)="moveDown(todo)">⬇</button>
+<div class="flex gap-[6px] shrink-0 items-start md:w-full md:justify-between md:mt-[10px] sm:w-full sm:justify-stretch sm:flex-nowrap sm:gap-2">
+  <div class="flex flex-col gap-1">
+    <button class="px-2 py-[5px] bg-gradient-to-br from-[#17a2b8] to-[#117a8b] text-white border-none rounded-lg cursor-pointer text-[0.9rem] font-bold transition-[background_0.2s,transform_0.2s,box-shadow_0.2s] shadow-[0_2px_6px_rgba(23,162,184,0.3)] hover:bg-gradient-to-br hover:from-[#117a8b] hover:to-[#0d5a66] hover:-translate-y-[1px] hover:shadow-[0_3px_10px_rgba(23,162,184,0.5)] md:flex-[1_1_auto] md:px-3 md:py-[10px] md:text-[0.9rem] md:min-h-[44px] sm:p-[12px_8px] sm:text-[0.85rem] sm:min-h-[46px] sm:w-full" (click)="moveUp(todo)">⬆</button>
+    <button class="px-2 py-[5px] bg-gradient-to-br from-[#17a2b8] to-[#117a8b] text-white border-none rounded-lg cursor-pointer text-[0.9rem] font-bold transition-[background_0.2s,transform_0.2s,box-shadow_0.2s] shadow-[0_2px_6px_rgba(23,162,184,0.3)] hover:bg-gradient-to-br hover:from-[#117a8b] hover:to-[#0d5a66] hover:-translate-y-[1px] hover:shadow-[0_3px_10px_rgba(23,162,184,0.5)] md:flex-[1_1_auto] md:px-3 md:py-[10px] md:text-[0.9rem] md:min-h-[44px] sm:p-[12px_8px] sm:text-[0.85rem] sm:min-h-[46px] sm:w-full" (click)="moveDown(todo)">⬇</button>
   </div>
-  <div class="edit-delete">
-    <button class="edit" (click)="editTodo(todo)">{{ todo.editing ? 'Spara' : 'Ändra' }}</button>
-    <button class="delete" (click)="deleteTodo(todo)">Ta bort</button>
+  <div class="flex flex-col gap-1 ml-auto sm:flex-1 sm:gap-2">
+    <button class="py-[6px] px-3 bg-gradient-to-br from-[#ffc107] to-[#ff9800] text-black border-none rounded-[10px] cursor-pointer text-[0.9rem] font-bold transition-[background_0.2s,transform_0.2s,box-shadow_0.2s] shadow-[0_2px_6px_rgba(255,193,7,0.3)] hover:bg-gradient-to-br hover:from-[#ff9800] hover:to-[#f57c00] hover:-translate-y-[1px] hover:shadow-[0_3px_10px_rgba(255,193,7,0.5)] md:flex-[1_1_auto] md:px-3 md:py-[10px] md:text-[0.9rem] md:min-h-[44px] sm:p-[12px_8px] sm:text-[0.85rem] sm:min-h-[46px] sm:w-full" (click)="editTodo(todo)">{{ todo.editing ? 'Spara' : 'Ändra' }}</button>
+    <button class="py-[6px] px-3 bg-gradient-to-br from-[#dc3545] to-[#b02a37] text-white border-none rounded-[10px] cursor-pointer text-[0.9rem] font-bold transition-[background_0.2s,transform_0.2s,box-shadow_0.2s] shadow-[0_2px_6px_rgba(220,53,69,0.3)] hover:bg-gradient-to-br hover:from-[#b02a37] hover:to-[#8b1f2b] hover:-translate-y-[1px] hover:shadow-[0_3px_10px_rgba(220,53,69,0.5)] md:flex-[1_1_auto] md:px-3 md:py-[10px] md:text-[0.9rem] md:min-h-[44px] sm:p-[12px_8px] sm:text-[0.85rem] sm:min-h-[46px] sm:w-full" (click)="deleteTodo(todo)">Ta bort</button>
   </div>
 </div>
     </div>
