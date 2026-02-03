@@ -1,38 +1,181 @@
+<!-- Clock Component -->
 <app-klocka></app-klocka>
 
-<div class="max-w-[600px] w-[90%] my-[50px] mx-auto p-[30px] bg-gradient-to-br from-[rgba(30,10,62,0.95)] to-[rgba(26,0,50,0.9)] rounded-[20px] border-2 border-[rgba(255,204,0,0.8)] shadow-[0_8px_32px_rgba(0,0,0,0.3),0_0_60px_rgba(255,204,0,0.1)] font-[&#39;Segoe_UI&#39;,Tahoma,sans-serif] text-white box-border overflow-x-hidden transition-[transform_0.3s,box-shadow_0.3s,border-color_0.3s] backdrop-blur-[10px] hover:border-[#00ff88] hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_0_80px_rgba(0,255,136,0.15)] hover:-translate-y-[2px] md:p-5 md:w-[95%] md:max-w-full sm:p-[15px] sm:my-5 sm:w-[95%]">
-  <h2 class="text-center mb-[30px] text-[2rem] tracking-[1px] text-[#ffcc00] font-bold [text-shadow:0_2px_10px_rgba(255,204,0,0.4)] [body:not(.light-mode)_&]:text-[#ffcc00] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:[text-shadow:none] sm:text-[1.6rem] sm:mb-5">Todos</h2>
+<!-- Main Content Container - Mobile First & Consistent -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  
+  <div class="max-w-4xl mx-auto space-y-8">
+    
+    <!-- Page Title -->
+    <h1 class="text-3xl sm:text-4xl font-bold text-slate-100 dark:text-slate-100 text-center text-balance">
+      Todos
+    </h1>
 
-  <!-- Input för nya todos -->
-  <div class="flex gap-[10px] mb-[15px] flex-wrap">
-    <input type="text" [(ngModel)]="newTodo" placeholder="Skriv en uppgift..." (keyup.enter)="addTodo()" class="flex-[1_1_140px] max-w-full p-3 rounded-xl border border-[rgba(255,204,0,0.3)] bg-[rgba(20,10,40,0.8)] text-white text-base transition-[border-color_0.2s,box-shadow_0.2s] box-border min-h-[48px] shadow-[inset_0_2px_8px_rgba(0,0,0,0.2)] focus:outline-none focus:border-[#ffcc00] focus:shadow-[0_0_16px_rgba(255,204,0,0.5),inset_0_2px_8px_rgba(0,0,0,0.2)] md:flex-[1_1_100%] md:max-w-full md:text-base md:p-[14px] md:min-h-[48px] sm:text-base sm:p-[14px] sm:min-h-[48px] [body.light-mode_&]:bg-[rgba(248,249,250,0.9)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:focus:border-[var(--light-accent)] [body.light-mode_&]:focus:shadow-[0_0_16px_rgba(255,149,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.05)]" />
-    <select [(ngModel)]="selectedCategory" class="flex-[1_1_140px] max-w-full p-3 rounded-xl border border-[rgba(255,204,0,0.3)] bg-[rgba(20,10,40,0.8)] text-white text-base transition-[border-color_0.2s,box-shadow_0.2s] box-border min-h-[48px] shadow-[inset_0_2px_8px_rgba(0,0,0,0.2)] focus:outline-none focus:border-[#ffcc00] focus:shadow-[0_0_16px_rgba(255,204,0,0.5),inset_0_2px_8px_rgba(0,0,0,0.2)] md:flex-[1_1_100%] md:max-w-full md:text-base md:p-[14px] md:min-h-[48px] sm:flex-[1_1_100%] sm:max-w-full sm:text-base sm:p-[14px] sm:min-h-[48px] [body.light-mode_&]:bg-[rgba(248,249,250,0.9)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:focus:border-[var(--light-accent)] [body.light-mode_&]:focus:shadow-[0_0_16px_rgba(255,149,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.05)]">
-      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
-    </select>
-    <button (click)="addTodo()" class="px-[18px] py-3 border-none rounded-xl text-white font-bold cursor-pointer transition-[background_0.2s,transform_0.2s,box-shadow_0.2s] flex-[1_1_100px] max-w-full min-h-[48px] box-border touch-auto bg-gradient-to-br from-[#007bff] to-[#0056b3] shadow-[0_2px_8px_rgba(0,123,255,0.3)] hover:bg-gradient-to-br hover:from-[#0056b3] hover:to-[#004085] hover:-translate-y-[2px] hover:shadow-[0_4px_16px_rgba(0,123,255,0.5)] md:flex-[1_1_100%] md:max-w-full md:text-base md:p-[14px] md:min-h-[48px] sm:p-[14px] sm:text-base sm:min-h-[48px]">Lägg till</button>
+    <!-- Add Todo Section -->
+    <div class="bg-slate-800/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-700 dark:border-slate-700 rounded-2xl p-6 space-y-4">
+      <h2 class="text-xl font-semibold text-slate-100 dark:text-slate-100">
+        Lägg till uppgift
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <input 
+          type="text" 
+          [(ngModel)]="newTodo" 
+          placeholder="Skriv en uppgift..." 
+          (keyup.enter)="addTodo()" 
+          class="md:col-span-2 px-4 py-3 bg-slate-900/80 dark:bg-slate-900/80 border border-slate-600 dark:border-slate-600 rounded-xl text-slate-100 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 transition-colors"
+        />
+        <select 
+          [(ngModel)]="selectedCategory" 
+          class="px-4 py-3 bg-slate-900/80 dark:bg-slate-900/80 border border-slate-600 dark:border-slate-600 rounded-xl text-slate-100 dark:text-slate-100 focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 transition-colors"
+        >
+          <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+        </select>
+      </div>
+      <button 
+        (click)="addTodo()" 
+        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors"
+      >
+        Lägg till uppgift
+      </button>
+    </div>
+
+    <!-- Category Management -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Create Category -->
+      <div class="bg-slate-800/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-700 dark:border-slate-700 rounded-2xl p-6 space-y-4">
+        <h2 class="text-xl font-semibold text-slate-100 dark:text-slate-100">
+          Skapa kategori
+        </h2>
+        <input 
+          type="text" 
+          [(ngModel)]="newCategory" 
+          placeholder="Ny kategori..." 
+          class="w-full px-4 py-3 bg-slate-900/80 dark:bg-slate-900/80 border border-slate-600 dark:border-slate-600 rounded-xl text-slate-100 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 transition-colors"
+        />
+        <button 
+          (click)="addCategory()" 
+          class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors"
+        >
+          Skapa kategori
+        </button>
+      </div>
+
+      <!-- Delete Category -->
+      <div class="bg-slate-800/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-700 dark:border-slate-700 rounded-2xl p-6 space-y-4">
+        <h2 class="text-xl font-semibold text-slate-100 dark:text-slate-100">
+          Ta bort kategori
+        </h2>
+        <select 
+          [(ngModel)]="selectedCategory" 
+          class="w-full px-4 py-3 bg-slate-900/80 dark:bg-slate-900/80 border border-slate-600 dark:border-slate-600 rounded-xl text-slate-100 dark:text-slate-100 focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 transition-colors"
+        >
+          <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+        </select>
+        <button 
+          *ngIf="selectedCategory !== 'Allmänt'" 
+          (click)="deleteCategory(categories.indexOf(selectedCategory))" 
+          class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors"
+        >
+          Ta bort kategori
+        </button>
+      </div>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="bg-slate-800/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-700 dark:border-slate-700 rounded-2xl p-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <label class="text-slate-100 dark:text-slate-100 font-semibold">
+          Visa kategori:
+        </label>
+        <select 
+          [(ngModel)]="filterCategory" 
+          class="flex-1 px-4 py-3 bg-slate-900/80 dark:bg-slate-900/80 border border-slate-600 dark:border-slate-600 rounded-xl text-slate-100 dark:text-slate-100 focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 transition-colors"
+        >
+          <option value="Alla">Alla</option>
+          <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Todos List -->
+    <div class="space-y-3">
+      <div 
+        *ngFor="let todo of filteredTodos()" 
+        class="bg-slate-800/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-700 dark:border-slate-700 rounded-xl p-4 transition-all hover:border-blue-500 dark:hover:border-blue-500"
+        [class.opacity-60]="todo.done"
+      >
+        <div class="flex items-start gap-4 flex-wrap">
+          <!-- Checkbox -->
+          <input 
+            type="checkbox" 
+            [ngModel]="todo.done" 
+            (ngModelChange)="toggleDone(todo)" 
+            class="mt-1 w-5 h-5 rounded border-slate-600 dark:border-slate-600 text-blue-500 focus:ring-blue-500 focus:ring-offset-slate-900 cursor-pointer"
+          />
+          
+          <!-- Category Badge -->
+          <span class="px-3 py-1 bg-blue-600/20 text-blue-400 dark:text-blue-400 text-sm font-medium rounded-lg border border-blue-500/30">
+            {{ todo.category }}
+          </span>
+
+          <!-- Todo Text or Edit Input -->
+          <div class="flex-1 min-w-0" *ngIf="!todo.editing">
+            <span class="text-slate-100 dark:text-slate-100 break-words" [class.line-through]="todo.done">
+              {{ todo.text }}
+            </span>
+          </div>
+
+          <input 
+            *ngIf="todo.editing" 
+            type="text" 
+            [(ngModel)]="todo.text" 
+            class="flex-1 px-3 py-2 bg-slate-900/80 dark:bg-slate-900/80 border border-slate-600 dark:border-slate-600 rounded-lg text-slate-100 dark:text-slate-100 focus:outline-none focus:border-blue-500 dark:focus:border-blue-500"
+          />
+
+          <!-- Action Buttons -->
+          <div class="flex gap-2 ml-auto">
+            <button 
+              *ngIf="!todo.editing" 
+              (click)="todo.editing = true" 
+              class="px-3 py-1.5 bg-slate-700 hover:bg-slate-600 text-slate-100 dark:text-slate-100 text-sm rounded-lg transition-colors"
+            >
+              Ändra
+            </button>
+            <button 
+              *ngIf="todo.editing" 
+              (click)="todo.editing = false" 
+              class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-sm rounded-lg transition-colors"
+            >
+              Spara
+            </button>
+            <button 
+              (click)="removeTodo(todo)" 
+              class="px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white text-sm rounded-lg transition-colors"
+            >
+              Ta bort
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty State -->
+      <div 
+        *ngIf="filteredTodos().length === 0" 
+        class="text-center py-12 text-slate-400 dark:text-slate-400"
+      >
+        <p class="text-lg">Inga uppgifter att visa</p>
+        <p class="text-sm">Lägg till en ny uppgift för att komma igång!</p>
+      </div>
+    </div>
+
   </div>
 
-  <!-- Skapa nya kategorier -->
-  <div class="flex gap-[10px] mb-[15px] flex-wrap">
-    <input type="text" [(ngModel)]="newCategory" placeholder="Ny kategori..." class="flex-[1_1_140px] max-w-full p-3 rounded-xl border border-[rgba(255,204,0,0.3)] bg-[rgba(20,10,40,0.8)] text-white text-base transition-[border-color_0.2s,box-shadow_0.2s] box-border min-h-[48px] shadow-[inset_0_2px_8px_rgba(0,0,0,0.2)] focus:outline-none focus:border-[#ffcc00] focus:shadow-[0_0_16px_rgba(255,204,0,0.5),inset_0_2px_8px_rgba(0,0,0,0.2)] md:flex-[1_1_100%] md:max-w-full md:text-base md:p-[14px] md:min-h-[48px] sm:text-base sm:p-[14px] sm:min-h-[48px] [body.light-mode_&]:bg-[rgba(248,249,250,0.9)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:focus:border-[var(--light-accent)] [body.light-mode_&]:focus:shadow-[0_0_16px_rgba(255,149,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.05)]" />
-    <button (click)="addCategory()" class="px-[18px] py-3 border-none rounded-xl text-white font-bold cursor-pointer transition-[background_0.2s,transform_0.2s,box-shadow_0.2s] flex-[1_1_100px] max-w-full min-h-[48px] box-border touch-auto bg-gradient-to-br from-[#28a745] to-[#1e7e34] shadow-[0_2px_8px_rgba(40,167,69,0.3)] hover:bg-gradient-to-br hover:from-[#1e7e34] hover:to-[#145523] hover:-translate-y-[2px] hover:shadow-[0_4px_16px_rgba(40,167,69,0.5)] md:flex-[1_1_100%] md:max-w-full md:text-base md:p-[14px] md:min-h-[48px] sm:p-[14px] sm:text-base sm:min-h-[48px]">Skapa kategori</button>
+  <!-- Projects Section -->
+  <div class="mt-12">
+    <app-projekt></app-projekt>
   </div>
-
-  <!-- Ta bort kategori -->
-  <div class="flex gap-[10px] mb-[15px] flex-wrap">
-    <label class="md:w-full md:mb-2 md:text-[0.95rem]">Ta bort :</label>
-    <select [(ngModel)]="selectedCategory" class="flex-[1_1_140px] max-w-full p-3 rounded-xl border border-[rgba(255,204,0,0.3)] bg-[rgba(20,10,40,0.8)] text-white text-base transition-[border-color_0.2s,box-shadow_0.2s] box-border min-h-[48px] shadow-[inset_0_2px_8px_rgba(0,0,0,0.2)] focus:outline-none focus:border-[#ffcc00] focus:shadow-[0_0_16px_rgba(255,204,0,0.5),inset_0_2px_8px_rgba(0,0,0,0.2)] md:flex-[1_1_100%] md:max-w-full md:text-base md:p-[14px] md:min-h-[48px] sm:text-base sm:p-[14px] sm:min-h-[48px] [body.light-mode_&]:bg-[rgba(248,249,250,0.9)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:focus:border-[var(--light-accent)] [body.light-mode_&]:focus:shadow-[0_0_16px_rgba(255,149,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.05)]">
-      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
-    </select>
-    <button *ngIf="selectedCategory !== 'Allmänt'" (click)="deleteCategory(categories.indexOf(selectedCategory))" class="mt-[10px] px-[18px] py-3 border-none rounded-xl text-white font-bold cursor-pointer transition-[background_0.2s,transform_0.2s,box-shadow_0.2s] flex-[1_1_100px] max-w-full min-h-[48px] box-border touch-auto bg-gradient-to-br from-[#dc3545] to-[#b02a37] shadow-[0_2px_8px_rgba(220,53,69,0.3)] hover:bg-gradient-to-br hover:from-[#b02a37] hover:to-[#8b1f2b] hover:-translate-y-[2px] hover:shadow-[0_4px_16px_rgba(220,53,69,0.5)] md:flex-[1_1_100%] md:max-w-full md:text-base md:p-[14px] md:min-h-[48px] sm:p-[14px] sm:text-base sm:min-h-[48px]">
-      Ta bort kategori
-    </button>
-  </div>
-
-  <!-- Filtrera todos -->
-  <div class="flex gap-[10px] mb-[15px] flex-wrap">
-    <label class="md:w-full md:mb-2 md:text-[0.95rem]">Visa kategori :</label>
-    <select [(ngModel)]="filterCategory" class="flex-[1_1_140px] max-w-full p-3 rounded-xl border border-[rgba(255,204,0,0.3)] bg-[rgba(20,10,40,0.8)] text-white text-base transition-[border-color_0.2s,box-shadow_0.2s] box-border min-h-[48px] shadow-[inset_0_2px_8px_rgba(0,0,0,0.2)] focus:outline-none focus:border-[#ffcc00] focus:shadow-[0_0_16px_rgba(255,204,0,0.5),inset_0_2px_8px_rgba(0,0,0,0.2)] md:flex-[1_1_100%] md:max-w-full md:text-base md:p-[14px] md:min-h-[48px] sm:text-base sm:p-[14px] sm:min-h-[48px] [body.light-mode_&]:bg-[rgba(248,249,250,0.9)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:focus:border-[var(--light-accent)] [body.light-mode_&]:focus:shadow-[0_0_16px_rgba(255,149,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.05)]">
+  
+</div>
       <option value="Alla">Alla</option>
       <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
     </select>
