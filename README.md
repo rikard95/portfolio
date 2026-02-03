@@ -80,6 +80,18 @@ vercel --prod
 
 For detailed deployment setup instructions, see `SETUP.md`.
 
+## Troubleshooting
+
+If you experience issues with styles not loading after switching branches, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md) for common solutions.
+
+**Quick fix:** After switching branches, always run:
+```bash
+npm install
+npm start
+```
+
+Then hard refresh your browser (Ctrl+Shift+R or Cmd+Shift+R).
+
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
