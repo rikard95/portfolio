@@ -1,43 +1,44 @@
 <app-klocka></app-klocka>
 
-<div class="kalender-container welcome-container">
-  <h1>Kalender</h1>
+<div class="max-w-[900px] w-[90%] mx-auto my-16 p-10 bg-gradient-to-br from-[rgba(30,10,62,0.95)] to-[rgba(26,0,50,0.9)] border-2 border-[rgba(255,204,0,0.8)] rounded-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.3),0_0_60px_rgba(255,204,0,0.1)] text-white leading-[1.7] box-border overflow-x-hidden transition-[var(--transition-smooth)] backdrop-blur-[10px] hover:border-[#00ff88] hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_0_80px_rgba(0,255,136,0.15)] hover:-translate-y-0.5 [body.light-mode_&]:bg-gradient-to-br [body.light-mode_&]:from-[rgba(255,255,255,0.98)] [body.light-mode_&]:to-[rgba(245,243,240,0.95)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:shadow-[0_8px_32px_rgba(0,0,0,0.08),0_0_60px_rgba(255,140,66,0.05)] [body.light-mode_&]:hover:border-[var(--light-accent)] [body.light-mode_&]:hover:shadow-[0_12px_48px_rgba(0,0,0,0.12),0_0_80px_rgba(255,149,0,0.1)] max-[768px]:p-6 max-[768px]:my-8 max-[768px]:w-[90%] max-[480px]:p-4 max-[480px]:my-6 max-[480px]:w-[95%]">
+  <h1 class="text-center text-white mb-4 font-bold shadow-[0_2px_10px_rgba(255,204,0,0.3)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:shadow-[0_2px_10px_rgba(255,149,0,0.1)] max-[480px]:text-[1.8rem] max-[480px]:mb-4">Kalender</h1>
 
-  <div class="kalender-header">
-    <button type="button" (click)="changeMonth(-1)">&#8592;</button>
+  <div class="flex justify-center items-center gap-4 flex-wrap mb-6 max-[480px]:gap-[0.8rem]">
+    <button type="button" (click)="changeMonth(-1)" class="bg-gradient-to-br from-[#007bff] to-[#0056b3] text-white border-none rounded-xl px-4 py-2.5 cursor-pointer transition-[var(--transition-fast)] flex-[0_0_auto] min-h-[44px] text-base touch-manipulation box-border font-semibold shadow-[0_2px_8px_rgba(0,123,255,0.3)] hover:bg-gradient-to-br hover:from-[#00ff88] hover:to-[#00c86b] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,255,136,0.4)] [body.light-mode_&]:bg-gradient-to-br [body.light-mode_&]:from-[#007bff] [body.light-mode_&]:to-[#0056b3] [body.light-mode_&]:text-white [body.light-mode_&]:hover:bg-gradient-to-br [body.light-mode_&]:hover:from-[var(--light-accent)] [body.light-mode_&]:hover:to-[var(--light-accent-hover)] max-[768px]:flex-[1_1_45%] max-[768px]:min-w-0 max-[768px]:text-base max-[768px]:py-[0.7rem] max-[768px]:min-h-[48px] max-[480px]:w-full max-[480px]:text-base max-[480px]:py-[0.8rem] max-[480px]:min-h-[50px]">&#8592;</button>
 
-    <select [(ngModel)]="currentMonth" (change)="generateCalendar()">
+    <select [(ngModel)]="currentMonth" (change)="generateCalendar()" class="bg-[rgba(20,10,40,0.8)] text-white border border-[rgba(255,204,0,0.3)] rounded-xl px-2.5 py-2.5 text-base w-auto min-w-[100px] min-h-[44px] flex-[1_1_auto] box-border transition-[var(--transition-fast)] shadow-[inset_0_2px_8px_rgba(0,0,0,0.2)] focus:outline-none focus:border-[#ffcc00] focus:shadow-[0_0_16px_rgba(255,204,0,0.5),inset_0_2px_8px_rgba(0,0,0,0.2)] [body.light-mode_&]:bg-[rgba(248,249,250,0.9)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:focus:border-[var(--light-accent)] [body.light-mode_&]:focus:shadow-[0_0_16px_rgba(255,149,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.05)] max-[768px]:flex-[1_1_45%] max-[768px]:min-w-0 max-[768px]:text-base max-[768px]:py-[0.7rem] max-[768px]:min-h-[48px] max-[480px]:w-full max-[480px]:text-base max-[480px]:py-[0.8rem] max-[480px]:min-h-[50px]">
       <option *ngFor="let m of months; let i = index" [value]="i">{{ m }}</option>
     </select>
 
-    <input type="number" [(ngModel)]="currentYear" (change)="generateCalendar()" min="1900" max="2100"/>
+    <input type="number" [(ngModel)]="currentYear" (change)="generateCalendar()" min="1900" max="2100" class="bg-[rgba(20,10,40,0.8)] text-white border border-[rgba(255,204,0,0.3)] rounded-xl px-2.5 py-2.5 text-base w-auto min-w-[100px] min-h-[44px] flex-[1_1_auto] box-border transition-[var(--transition-fast)] shadow-[inset_0_2px_8px_rgba(0,0,0,0.2)] focus:outline-none focus:border-[#ffcc00] focus:shadow-[0_0_16px_rgba(255,204,0,0.5),inset_0_2px_8px_rgba(0,0,0,0.2)] [body.light-mode_&]:bg-[rgba(248,249,250,0.9)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:focus:border-[var(--light-accent)] [body.light-mode_&]:focus:shadow-[0_0_16px_rgba(255,149,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.05)] max-[768px]:flex-[1_1_45%] max-[768px]:min-w-0 max-[768px]:text-base max-[768px]:py-[0.7rem] max-[768px]:min-h-[48px] max-[480px]:w-full max-[480px]:text-base max-[480px]:py-[0.8rem] max-[480px]:min-h-[50px]"/>
 
-    <button type="button" (click)="changeMonth(1)">&#8594;</button>
+    <button type="button" (click)="changeMonth(1)" class="bg-gradient-to-br from-[#007bff] to-[#0056b3] text-white border-none rounded-xl px-4 py-2.5 cursor-pointer transition-[var(--transition-fast)] flex-[0_0_auto] min-h-[44px] text-base touch-manipulation box-border font-semibold shadow-[0_2px_8px_rgba(0,123,255,0.3)] hover:bg-gradient-to-br hover:from-[#00ff88] hover:to-[#00c86b] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,255,136,0.4)] [body.light-mode_&]:bg-gradient-to-br [body.light-mode_&]:from-[#007bff] [body.light-mode_&]:to-[#0056b3] [body.light-mode_&]:text-white [body.light-mode_&]:hover:bg-gradient-to-br [body.light-mode_&]:hover:from-[var(--light-accent)] [body.light-mode_&]:hover:to-[var(--light-accent-hover)] max-[768px]:flex-[1_1_45%] max-[768px]:min-w-0 max-[768px]:text-base max-[768px]:py-[0.7rem] max-[768px]:min-h-[48px] max-[480px]:w-full max-[480px]:text-base max-[480px]:py-[0.8rem] max-[480px]:min-h-[50px]">&#8594;</button>
   </div>
 
-  <div class="kalender-grid-wrapper">
-    <div class="weekday-header">
-      <div class="weekday-name">Mån</div>
-      <div class="weekday-name">Tis</div>
-      <div class="weekday-name">Ons</div>
-      <div class="weekday-name">Tors</div>
-      <div class="weekday-name">Fre</div>
-      <div class="weekday-name">Lör</div>
-      <div class="weekday-name">Sön</div>
+  <div class="w-full">
+    <div class="grid grid-cols-7 gap-2 mb-2 pb-3 border-b-2 border-[rgba(255,204,0,0.3)] [body.light-mode_&]:border-b-2 [body.light-mode_&]:border-[var(--light-border)] max-[480px]:gap-0.5 max-[480px]:pb-2">
+      <div class="text-center font-bold text-base uppercase tracking-wide px-2 py-2 text-[#fc0] shadow-[0_0_8px_rgba(255,204,0,0.3)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:shadow-none max-[768px]:text-[0.9rem] max-[768px]:px-[0.4rem] max-[768px]:py-[0.4rem] max-[480px]:text-[0.7rem] max-[480px]:px-[0.2rem] max-[480px]:py-[0.3rem]">Mån</div>
+      <div class="text-center font-bold text-base uppercase tracking-wide px-2 py-2 text-[#fc0] shadow-[0_0_8px_rgba(255,204,0,0.3)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:shadow-none max-[768px]:text-[0.9rem] max-[768px]:px-[0.4rem] max-[768px]:py-[0.4rem] max-[480px]:text-[0.7rem] max-[480px]:px-[0.2rem] max-[480px]:py-[0.3rem]">Tis</div>
+      <div class="text-center font-bold text-base uppercase tracking-wide px-2 py-2 text-[#fc0] shadow-[0_0_8px_rgba(255,204,0,0.3)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:shadow-none max-[768px]:text-[0.9rem] max-[768px]:px-[0.4rem] max-[768px]:py-[0.4rem] max-[480px]:text-[0.7rem] max-[480px]:px-[0.2rem] max-[480px]:py-[0.3rem]">Ons</div>
+      <div class="text-center font-bold text-base uppercase tracking-wide px-2 py-2 text-[#fc0] shadow-[0_0_8px_rgba(255,204,0,0.3)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:shadow-none max-[768px]:text-[0.9rem] max-[768px]:px-[0.4rem] max-[768px]:py-[0.4rem] max-[480px]:text-[0.7rem] max-[480px]:px-[0.2rem] max-[480px]:py-[0.3rem]">Tors</div>
+      <div class="text-center font-bold text-base uppercase tracking-wide px-2 py-2 text-[#fc0] shadow-[0_0_8px_rgba(255,204,0,0.3)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:shadow-none max-[768px]:text-[0.9rem] max-[768px]:px-[0.4rem] max-[768px]:py-[0.4rem] max-[480px]:text-[0.7rem] max-[480px]:px-[0.2rem] max-[480px]:py-[0.3rem]">Fre</div>
+      <div class="text-center font-bold text-base uppercase tracking-wide px-2 py-2 text-[#fc0] shadow-[0_0_8px_rgba(255,204,0,0.3)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:shadow-none max-[768px]:text-[0.9rem] max-[768px]:px-[0.4rem] max-[768px]:py-[0.4rem] max-[480px]:text-[0.7rem] max-[480px]:px-[0.2rem] max-[480px]:py-[0.3rem]">Lör</div>
+      <div class="text-center font-bold text-base uppercase tracking-wide px-2 py-2 text-[#fc0] shadow-[0_0_8px_rgba(255,204,0,0.3)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:shadow-none max-[768px]:text-[0.9rem] max-[768px]:px-[0.4rem] max-[768px]:py-[0.4rem] max-[480px]:text-[0.7rem] max-[480px]:px-[0.2rem] max-[480px]:py-[0.3rem]">Sön</div>
     </div>
     
-    <div class="kalender-grid">
-      <div *ngFor="let day of monthDays" class="day" 
-           [class.empty]="isInvalidDate(day.date)"
-           [class.today]="isToday(day.date)"
-           [class.has-note]="!isInvalidDate(day.date) && day.note"
+    <div class="grid grid-cols-7 gap-1 bg-[rgba(20,10,40,0.3)] p-1 rounded-xl [body.light-mode_&]:bg-[rgba(220,220,220,0.3)] max-[1024px]:gap-[3px] max-[768px]:gap-0.5 max-[768px]:p-0.5 max-[480px]:gap-0.5 max-[480px]:p-0.5">
+      <div *ngFor="let day of monthDays" 
+           [class]="'bg-gradient-to-br from-[rgba(42,13,62,0.95)] to-[rgba(26,0,50,0.9)] border border-[rgba(100,50,150,0.4)] rounded-lg min-h-[120px] p-2.5 flex flex-col justify-start transition-[var(--transition-smooth)] backdrop-blur-[5px] shadow-[0_2px_8px_rgba(0,0,0,0.2)] relative overflow-hidden cursor-pointer hover:-translate-y-px [body.light-mode_&]:bg-gradient-to-br [body.light-mode_&]:from-[rgba(255,255,255,0.98)] [body.light-mode_&]:to-[rgba(248,249,250,0.95)] [body.light-mode_&]:border-[rgba(200,200,200,0.5)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:shadow-[0_2px_8px_rgba(0,0,0,0.06)] [body.light-mode_&]:hover:border-[var(--light-accent)] [body.light-mode_&]:hover:shadow-[0_4px_12px_rgba(255,149,0,0.15)] [body.light-mode_&]:hover:bg-gradient-to-br [body.light-mode_&]:hover:from-[rgba(255,250,245,0.98)] [body.light-mode_&]:hover:to-[rgba(255,255,255,0.95)] max-[1024px]:min-h-[110px] max-[1024px]:p-2 max-[768px]:min-h-[100px] max-[768px]:p-[0.4rem] max-[480px]:min-h-[85px] max-[480px]:p-[0.3rem]' + 
+           (isInvalidDate(day.date) ? ' !bg-[rgba(20,10,40,0.15)] !border-[rgba(100,50,150,0.15)] !min-h-[120px] pointer-events-none !cursor-default [body.light-mode_&]:!bg-[rgba(240,240,240,0.2)] [body.light-mode_&]:!border-[rgba(200,200,200,0.2)] max-[768px]:!min-h-[100px] max-[480px]:!min-h-[85px]' : ' hover:border-[#00ff88] hover:shadow-[0_4px_12px_rgba(0,255,136,0.2)] hover:bg-gradient-to-br hover:from-[rgba(50,20,70,0.98)] hover:to-[rgba(32,5,60,0.95)]') + 
+           (isToday(day.date) && !isInvalidDate(day.date) ? ' !border-2 !border-[#00ff88] !shadow-[0_0_20px_rgba(0,255,136,0.4),inset_0_0_30px_rgba(0,255,136,0.1)] !bg-gradient-to-br !from-[rgba(0,255,136,0.15)] !to-[rgba(0,200,100,0.1)] [body.light-mode_&]:!border-[var(--light-accent)] [body.light-mode_&]:!bg-gradient-to-br [body.light-mode_&]:!from-[rgba(255,245,230,0.98)] [body.light-mode_&]:!to-[rgba(255,250,240,0.95)] [body.light-mode_&]:!shadow-[0_0_20px_rgba(255,140,66,0.25),inset_0_0_30px_rgba(255,149,0,0.08)]' : '') + 
+           (!isInvalidDate(day.date) && day.note ? ' !border-[rgba(255,204,0,0.5)] [body.light-mode_&]:!border-[rgba(255,149,0,0.6)]' : '')"
            (click)="!isInvalidDate(day.date) && openModal(day)">
-        <div *ngIf="!isInvalidDate(day.date)" class="day-content">
-          <div class="day-number">{{ day.date.getDate() }}</div>
-          <div class="note-preview" *ngIf="day.note">
+        <div *ngIf="!isInvalidDate(day.date)" class="flex flex-col h-full pointer-events-none">
+          <div [class]="'font-bold text-center mb-2 text-[1.3rem] text-white px-1 py-1 border-b border-[rgba(255,204,0,0.2)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:border-b-[rgba(255,149,0,0.2)] max-[1024px]:text-[1.2rem] max-[768px]:text-[1.1rem] max-[768px]:mb-[0.3rem] max-[480px]:text-base max-[480px]:mb-1' + (isToday(day.date) ? ' !text-[#00ff88] !shadow-[0_0_10px_rgba(0,255,136,0.5)] [body.light-mode_&]:!text-[var(--light-accent)] [body.light-mode_&]:!shadow-[0_0_10px_rgba(255,149,0,0.3)]' : '')">{{ day.date.getDate() }}</div>
+          <div class="flex-1 text-[0.85rem] text-white px-[0.4rem] py-[0.4rem] break-words overflow-hidden text-ellipsis leading-[1.4] [body.light-mode_&]:text-[var(--light-text-primary)] max-[768px]:text-[0.75rem] max-[480px]:text-[0.65rem] max-[480px]:px-[0.2rem] max-[480px]:py-[0.2rem]" *ngIf="day.note">
             {{ getNotePreview(day.note) }}
           </div>
-          <div class="note-placeholder" *ngIf="!day.note">
+          <div class="flex-1 text-[0.75rem] text-[#777] px-[0.4rem] py-[0.4rem] italic text-center flex items-center justify-center [body.light-mode_&]:text-[#6b6b6b] max-[768px]:text-[0.7rem] max-[480px]:text-[0.6rem] max-[480px]:px-[0.2rem] max-[480px]:py-[0.2rem]" *ngIf="!day.note">
             Klicka för att lägga till anteckning
           </div>
         </div>
@@ -46,28 +47,28 @@
   </div>
 </div>
 
-<div class="scroll-top-container">
-  <button type="button" (click)="scrollToTop()" class="scroll-top-btn">
+<div class="flex justify-center mt-4 min-[769px]:hidden">
+  <button type="button" (click)="scrollToTop()" class="bg-gradient-to-br from-[#ffcc00] to-[#ff9800] text-black border-none rounded-xl px-4 py-2 font-bold cursor-pointer transition-[var(--transition-fast)] shadow-[0_4px_16px_rgba(255,204,0,0.3)] hover:bg-gradient-to-br hover:from-[#ff9800] hover:to-[#f57c00] hover:-translate-y-0.5 hover:shadow-[0_6px_24px_rgba(255,204,0,0.5)] [body.light-mode_&]:bg-gradient-to-br [body.light-mode_&]:from-[var(--light-accent)] [body.light-mode_&]:to-[var(--light-accent-hover)] max-[480px]:px-6 max-[480px]:py-[0.8rem] max-[480px]:text-base max-[480px]:min-h-[48px]">
     Gå till datumväljare ↑
   </button>
 </div>
 
 <!-- Modal -->
-<div class="modal-overlay" *ngIf="isModalOpen" (click)="closeModal()">
-  <div class="modal-content" (click)="$event.stopPropagation()">
-    <div class="modal-header">
-      <h2>{{ selectedDay && getDateString(selectedDay.date) }}</h2>
-      <button type="button" class="modal-close" (click)="closeModal()">×</button>
+<div class="fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.8)] flex items-center justify-center z-[1000] backdrop-blur-[5px] animate-[fadeIn_0.2s_ease-out] [body.light-mode_&]:bg-[rgba(0,0,0,0.6)]" *ngIf="isModalOpen" (click)="closeModal()">
+  <div class="bg-gradient-to-br from-[rgba(30,10,62,0.98)] to-[rgba(26,0,50,0.95)] border-2 border-[rgba(255,204,0,0.8)] rounded-2xl w-[90%] max-w-[600px] max-h-[80vh] flex flex-col shadow-[0_20px_60px_rgba(0,0,0,0.5)] animate-[slideIn_0.3s_ease-out] [body.light-mode_&]:bg-gradient-to-br [body.light-mode_&]:from-[rgba(255,255,255,0.98)] [body.light-mode_&]:to-[rgba(248,249,250,0.95)] [body.light-mode_&]:border-[var(--light-border)] max-[768px]:w-[95%] max-[480px]:w-[98%] max-[480px]:max-h-[90vh]" (click)="$event.stopPropagation()">
+    <div class="flex justify-between items-center px-6 py-6 border-b border-[rgba(255,204,0,0.3)] [body.light-mode_&]:border-b-[var(--light-border)] max-[480px]:px-4 max-[480px]:py-4">
+      <h2 class="text-white m-0 text-2xl shadow-[0_2px_10px_rgba(255,204,0,0.3)] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:shadow-[0_2px_10px_rgba(255,149,0,0.1)] max-[768px]:text-[1.2rem] max-[480px]:text-base">{{ selectedDay && getDateString(selectedDay.date) }}</h2>
+      <button type="button" class="bg-transparent border-none text-white text-[2.5rem] cursor-pointer w-10 h-10 rounded-full transition-[var(--transition-fast)] hover:bg-[rgba(255,0,0,0.2)] hover:text-[#f44] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:hover:bg-[rgba(255,0,0,0.1)] [body.light-mode_&]:hover:text-[#c00] max-[480px]:w-[35px] max-[480px]:h-[35px] max-[480px]:text-[2rem]" (click)="closeModal()">×</button>
     </div>
-    <div class="modal-body">
+    <div class="flex-1 px-6 py-6 overflow-y-auto max-[480px]:px-4 max-[480px]:py-4">
       <textarea 
         [(ngModel)]="modalNote"
         placeholder="Skriv din anteckning här..."
-        autofocus></textarea>
+        autofocus class="w-full min-h-[200px] bg-[rgba(10,5,20,0.6)] border border-[rgba(255,204,0,0.3)] text-white resize-y text-base rounded-lg px-4 py-4 transition-[var(--transition-fast)] shadow-[inset_0_2px_8px_rgba(0,0,0,0.3)] font-[inherit] leading-[1.6] focus:outline-none focus:border-[#fc0] focus:shadow-[0_0_16px_rgba(255,204,0,0.4),inset_0_2px_8px_rgba(0,0,0,0.3)] focus:bg-[rgba(15,10,25,0.7)] placeholder:text-[#999] [body.light-mode_&]:text-[var(--light-text-primary)] [body.light-mode_&]:bg-[rgba(255,255,255,0.9)] [body.light-mode_&]:border-[rgba(200,200,200,0.5)] [body.light-mode_&]:focus:border-[var(--light-accent)] [body.light-mode_&]:focus:shadow-[0_0_16px_rgba(255,149,0,0.3),inset_0_2px_8px_rgba(0,0,0,0.05)] [body.light-mode_&]:focus:bg-white [body.light-mode_&]:placeholder:text-[#6b6b6b] max-[1024px]:text-[0.8rem] max-[768px]:min-h-[150px] max-[768px]:text-[0.95rem] max-[480px]:min-h-[120px] max-[480px]:text-[0.9rem] max-[480px]:px-3 max-[480px]:py-3"></textarea>
     </div>
-    <div class="modal-footer">
-      <button type="button" class="btn-cancel" (click)="closeModal()">Avbryt</button>
-      <button type="button" class="btn-save" (click)="saveModalNote()">Spara</button>
+    <div class="flex justify-end gap-4 px-6 py-6 border-t border-[rgba(255,204,0,0.3)] [body.light-mode_&]:border-t-[var(--light-border)] max-[480px]:px-4 max-[480px]:py-4 max-[480px]:gap-2">
+      <button type="button" class="px-6 py-3 border-none rounded-lg text-base font-semibold cursor-pointer transition-[var(--transition-fast)] min-w-[100px] bg-gradient-to-br from-[#6c757d] to-[#5a6268] text-white hover:bg-gradient-to-br hover:from-[#5a6268] hover:to-[#545b62] hover:-translate-y-0.5 max-[480px]:px-4 max-[480px]:py-2.5 max-[480px]:text-[0.9rem] max-[480px]:min-w-[80px]" (click)="closeModal()">Avbryt</button>
+      <button type="button" class="px-6 py-3 border-none rounded-lg text-base font-semibold cursor-pointer transition-[var(--transition-fast)] min-w-[100px] bg-gradient-to-br from-[#00ff88] to-[#00c86b] text-black hover:bg-gradient-to-br hover:from-[#00c86b] hover:to-[#00a85a] hover:-translate-y-0.5 [body.light-mode_&]:bg-gradient-to-br [body.light-mode_&]:from-[var(--light-accent)] [body.light-mode_&]:to-[var(--light-accent-hover)] [body.light-mode_&]:text-black max-[480px]:px-4 max-[480px]:py-2.5 max-[480px]:text-[0.9rem] max-[480px]:min-w-[80px]" (click)="saveModalNote()">Spara</button>
     </div>
   </div>
 </div>
