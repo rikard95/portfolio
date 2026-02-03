@@ -25,9 +25,9 @@
     @apply bg-slate-950 text-slate-100 transition-colors duration-300;
   }
 
-  /* Light mode - Clean light blue background (darker than white) */
+  /* Light mode - Blue 400 background (darker blue) */
   body.light-mode {
-    @apply bg-[#e3f2fd] text-[#1a1a1a];
+    @apply bg-[#60a5fa] text-[#1a1a1a];
   }
   
   /* Override Tailwind text classes in light mode */
@@ -42,7 +42,7 @@
   
   body.light-mode .bg-slate-800\/50,
   body.light-mode .dark\:bg-slate-800\/50 {
-    background: rgba(227, 242, 253, 0.95) !important;
+    background: rgba(96, 165, 250, 0.95) !important;
   }
   
   body.light-mode .border-slate-700,

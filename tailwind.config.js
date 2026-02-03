@@ -18,10 +18,10 @@ module.exports = {
         'dark-accent-hover': '#60a5fa',
         'dark-success': '#10b981',
         
-        // Light mode colors - Clean, bright light blue palette
-        'light-bg-primary': '#e3f2fd',
-        'light-bg-secondary': '#bbdefb',
-        'light-bg-card': '#90caf9',
+        // Light mode colors - Blue 400 palette (darker blue)
+        'light-bg-primary': '#60a5fa',
+        'light-bg-secondary': '#3b82f6',
+        'light-bg-card': '#2563eb',
         'light-text-primary': '#1a1a1a',
         'light-text-secondary': '#495057',
         'light-border': '#dee2e6',
