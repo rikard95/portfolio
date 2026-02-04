@@ -41,6 +41,8 @@
   }
   
   /* Keep text white in dark backgrounds (calculator display & notes textarea) */
+  body.light-mode .bg-slate-900\/80.text-slate-100,
+  body.light-mode .bg-slate-900\/80.dark\:text-slate-100,
   body.light-mode .bg-slate-900\/80 .text-slate-100,
   body.light-mode .bg-slate-900\/80 .dark\:text-slate-100 {
     color: #f1f5f9 !important;
@@ -49,6 +51,12 @@
   /* Keep calculator result text white in light mode */
   body.light-mode .bg-slate-900\/80 .text-blue-400,
   body.light-mode .bg-slate-900\/80 .dark\:text-blue-400 {
+    color: #f1f5f9 !important;
+  }
+  
+  /* Keep "Anteckningar" heading white in notes card */
+  body.light-mode .bg-slate-800\/50:has(textarea.bg-slate-900\/80) .text-slate-100,
+  body.light-mode .bg-slate-800\/50:has(textarea.bg-slate-900\/80) .dark\:text-slate-100 {
     color: #f1f5f9 !important;
   }
   
