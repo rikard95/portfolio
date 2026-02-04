@@ -44,16 +44,28 @@
     </div>
 
     <div class="alarm-list w-full">
-      <div *ngFor="let alarm of alarms" class="alarm-item mt-2.5 flex items-center flex-wrap justify-center gap-[5px] bg-gradient-to-br from-[rgba(42,13,62,0.8)] to-[rgba(26,0,50,0.7)] p-2 rounded-xl border-2 border-[rgba(255,204,0,0.3)] transition-smooth hover:border-[#00ff88] hover:shadow-[0_4px_16px_rgba(0,255,136,0.3)] hover:-translate-y-0.5 max-[768px]:gap-2 max-[480px]:flex-col max-[480px]:items-stretch max-[480px]:gap-2 max-[480px]:p-[0.8rem] max-[480px]:rounded-lg max-[480px]:mb-2 [body.light-mode_&]:bg-gradient-to-br [body.light-mode_&]:from-[rgba(240,243,246,0.95)] [body.light-mode_&]:to-[rgba(248,249,250,0.9)] [body.light-mode_&]:border-[rgba(59,130,246,0.3)] [body.light-mode_&]:hover:border-[var(--light-accent)] [body.light-mode_&]:hover:shadow-[0_4px_16px_rgba(59,130,246,0.25)]">
-        <span [class.active-alarm]="alarm.active" [class.inactive-alarm]="!alarm.active" class="min-w-[100px] max-[768px]:min-w-[90px] max-[768px]:text-[0.95rem] max-[480px]:w-full max-[480px]:text-center max-[480px]:text-base max-[480px]:p-2">
-         {{ alarm.time }} ({{ alarm.active ? 'På' : 'Av' }})
-        </span>
-        <button type="button" (click)="toggleAlarm(alarm)" class="py-2 px-3 rounded-xl border-none cursor-pointer font-bold transition-fast shadow-[0_2px_8px_rgba(0,0,0,0.3)] bg-gradient-to-br from-[#007bff] to-[#0056b3] text-white hover:bg-gradient-to-br hover:from-[#0056b3] hover:to-[#004085] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,123,255,0.5)] max-[768px]:py-2 max-[768px]:px-3 max-[768px]:text-[0.85rem] max-[480px]:w-full max-[480px]:py-3 max-[480px]:text-base max-[480px]:min-h-[46px]">
-          {{ alarm.active ? 'Stoppa' : 'Starta' }}
-        </button>
-        <button type="button" (click)="removeAlarm(alarm)" class="py-2 px-3 rounded-xl border-none cursor-pointer font-bold transition-fast shadow-[0_2px_8px_rgba(0,0,0,0.3)] bg-gradient-to-br from-[#dc3545] to-[#b02a37] text-white hover:bg-gradient-to-br hover:from-[#b02a37] hover:to-[#8b1f2b] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(220,53,69,0.5)] max-[768px]:py-2 max-[768px]:px-3 max-[768px]:text-[0.85rem] max-[480px]:w-full max-[480px]:py-3 max-[480px]:text-base max-[480px]:min-h-[46px]">Ta bort</button>
-      </div>
-    </div>
+  <div *ngFor="let alarm of alarms" 
+       class="alarm-item mt-2.5 flex items-center flex-wrap justify-center gap-[5px] p-2 rounded-xl transition-smooth 
+              bg-slate-800/50 backdrop-blur-[10px] border-none
+              max-[480px]:flex-col max-[480px]:items-stretch max-[480px]:p-[0.8rem] 
+              [body.light-mode_&]:bg-gradient-to-br [body.light-mode_&]:from-[rgba(248,249,250,0.98)] [body.light-mode_&]:to-[rgba(248,249,250,0.95)] [body.light-mode_&]:!text-black [body.light-mode_&]:border-none">
+    
+    <span [class.active-alarm]="alarm.active" [class.inactive-alarm]="!alarm.active" 
+          class="min-w-[100px] max-[480px]:w-full max-[480px]:text-center font-bold [body.light-mode_&]:!text-black">
+      {{ alarm.time }} ({{ alarm.active ? 'På' : 'Av' }})
+    </span>
+
+    <button type="button" (click)="toggleAlarm(alarm)" 
+            class="py-2 px-3 rounded-xl border-none cursor-pointer font-bold bg-gradient-to-br from-[#007bff] to-[#0056b3] text-white hover:-translate-y-0.5 shadow-md">
+      {{ alarm.active ? 'Stoppa' : 'Starta' }}
+    </button>
+
+    <button type="button" (click)="removeAlarm(alarm)" 
+            class="py-2 px-3 rounded-xl border-none cursor-pointer font-bold bg-gradient-to-br from-[#dc3545] to-[#b02a37] text-white hover:-translate-y-0.5 shadow-md">
+      Ta bort
+    </button>
+  </div>
+</div>
   </div>
 </div>
 
