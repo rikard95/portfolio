@@ -1,0 +1,64 @@
+/* Color box and shade styles */
+.color-box,
+.color-shade {
+  -webkit-tap-highlight-color: transparent;
+  min-height: 40px;
+}
+
+.color-box {
+  min-height: 80px;
+}
+
+.color-box:active,
+.color-shade:active {
+  transform: scale(1.05);
+}
+
+/* Animation for copied message */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Hover effects for light colors */
+.color-box[style*="#FFFFFF"],
+.color-box[style*="#FFF"],
+.color-box[style*="#E6E6FA"],
+.color-box[style*="#FFB6C1"],
+.color-box[style*="#FFC0CB"],
+.color-box[style*="#98FF98"],
+.color-box[style*="#87CEEB"],
+.color-box[style*="#C0C0C0"],
+.color-box[style*="#F0E68C"],
+.color-box[style*="#FFF44F"],
+.color-box[style*="#A9A9A9"] {
+  border-color: #475569;
+}
+
+.color-box:hover,
+.color-shade:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Accessibility improvements */
+.color-box:focus,
+.color-shade:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.color-box:focus-visible,
+.color-shade:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}

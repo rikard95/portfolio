@@ -13,6 +13,7 @@ import { Dagbok } from './pages/dagbok/dagbok';
 import { Slides } from './pages/slides/slides';
 import { Login } from './pages/login/login';
 import { Registrera } from './pages/registrera/registrera';
+import { ColorPickerComponent } from './pages/color-picker/color-picker';
 
 
 export const routes: Routes = [
@@ -27,5 +28,6 @@ export const routes: Routes = [
   { path: 'kalender', component: Kalender },
   { path: 'dagbok', component: Dagbok },
   { path: 'slides', component: Slides },
+  { path: 'color-picker', component: ColorPickerComponent },
   { path: '**', redirectTo: '' }
 ];
