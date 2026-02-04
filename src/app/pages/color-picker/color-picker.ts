@@ -26,6 +26,7 @@ export class ColorPickerComponent {
   copiedColor: string = '';
   showCopiedMessage: boolean = false;
   customHex: string = '#000000';
+  private copyMessageTimeout?: ReturnType<typeof setTimeout>;
 
   tailwindColors: TailwindColorScale[] = [
     {
@@ -353,13 +354,7 @@ export class ColorPickerComponent {
   async copyColorHex(hex: string) {
     try {
       await navigator.clipboard.writeText(hex);
-      this.copiedColor = hex;
-      this.showCopiedMessage = true;
-      
-      // Hide message after 2 seconds
-      setTimeout(() => {
-        this.showCopiedMessage = false;
-      }, 2000);
+      this.showCopyMessage(hex);
     } catch (err) {
       console.error('Failed to copy color:', err);
       // Fallback for older browsers
@@ -377,6 +372,21 @@ export class ColorPickerComponent {
     return /^#[0-9A-F]{6}$/i.test(hex);
   }
 
+  private showCopyMessage(hex: string) {
+    // Clear any existing timeout to prevent timing issues
+    if (this.copyMessageTimeout) {
+      clearTimeout(this.copyMessageTimeout);
+    }
+
+    this.copiedColor = hex;
+    this.showCopiedMessage = true;
+
+    // Hide message after 2 seconds
+    this.copyMessageTimeout = setTimeout(() => {
+      this.showCopiedMessage = false;
+    }, 2000);
+  }
+
   private fallbackCopy(text: string) {
     const textArea = document.createElement('textarea');
     textArea.value = text;
@@ -386,11 +396,7 @@ export class ColorPickerComponent {
     textArea.select();
     try {
       document.execCommand('copy');
-      this.copiedColor = text;
-      this.showCopiedMessage = true;
-      setTimeout(() => {
-        this.showCopiedMessage = false;
-      }, 2000);
+      this.showCopyMessage(text);
     } catch (err) {
       console.error('Fallback copy failed:', err);
     }
