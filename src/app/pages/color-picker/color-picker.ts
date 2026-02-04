@@ -382,10 +382,16 @@ export class ColorPickerComponent {
     }
   }
 
-  onColorPickerChange(event: Event) {
-    const input = event.target as HTMLInputElement;
-    this.selectedColor = input.value;
-    this.customHex = input.value;
+  onColorPickerChange(color: string) {
+    this.selectedColor = color;
+    this.customHex = color;
+  }
+
+  onHexInputChange(value: string) {
+    this.customHex = value;
+    if (this.isValidHex(value)) {
+      this.selectedColor = value;
+    }
   }
 
   switchTab(tab: 'hex' | 'tailwind') {
