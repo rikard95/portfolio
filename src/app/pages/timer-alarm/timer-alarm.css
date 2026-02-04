@@ -26,9 +26,9 @@
 
 /* Light mode overrides for alarm states */
 body.light-mode .active-alarm {
-  color: #16a34a;
+  color: #000000;
   font-weight: bold;
-  text-shadow: 0 0 10px rgba(22, 163, 74, 0.3);
+  text-shadow: none;
 }
 
 body.light-mode .inactive-alarm {
