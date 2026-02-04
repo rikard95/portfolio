@@ -54,12 +54,6 @@
     color: #f1f5f9 !important;
   }
   
-  /* Keep "Anteckningar" heading white in notes card */
-  body.light-mode .bg-slate-800\/50:has(textarea.bg-slate-900\/80) .text-slate-100,
-  body.light-mode .bg-slate-800\/50:has(textarea.bg-slate-900\/80) .dark\:text-slate-100 {
-    color: #f1f5f9 !important;
-  }
-  
   body.light-mode .bg-slate-800\/50,
   body.light-mode .dark\:bg-slate-800\/50 {
     background: rgba(241, 243, 245, 0.95) !important;
