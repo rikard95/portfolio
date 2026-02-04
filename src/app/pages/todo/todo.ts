@@ -72,6 +72,10 @@ export class TodoComponent implements OnInit {
     return this.todos.filter(t => t.category === this.filterCategory);
   }
 
+  onFilterCategoryChange() {
+    localStorage.setItem('filterCategory', this.filterCategory);
+  }
+
   editTodo(todo: Todo) {
     todo.editing = !todo.editing;
     this.saveToLocalStorage();
@@ -118,12 +122,15 @@ export class TodoComponent implements OnInit {
   saveToLocalStorage() {
     localStorage.setItem('todos', JSON.stringify(this.todos));
     localStorage.setItem('categories', JSON.stringify(this.categories));
+    localStorage.setItem('filterCategory', this.filterCategory);
   }
 
   loadFromLocalStorage() {
     const savedTodos = localStorage.getItem('todos');
     const savedCategories = localStorage.getItem('categories');
+    const savedFilterCategory = localStorage.getItem('filterCategory');
     if (savedTodos) this.todos = JSON.parse(savedTodos);
     if (savedCategories) this.categories = JSON.parse(savedCategories);
+    if (savedFilterCategory) this.filterCategory = savedFilterCategory;
   }
 }
