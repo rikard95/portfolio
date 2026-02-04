@@ -26,6 +26,8 @@ export class ColorPickerComponent {
   copiedColor: string = '';
   showCopiedMessage: boolean = false;
   customHex: string = '#000000';
+  selectedColor: string = '#000000';
+  activeTab: 'hex' | 'tailwind' = 'hex';
   private copyMessageTimeout?: ReturnType<typeof setTimeout>;
 
   tailwindColors: TailwindColorScale[] = [
@@ -362,10 +364,32 @@ export class ColorPickerComponent {
     }
   }
 
+  async copyTailwindClass(colorName: string, shade: string) {
+    const className = `${colorName.toLowerCase()}-${shade}`;
+    try {
+      await navigator.clipboard.writeText(className);
+      this.showCopyMessage(className);
+    } catch (err) {
+      console.error('Failed to copy class:', err);
+      // Fallback for older browsers
+      this.fallbackCopy(className);
+    }
+  }
+
   copyCustomColor() {
     if (this.isValidHex(this.customHex)) {
       this.copyColorHex(this.customHex);
     }
+  }
+
+  onColorPickerChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.selectedColor = input.value;
+    this.customHex = input.value;
+  }
+
+  switchTab(tab: 'hex' | 'tailwind') {
+    this.activeTab = tab;
   }
 
   isValidHex(hex: string): boolean {

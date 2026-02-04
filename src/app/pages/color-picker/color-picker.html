@@ -6,39 +6,6 @@
 <!-- Main Content Container - Mobile First -->
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
   
-  <!-- Custom Hex Color Picker -->
-  <div class="max-w-[900px] w-[90%] mx-auto mb-8">
-    <div class="bg-slate-800/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-700 dark:border-slate-700 rounded-2xl p-6 space-y-4 transition-all hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-glow">
-      <h2 class="text-xl sm:text-2xl font-bold text-slate-100 dark:text-slate-100 text-center">
-        Anpassad Hex-färg
-      </h2>
-      
-      <div class="flex flex-col sm:flex-row gap-4 items-center">
-        <div class="flex-1 w-full">
-          <input
-            type="text"
-            [(ngModel)]="customHex"
-            placeholder="#000000"
-            maxlength="7"
-            class="w-full px-4 py-3 bg-slate-900/80 dark:bg-slate-900/80 border border-slate-600 dark:border-slate-600 rounded-xl text-slate-100 dark:text-slate-100 font-mono text-lg focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 transition-colors"
-          />
-        </div>
-        <div 
-          [style.background-color]="isValidHex(customHex) ? customHex : '#000000'"
-          class="w-20 h-20 sm:w-16 sm:h-16 rounded-xl border-2 border-slate-600 flex-shrink-0"
-        ></div>
-        <button
-          type="button"
-          (click)="copyCustomColor()"
-          [disabled]="!isValidHex(customHex)"
-          class="px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-600 disabled:cursor-not-allowed text-white font-semibold rounded-xl transition-colors"
-        >
-          Kopiera
-        </button>
-      </div>
-    </div>
-  </div>
-
   <!-- Copied Message -->
   <div 
     *ngIf="showCopiedMessage" 
@@ -51,51 +18,130 @@
     </div>
   </div>
 
-  <!-- Tailwind Colors Section -->
+  <!-- Combined Color Picker with Tabs -->
   <div class="max-w-[900px] w-[90%] mx-auto mb-[47px]">
     <div class="bg-slate-800/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-700 dark:border-slate-700 rounded-2xl p-6 space-y-6 transition-all hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-glow">
       
+      <!-- Header -->
       <div class="text-center">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-100 dark:text-slate-100 mb-2">
-          Tailwind Färger
+          Färgväljare
         </h2>
         <p class="text-slate-400 dark:text-slate-400">
-          Klicka på en färg för att kopiera hex-koden
+          Välj mellan hex-färger eller Tailwind-klasser
         </p>
       </div>
 
-      <!-- Color Scales -->
-      <div class="space-y-6">
-        <div *ngFor="let colorScale of tailwindColors" class="space-y-2">
-          <!-- Color Name -->
-          <h3 class="text-lg font-semibold text-slate-100 dark:text-slate-100">
-            {{ colorScale.name }}
-          </h3>
+      <!-- Tab Navigation -->
+      <div class="flex gap-2 border-b border-slate-600 dark:border-slate-600">
+        <button
+          type="button"
+          (click)="switchTab('hex')"
+          [class.border-blue-500]="activeTab === 'hex'"
+          [class.text-blue-400]="activeTab === 'hex'"
+          [class.border-transparent]="activeTab !== 'hex'"
+          [class.text-slate-400]="activeTab !== 'hex'"
+          class="px-6 py-3 font-semibold border-b-2 transition-colors hover:text-blue-300"
+        >
+          Hex-färger
+        </button>
+        <button
+          type="button"
+          (click)="switchTab('tailwind')"
+          [class.border-blue-500]="activeTab === 'tailwind'"
+          [class.text-blue-400]="activeTab === 'tailwind'"
+          [class.border-transparent]="activeTab !== 'tailwind'"
+          [class.text-slate-400]="activeTab !== 'tailwind'"
+          class="px-6 py-3 font-semibold border-b-2 transition-colors hover:text-blue-300"
+        >
+          Tailwind
+        </button>
+      </div>
+
+      <!-- Hex Tab Content -->
+      <div *ngIf="activeTab === 'hex'" class="space-y-4">
+        <div class="bg-slate-900/50 dark:bg-slate-900/50 border border-slate-600 dark:border-slate-600 rounded-xl p-4">
+          <p class="text-slate-300 dark:text-slate-300 text-sm text-center mb-4">
+            <strong>Tips:</strong> Välj en färg med färgväljaren eller skriv in hex-kod manuellt
+          </p>
           
-          <!-- Color Shades -->
-          <div class="grid grid-cols-11 gap-1">
+          <!-- Visual Color Picker -->
+          <div class="flex flex-col items-center gap-4 mb-4">
+            <label class="text-slate-200 dark:text-slate-200 font-semibold">Visuell färgväljare:</label>
+            <input
+              type="color"
+              [(ngModel)]="selectedColor"
+              (ngModelChange)="customHex = selectedColor"
+              class="w-32 h-32 cursor-pointer rounded-xl border-2 border-slate-600"
+              title="Välj en färg"
+            />
+          </div>
+
+          <!-- Manual Hex Input -->
+          <div class="flex flex-col sm:flex-row gap-4 items-center">
+            <div class="flex-1 w-full">
+              <label class="text-slate-200 dark:text-slate-200 text-sm font-semibold mb-2 block">
+                Hex-kod:
+              </label>
+              <input
+                type="text"
+                [(ngModel)]="customHex"
+                (ngModelChange)="selectedColor = customHex"
+                placeholder="#000000"
+                maxlength="7"
+                class="w-full px-4 py-3 bg-slate-900/80 dark:bg-slate-900/80 border border-slate-600 dark:border-slate-600 rounded-xl text-slate-100 dark:text-slate-100 font-mono text-lg focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 transition-colors"
+              />
+            </div>
+            <div 
+              [style.background-color]="isValidHex(customHex) ? customHex : '#000000'"
+              class="w-20 h-20 sm:w-16 sm:h-16 rounded-xl border-2 border-slate-600 flex-shrink-0"
+            ></div>
             <button
-              *ngFor="let shade of colorScale.shades"
               type="button"
-              (click)="copyColorHex(shade.hex)"
-              [style.background-color]="shade.hex"
-              class="color-shade group relative aspect-square rounded-lg transition-all hover:scale-110 hover:shadow-lg cursor-pointer hover:z-10"
-              [title]="colorScale.name + '-' + shade.shade + ': ' + shade.hex"
+              (click)="copyCustomColor()"
+              [disabled]="!isValidHex(customHex)"
+              class="px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-600 disabled:cursor-not-allowed text-white font-semibold rounded-xl transition-colors"
             >
-              <!-- Hover overlay with shade number -->
-              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 rounded-lg">
-                <span class="text-white text-xs font-bold">{{ shade.shade }}</span>
-              </div>
+              Kopiera
             </button>
           </div>
         </div>
       </div>
 
-      <!-- Info Section -->
-      <div class="bg-slate-900/50 dark:bg-slate-900/50 border border-slate-600 dark:border-slate-600 rounded-xl p-4">
-        <p class="text-slate-300 dark:text-slate-300 text-sm text-center">
-          <strong>Tips:</strong> Håll muspekaren över en färg för att se färgnamn och kod
-        </p>
+      <!-- Tailwind Tab Content -->
+      <div *ngIf="activeTab === 'tailwind'" class="space-y-6">
+        <div class="bg-slate-900/50 dark:bg-slate-900/50 border border-slate-600 dark:border-slate-600 rounded-xl p-4">
+          <p class="text-slate-300 dark:text-slate-300 text-sm text-center">
+            <strong>Tips:</strong> Klicka på en färg för att kopiera Tailwind-klassnamnet (t.ex. "emerald-200")
+          </p>
+        </div>
+
+        <!-- Color Scales -->
+        <div class="space-y-6">
+          <div *ngFor="let colorScale of tailwindColors" class="space-y-2">
+            <!-- Color Name -->
+            <h3 class="text-lg font-semibold text-slate-100 dark:text-slate-100">
+              {{ colorScale.name }}
+            </h3>
+            
+            <!-- Color Shades -->
+            <div class="grid grid-cols-11 gap-1">
+              <button
+                *ngFor="let shade of colorScale.shades"
+                type="button"
+                (click)="copyTailwindClass(colorScale.name, shade.shade)"
+                [style.background-color]="shade.hex"
+                class="color-shade group relative aspect-square rounded-lg transition-all hover:scale-110 hover:shadow-lg cursor-pointer hover:z-10"
+                [title]="colorScale.name.toLowerCase() + '-' + shade.shade"
+              >
+                <!-- Hover overlay with shade number -->
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 rounded-lg">
+                  <span class="text-white text-xs font-bold">{{ shade.shade }}</span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>

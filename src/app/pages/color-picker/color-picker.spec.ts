@@ -87,4 +87,28 @@ describe('ColorPickerComponent', () => {
     expect(component.isValidHex('#GGGGGG')).toBe(false);
     expect(component.isValidHex('')).toBe(false);
   });
+
+  it('should copy tailwind class name', async () => {
+    const mockClipboard = {
+      writeText: jasmine.createSpy('writeText').and.returnValue(Promise.resolve())
+    };
+    Object.defineProperty(navigator, 'clipboard', {
+      value: mockClipboard,
+      configurable: true
+    });
+
+    await component.copyTailwindClass('Emerald', '200');
+
+    expect(mockClipboard.writeText).toHaveBeenCalledWith('emerald-200');
+    expect(component.copiedColor).toBe('emerald-200');
+    expect(component.showCopiedMessage).toBe(true);
+  });
+
+  it('should switch tabs', () => {
+    expect(component.activeTab).toBe('hex');
+    component.switchTab('tailwind');
+    expect(component.activeTab).toBe('tailwind');
+    component.switchTab('hex');
+    expect(component.activeTab).toBe('hex');
+  });
 });
