@@ -1,6 +1,6 @@
 <app-klocka></app-klocka>
 
-<div class="max-w-5xl w-[95%] mx-auto mb-[47px] p-8 sm:p-6 md:p-8 bg-gradient-to-br from-[rgba(30,10,62,0.95)] to-[rgba(26,0,50,0.9)] border-2 border-[rgba(255,204,0,0.8)] rounded-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.3),0_0_60px_rgba(255,204,0,0.1)] text-white leading-[1.7] box-border overflow-x-hidden transition-[var(--transition-smooth)] backdrop-blur-[10px] hover:border-[#00ff88] hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_0_80px_rgba(0,255,136,0.15)] hover:-translate-y-0.5 [body.light-mode_&]:bg-gradient-to-br [body.light-mode_&]:from-[rgba(248,249,250,0.98)] [body.light-mode_&]:to-[rgba(241,243,245,0.95)] [body.light-mode_&]:text-[#1a1a1a] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:shadow-[0_8px_32px_rgba(0,0,0,0.08),0_0_60px_rgba(59,130,246,0.05)] [body.light-mode_&]:hover:border-[var(--light-accent)] [body.light-mode_&]:hover:shadow-[0_12px_48px_rgba(0,0,0,0.12),0_0_80px_rgba(59,130,246,0.1)] max-[768px]:p-6 max-[768px]:w-[90%] max-[480px]:p-4 max-[480px]:w-[95%]">
+<div class="max-w-[900px] w-[90%] mx-auto mb-[47px] p-8 sm:p-6 md:p-8 bg-gradient-to-br from-[rgba(30,10,62,0.95)] to-[rgba(26,0,50,0.9)] border-2 border-[rgba(255,204,0,0.8)] rounded-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.3),0_0_60px_rgba(255,204,0,0.1)] text-white leading-[1.7] box-border overflow-x-hidden transition-[var(--transition-smooth)] backdrop-blur-[10px] hover:border-[#00ff88] hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_0_80px_rgba(0,255,136,0.15)] hover:-translate-y-0.5 [body.light-mode_&]:bg-gradient-to-br [body.light-mode_&]:from-[rgba(248,249,250,0.98)] [body.light-mode_&]:to-[rgba(241,243,245,0.95)] [body.light-mode_&]:text-[#1a1a1a] [body.light-mode_&]:border-[var(--light-border)] [body.light-mode_&]:shadow-[0_8px_32px_rgba(0,0,0,0.08),0_0_60px_rgba(59,130,246,0.05)] [body.light-mode_&]:hover:border-[var(--light-accent)] [body.light-mode_&]:hover:shadow-[0_12px_48px_rgba(0,0,0,0.12),0_0_80px_rgba(59,130,246,0.1)] max-[768px]:p-6 max-[768px]:w-[90%] max-[480px]:p-4 max-[480px]:w-[95%]">
   <div class="flex justify-center items-center gap-4 flex-wrap mb-6 max-[480px]:gap-[0.8rem]">
     <button type="button" (click)="changeMonth(-1)" class="bg-gradient-to-br from-[#007bff] to-[#0056b3] text-white border-none rounded-xl px-4 py-2.5 cursor-pointer transition-[var(--transition-fast)] flex-[0_0_auto] min-h-[44px] text-base touch-manipulation box-border font-semibold shadow-[0_2px_8px_rgba(0,123,255,0.3)] hover:bg-gradient-to-br hover:from-[#00ff88] hover:to-[#00c86b] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,255,136,0.4)] [body.light-mode_&]:bg-gradient-to-br [body.light-mode_&]:from-[#007bff] [body.light-mode_&]:to-[#0056b3] [body.light-mode_&]:text-white [body.light-mode_&]:hover:bg-gradient-to-br [body.light-mode_&]:hover:from-[var(--light-accent)] [body.light-mode_&]:hover:to-[var(--light-accent-hover)] max-[768px]:flex-[1_1_45%] max-[768px]:min-w-0 max-[768px]:text-base max-[768px]:py-[0.7rem] max-[768px]:min-h-[48px] max-[480px]:w-full max-[480px]:text-base max-[480px]:py-[0.8rem] max-[480px]:min-h-[50px]">&#8592;</button>
 
@@ -45,11 +45,11 @@
   </div>
 </div>
 
-<div class="flex justify-center mt-4 min-[769px]:hidden">
+<!-- <div class="flex justify-center mt-4 min-[769px]:hidden">
   <button type="button" (click)="scrollToTop()" class="bg-gradient-to-br from-[#ffcc00] to-[#ff9800] text-black border-none rounded-xl px-4 py-2 font-bold cursor-pointer transition-[var(--transition-fast)] shadow-[0_4px_16px_rgba(255,204,0,0.3)] hover:bg-gradient-to-br hover:from-[#ff9800] hover:to-[#f57c00] hover:-translate-y-0.5 hover:shadow-[0_6px_24px_rgba(255,204,0,0.5)] [body.light-mode_&]:bg-gradient-to-br [body.light-mode_&]:from-[var(--light-accent)] [body.light-mode_&]:to-[var(--light-accent-hover)] max-[480px]:px-6 max-[480px]:py-[0.8rem] max-[480px]:text-base max-[480px]:min-h-[48px]">
     Gå till datumväljare ↑
   </button>
-</div>
+</div> -->
 
 <!-- Modal -->
 <div class="fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.8)] flex items-center justify-center z-[1000] backdrop-blur-[5px] animate-[fadeIn_0.2s_ease-out] [body.light-mode_&]:bg-[rgba(0,0,0,0.6)]" *ngIf="isModalOpen" (click)="closeModal()">
