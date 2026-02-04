@@ -40,6 +40,20 @@
     color: #1a1a1a !important;
   }
   
+  /* Keep text white in dark backgrounds (calculator display & notes textarea) */
+  body.light-mode .bg-slate-900\/80.text-slate-100,
+  body.light-mode .bg-slate-900\/80.dark\:text-slate-100,
+  body.light-mode .bg-slate-900\/80 .text-slate-100,
+  body.light-mode .bg-slate-900\/80 .dark\:text-slate-100 {
+    color: #f1f5f9 !important;
+  }
+  
+  /* Keep calculator result text white in light mode */
+  body.light-mode .bg-slate-900\/80 .text-blue-400,
+  body.light-mode .bg-slate-900\/80 .dark\:text-blue-400 {
+    color: #f1f5f9 !important;
+  }
+  
   body.light-mode .bg-slate-800\/50,
   body.light-mode .dark\:bg-slate-800\/50 {
     background: rgba(241, 243, 245, 0.95) !important;
