@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener, ElementRef, AfterViewInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { TourService } from '../../shared/services/tour.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ export class Header implements OnInit, AfterViewInit {
   isScrolled = false;
   private headerElement: HTMLElement | null = null;
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef, private tourService: TourService) {}
 
   ngOnInit() {
     const savedTheme = localStorage.getItem('theme');
@@ -47,5 +48,9 @@ export class Header implements OnInit, AfterViewInit {
       document.body.classList.add('light-mode');
       localStorage.setItem('theme', 'light');
     }
+  }
+
+  startTour() {
+    this.tourService.startTour();
   }
 }
