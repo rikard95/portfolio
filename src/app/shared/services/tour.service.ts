@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { driver, type Driver, type DriveStep } from 'driver.js';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +7,7 @@ import { Router } from '@angular/router';
 export class TourService {
   private driverObj: Driver | null = null;
 
-  constructor(private router: Router) {}
+  constructor() {}
 
   startTour(): void {
     const steps: DriveStep[] = [
@@ -100,7 +99,7 @@ export class TourService {
         }
       },
       {
-        element: 'a[routerLink="om-mig"]',
+        element: 'a[routerLink="/om-mig"]',
         popover: {
           title: 'Om Mig',
           description: 'Klicka här för att läsa mer om mig och min bakgrund.',
